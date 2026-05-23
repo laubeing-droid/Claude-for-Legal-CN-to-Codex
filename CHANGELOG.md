@@ -20,7 +20,7 @@
 ## [2.0.0] - 2026-05-23
 
 ### MCP 连接器独立仓库
-- MCP 配置逻辑迁移到 https://github.com/laubeing-droid/codex-legal-mcp-connectors
+- MCP 配置逻辑迁移到 https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors
 - install.ps1: 步骤 3 改为克隆并运行 mcp-connectors/install.ps1
 
 ## [1.4.0] - 2026-05-23

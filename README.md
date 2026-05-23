@@ -40,7 +40,7 @@ cd Claude-for-Legal-CN-to-Codex
 
 ## MCP 法律检索连接器
 
-MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubeing-droid/codex-legal-mcp-connectors) 管理，
+MCP 配置由独立仓库 [Codex-Claude-legal-CN-mcp-connectors](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors) 管理，
 `install.ps1` 和 `update.ps1` 均自动委托给该仓库。支持三种方式：
 
 | 连接器 | 方式 | 工具数 | 推荐 |
@@ -50,7 +50,7 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 | **北大法宝 CLI 命令行** | CLI 工具 | — | 调试/验证 |
 
 快速配置：编辑 `~/.codex/config.toml` → 替换凭证 → 重启 Codex。
-详细指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)。
+详细指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors)。
 
 ---
 
@@ -58,7 +58,7 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 
 | 技能 | 领域 | 大小 |
 |------|------|------|
-| codex-for-legal-cn | 根技能（路由+更新） | — |
+| codex-claude-legal-cn | 根技能（路由+更新） | — |
 | commercial-legal | 商事合同 | 43KB + 12 子技能 |
 | litigation-legal | 诉讼仲裁 | 28KB + 19 子技能 |
 | employment-legal | 劳动用工 | 32KB + 20 子技能 |
@@ -90,14 +90,14 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 | 帮我分析这个法考案例 | law-student |
 | 法律援助接谈记录 | legal-clinic |
 
-也可手动指定：`@codex-for-legal-cn 帮我审这份合同`
+也可手动指定：`@codex-claude-legal-cn 帮我审这份合同`
 
 ---
 
 ## 自动更新机制
 
 每次触发法律任务时，根技能自动 git pull 同步上游。手动更新：`.\update.ps1`
-`update.ps1` 会同步技能包装层，并委托 `codex-legal-mcp-connectors` 仓库处理 MCP 连接器检查与更新。
+`update.ps1` 会同步技能包装层，并委托 `Codex-Claude-legal-CN-mcp-connectors` 仓库处理 MCP 连接器检查与更新。
 
 ---
 

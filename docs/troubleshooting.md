@@ -47,7 +47,7 @@ Set-ExecutionPolicy -Scope CurrentUser -RemoteSigned -Force
 ### 没有自动进入法律模式
 
 ```
-@codex-for-legal-cn 你的问题
+@codex-claude-legal-cn 你的问题
 ```
 
 ### 引用标注全是 [需验证]
@@ -57,7 +57,7 @@ MCP 连接器未正确配置。按以下步骤排查：
 2. 确认 `enabled = true` 存在
 3. 重启 Codex Desktop
 4. 运行 `.\update.ps1` 查看 MCP 状态
-5. 详细配置指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)
+5. 详细配置指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors)
 
 ### 输出不准确
 

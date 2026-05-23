@@ -43,7 +43,7 @@ Claude-for-Legal-CN-to-Codex/
 
 ### MCP 连接器修改
 
-MCP 连接器配置由独立的 [codex-legal-mcp-connectors](https://github.com/laubeing-droid/codex-legal-mcp-connectors) 仓库管理。
+MCP 连接器配置由独立的 [Codex-Claude-legal-CN-mcp-connectors](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors) 仓库管理。
 如需新增或修改连接器，修改该仓库的对应文件。
 
 ## 提交 PR

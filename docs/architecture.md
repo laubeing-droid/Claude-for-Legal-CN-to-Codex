@@ -39,7 +39,7 @@ Claude-for-Legal-CN-to-Codex           ← 包装层（本仓库）
 | 包装层 | SKILL.md、安装脚本、文档 | 本仓库 |
 | 内容层 | CLAUDE.md、references 法条参考 | 上游仓库（SH88-source） |
 | 运行层 | 技能实际执行目录 | install.ps1 自动管理 |
-| MCP 层 | 法律检索连接器配置 | codex-legal-mcp-connectors 仓库管理 |
+| MCP 层 | 法律检索连接器配置 | Codex-Claude-legal-CN-mcp-connectors 仓库管理 |
 
 ## 设计原则
 
@@ -59,4 +59,4 @@ Claude-for-Legal-CN-to-Codex           ← 包装层（本仓库）
 
 - **SH88-source/claude-for-legal-CN**（Apache 2.0）— 当前直接上游
   - 源流：anthropics/claude-for-legal → zhou210712/claude-for-legal-ZH → SH88-source
-- **codex-legal-mcp-connectors**（独立仓库）— MCP 连接器管理
+- **Codex-Claude-legal-CN-mcp-connectors**（独立仓库）— MCP 连接器管理

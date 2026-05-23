@@ -4,7 +4,7 @@
 .DESCRIPTION
   1. 从上游拉取最新内容
   2. 同步技能包装层到 ~/.codex/skills/
-  3. MCP 连接器检查（委托给 codex-legal-mcp-connectors 仓库）
+  3. MCP 连接器检查（委托给 Codex-Claude-legal-CN-mcp-connectors 仓库）
   4. 运行 MCP 更新脚本（如可用）
   5. 验证安装完整性
 #>
@@ -14,7 +14,7 @@ $RepoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $SkillsDir = "$env:USERPROFILE\.codex\skills"
 $UpstreamDir = "$env:USERPROFILE\.codex\vendor\claude-for-legal-CN"
 $McpDir = "$RepoRoot\mcp-connectors"
-$McpRepoUrl = 'https://github.com/laubeing-droid/codex-legal-mcp-connectors.git'
+$McpRepoUrl = 'https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors.git'
 
 $domains = @(
     'commercial-legal','privacy-legal','product-legal','corporate-legal',
@@ -73,9 +73,9 @@ foreach ($name in $domains) {
     $count++
 }
 # 根技能
-$rootTgt = "$SkillsDir\codex-for-legal-cn"
+$rootTgt = "$SkillsDir\codex-claude-legal-cn"
 $null = New-Item -ItemType Directory -Force $rootTgt
-Copy-Item "$RepoRoot\skills\codex-for-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
+Copy-Item "$RepoRoot\skills\codex-claude-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
 Write-Host "  已同步 $count 个技能领域 + 根技能"
 
 # ---- [3/5] MCP 连接器检查（委托给独立仓库） ----
@@ -91,7 +91,7 @@ if (Test-Path "$McpDir\verify.ps1") {
     & "$McpDir\verify.ps1"
 } else {
     Write-Host '  [警告] 无法获取 MCP 连接器验证脚本，跳过 MCP 检查' -ForegroundColor Yellow
-    Write-Host '  如需手动检查，请运行: git clone https://github.com/laubeing-droid/codex-legal-mcp-connectors.git' -ForegroundColor DarkGray
+    Write-Host '  如需手动检查，请运行: git clone https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors.git' -ForegroundColor DarkGray
 }
 
 # ---- [4/5] MCP 更新（如可用） ----
@@ -106,7 +106,7 @@ if (Test-Path "$McpDir\update.ps1") {
 # ---- [5/5] 验证安装完整性 ----
 Write-Host '[5/5] 验证安装完整性...' -ForegroundColor Yellow
 $missing = @()
-$all = $domains + @('codex-for-legal-cn')
+$all = $domains + @('codex-claude-legal-cn')
 foreach ($name in $all) {
     if (-not (Test-Path "$SkillsDir\$name\SKILL.md")) { $missing += $name }
 }
@@ -119,5 +119,5 @@ if ($missing.Count -eq 0) {
 
 Write-Host ''
 Write-Host '更新完成。重启 Codex Desktop 使新内容生效。' -ForegroundColor Green
-Write-Host 'MCP 连接器由 codex-legal-mcp-connectors 独立管理。' -ForegroundColor Cyan
-Write-Host '  详情: https://github.com/laubeing-droid/codex-legal-mcp-connectors' -ForegroundColor Cyan
+Write-Host 'MCP 连接器由 Codex-Claude-legal-CN-mcp-connectors 独立管理。' -ForegroundColor Cyan
+Write-Host '  详情: https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors' -ForegroundColor Cyan

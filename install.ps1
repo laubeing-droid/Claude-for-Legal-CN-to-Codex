@@ -4,7 +4,7 @@
 .DESCRIPTION
   1. 克隆上游法律内容 (SH88-source/claude-for-legal-CN)
   2. 安装 SKILL.md 包装层到 ~/.codex/skills/
-  3. 配置 MCP 连接器（通过 codex-legal-mcp-connectors 独立仓库）
+  3. 配置 MCP 连接器（通过 Codex-Claude-legal-CN-mcp-connectors 独立仓库）
   4. 设置内容链接便于自动更新
 #>
 
@@ -72,14 +72,14 @@ foreach ($name in $domains) {
     }
 }
 # 根技能
-$rootTgt = "$SkillsDir\codex-for-legal-cn"
+$rootTgt = "$SkillsDir\codex-claude-legal-cn"
 $null = New-Item -ItemType Directory -Force $rootTgt
-Copy-Item "$RepoRoot\skills\codex-for-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
+Copy-Item "$RepoRoot\skills\codex-claude-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
 Write-Host '  技能安装完成'
 
 # [3/4] MCP 连接器（委托到独立仓库）
 Write-Host '[3/4] 配置 MCP 连接器...' -ForegroundColor Yellow
-$McpRepoUrl = 'https://github.com/laubeing-droid/codex-legal-mcp-connectors.git'
+$McpRepoUrl = 'https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors.git'
 $McpDir = "$RepoRoot\mcp-connectors"
 if (-not (Test-Path "$McpDir\install.ps1")) {
     Write-Host '  正在克隆 MCP 连接器仓库...' -ForegroundColor Yellow
@@ -106,7 +106,7 @@ if ($policy -eq 'Restricted') {
 
 # 验证
 $missing = @()
-$all = $domains + @('codex-for-legal-cn')
+$all = $domains + @('codex-claude-legal-cn')
 foreach ($name in $all) {
     if (-not (Test-Path "$SkillsDir\$name\SKILL.md")) { $missing += $name }
 }
@@ -119,6 +119,6 @@ if ($missing.Count -eq 0) {
 
 Write-Host ''
 Write-Host '安装完成！重启 Codex Desktop 使技能生效。' -ForegroundColor Green
-Write-Host 'MCP 连接器由 codex-legal-mcp-connectors 管理，替换凭证即可使用。' -ForegroundColor Cyan
+Write-Host 'MCP 连接器由 Codex-Claude-legal-CN-mcp-connectors 管理，替换凭证即可使用。' -ForegroundColor Cyan
 Write-Host '  配置指南: docs/connectors.md' -ForegroundColor Cyan
-Write-Host '  独立仓库: https://github.com/laubeing-droid/codex-legal-mcp-connectors' -ForegroundColor Cyan
+Write-Host '  独立仓库: https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors' -ForegroundColor Cyan

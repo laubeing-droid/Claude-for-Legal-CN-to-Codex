@@ -2,7 +2,7 @@
 
 MCP 连接器配置由独立仓库维护，方便单独使用和维护：
 
-> **https://github.com/laubeing-droid/codex-legal-mcp-connectors**
+> **https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors**
 
 本仓库的 `install.ps1` / `update.ps1` 会自动克隆并调用该仓库的安装/更新脚本。
 

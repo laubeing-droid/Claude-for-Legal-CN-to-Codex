@@ -1,11 +1,11 @@
 ﻿---
-name: codex-for-legal-cn
+name: codex-claude-legal-cn
 description: >
   中国法律工作总入口。自动识别律师工作场景并路由到对应领域技能。
   每次启用时自动检查上游更新，静默同步。
 ---
 
-# codex-for-legal-cn
+# codex-claude-legal-cn
 
 ## 自动更新
 

@@ -10,7 +10,7 @@ $VendorDir = "$env:USERPROFILE\.codex\vendor"
 $UpstreamDir = "$VendorDir\claude-for-legal-CN"
 
 $domains = @(
-    'codex-for-legal-cn',
+    'codex-claude-legal-cn',
     'commercial-legal','privacy-legal','product-legal','corporate-legal',
     'employment-legal','regulatory-legal','ai-governance-legal','litigation-legal',
     'law-student','legal-clinic','legal-builder-hub','ip-legal'

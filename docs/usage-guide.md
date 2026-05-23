@@ -78,7 +78,7 @@ pkulaw-mcp tools
 
 **建议的组合**：方式一（chineselaw）或方式二（北大法宝 MCP），二选一即可。方式三可选安装用于调试。
 
-**完整配置指南和工具列表见 [MCP 连接器仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)**。
+**完整配置指南和工具列表见 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors)**。
 
 ---
 
@@ -99,7 +99,7 @@ pkulaw-mcp tools
 ### 手动指定
 
 ```
-@codex-for-legal-cn 帮我审这份合同
+@codex-claude-legal-cn 帮我审这份合同
 @litigation-legal 分析一下证据问题
 ```
 
@@ -138,5 +138,5 @@ pkulaw-mcp tools
 
 ## 八、故障排查
 
-MCP 配置问题优先查看 [MCP 连接器仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)。
+MCP 配置问题优先查看 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors)。
 常见问题见 docs/troubleshooting.md。

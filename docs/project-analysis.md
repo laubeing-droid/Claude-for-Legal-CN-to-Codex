@@ -86,7 +86,7 @@ laubeing-droid/Claude-for-Legal-CN-to-Codex  (本仓库, 全功能整合)
   | 资产 | 说明 |
   |------|------|
   | 12 个领域 SKILL.md | 精简入口定义，自动指向上游内容 |
-  | 根技能 codex-for-legal-cn | 关键词自动路由 + 自动更新指令 |
+  | 根技能 codex-claude-legal-cn | 关键词自动路由 + 自动更新指令 |
   | install.ps1 | 一键自动拉取上游 + 部署到 Codex |
   | update.ps1 | 手动同步最新内容 + 委托 MCP 连接器验证 |
   | 自动更新机制 | 每次使用法律功能时自动同步上游 |
@@ -123,7 +123,7 @@ laubeing-droid/Claude-for-Legal-CN-to-Codex  (本仓库, 全功能整合)
 
 1. **选型集成**: 选择适合 Codex 的中国法内容源
 2. **一键安装**: 编写 install.ps1，自动完成克隆、部署、配置
-3. **技能入口**: 为 12 个领域编写 SKILL.md，创建根技能 codex-for-legal-cn
+3. **技能入口**: 为 12 个领域编写 SKILL.md，创建根技能 codex-claude-legal-cn
 4. **自动路由**: 在根技能中实现关键词到对应法律领域的自动分发
 5. **更新机制**: 每次调用技能时自动同步上游最新内容
 6. **上游监测**: GitHub Actions 每周自动检查上游链更新
