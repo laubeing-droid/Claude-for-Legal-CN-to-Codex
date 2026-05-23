@@ -2,7 +2,7 @@
 
 ## 仓库结构
 
-`
+```
 Claude-for-Legal-CN-to-Codex/
   skills/<domain>/SKILL.md   入口定义（轻量，本仓库维护）
   install.ps1                一键安装脚本
@@ -11,7 +11,7 @@ Claude-for-Legal-CN-to-Codex/
   verify.ps1                 安装验证脚本
   docs/                      文档
   .github/workflows/         GitHub Actions 配置
-`
+```
 
 ## 设计原则
 
@@ -26,7 +26,7 @@ Claude-for-Legal-CN-to-Codex/
 
 - SKILL.md 中的路由关键词和触发规则
 - 安装/更新/卸载脚本（install.ps1, update.ps1, uninstall.ps1, verify.ps1）
-- MCP 连接器配置逻辑（在 install.ps1 / update.ps1 中）
+- MCP 连接器委托逻辑
 - 文档完善（docs/ 目录下所有文件）
 - GitHub Actions 工作流配置
 
@@ -43,8 +43,8 @@ Claude-for-Legal-CN-to-Codex/
 
 ### MCP 连接器修改
 
-MCP 连接器配置通过 install.ps1 的 Add-McpServerToConfig 函数写入 ~/.codex/config.toml。
-如需新增或修改连接器，编辑 install.ps1 和 update.ps1 中对应的配置段。
+MCP 连接器配置由独立的 [codex-legal-mcp-connectors](https://github.com/laubeing-droid/codex-legal-mcp-connectors) 仓库管理。
+如需新增或修改连接器，修改该仓库的对应文件。
 
 ## 提交 PR
 

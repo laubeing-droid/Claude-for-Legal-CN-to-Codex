@@ -1,9 +1,8 @@
 ﻿# Claude for Legal CN to Codex
 
-面向中国律师的 Codex 法律工作技能集。覆盖诉讼仲裁、商事合同、劳动用工、
-数据合规、知识产权等 12 个核心法律领域，安装即用、自动更新。
+将 [Claude for Legal (China Law)](https://github.com/SH88-source/claude-for-legal-CN) 技能包一键移植到 **Codex Desktop** 平台。覆盖诉讼仲裁、商事合同、劳动用工、数据合规、知识产权等 12 个核心法律领域，安装即用、自动更新。
 
-> **新用户？** 从 QUICKSTART.md 开始 —— 60 秒完成安装。本文档是完整参考手册。
+> **新用户？** 从 [QUICKSTART.md](QUICKSTART.md) 开始 —— 60 秒完成安装。本文档是完整参考手册。
 
 ---
 
@@ -57,21 +56,21 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 
 ## 技能清单
 
-| skill | area | size |
-|-------|------|------|
-| codex-for-legal-cn | 根技能（路由+更新） | - |
-| commercial-legal | 商事合同 | 43KB + 12 sub-skills |
-| litigation-legal | 诉讼仲裁 | 28KB + 19 sub-skills |
-| employment-legal | 劳动用工 | 32KB + 20 sub-skills |
-| privacy-legal | 数据合规 | 25KB + 9 sub-skills |
-| corporate-legal | 公司交易 | 27KB + 13 sub-skills |
-| ip-legal | 知识产权 | 17KB + 12 sub-skills |
-| product-legal | 产品合规 | 23KB + 7 sub-skills |
-| regulatory-legal | 监管合规 | 10KB + 9 sub-skills |
-| ai-governance-legal | AI 治理 | 16KB + 10 sub-skills |
-| law-student | 法学生/法考 | 35KB + 13 sub-skills |
-| legal-clinic | 法律诊所 | 29KB + 16 sub-skills |
-| legal-builder-hub | 技能治理中心 | 11KB + 10 sub-skills |
+| 技能 | 领域 | 大小 |
+|------|------|------|
+| codex-for-legal-cn | 根技能（路由+更新） | — |
+| commercial-legal | 商事合同 | 43KB + 12 子技能 |
+| litigation-legal | 诉讼仲裁 | 28KB + 19 子技能 |
+| employment-legal | 劳动用工 | 32KB + 20 子技能 |
+| privacy-legal | 数据合规 | 25KB + 9 子技能 |
+| corporate-legal | 公司交易 | 27KB + 13 子技能 |
+| ip-legal | 知识产权 | 17KB + 12 子技能 |
+| product-legal | 产品合规 | 23KB + 7 子技能 |
+| regulatory-legal | 监管合规 | 10KB + 9 子技能 |
+| ai-governance-legal | AI 治理 | 16KB + 10 子技能 |
+| law-student | 法学生/法考 | 35KB + 13 子技能 |
+| legal-clinic | 法律诊所 | 29KB + 16 子技能 |
+| legal-builder-hub | 技能治理中心 | 11KB + 10 子技能 |
 
 ---
 
@@ -91,7 +90,7 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 | 帮我分析这个法考案例 | law-student |
 | 法律援助接谈记录 | legal-clinic |
 
-也可手动指定：@codex-for-legal-cn 帮我审这份合同
+也可手动指定：`@codex-for-legal-cn 帮我审这份合同`
 
 ---
 
@@ -105,7 +104,7 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 ## 架构
 
 ```
-Claude-for-Legal-CN-to-Codex                  ← 包装层（本仓库）
+Claude-for-Legal-CN-to-Codex           ← 包装层（本仓库）
   skills/SKILL.md                      入口定义 + 路由规则
   install.ps1 / update.ps1             安装与更新
   docs/                                文档
@@ -115,11 +114,11 @@ Claude-for-Legal-CN-to-Codex                  ← 包装层（本仓库）
   CLAUDE.md + references                工作流指令 + 法条参考
        |
        ▼
-~/.codex/skills/<domain>/              ← 运行层
+~/.codex/skills/<domain>/             ← 运行层
   SKILL.md + CLAUDE.md + references
        |
        ▼
-~/.codex/config.toml                   ← MCP 层（由 mcp-connectors 仓库管理）
+~/.codex/config.toml                  ← MCP 层（由 mcp-connectors 仓库管理）
   [mcp_servers.chineselaw]
   [mcp_servers.pkulaw-*]
 ```
@@ -133,7 +132,7 @@ anthropics/claude-for-legal → zhou210712/claude-for-legal-ZH
 → SH88-source/claude-for-legal-CN → Claude-for-Legal-CN-to-Codex（本仓库）
 ```
 
-详细项目分析见 docs/project-analysis.md。
+详细项目分析见 [docs/project-analysis.md](docs/project-analysis.md)。
 
 ---
 

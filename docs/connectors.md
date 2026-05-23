@@ -1,10 +1,10 @@
 ﻿# MCP 连接器配置指南
 
-MCP 连接器配置已独立为单独的仓库，方便单独使用和维护：
+MCP 连接器配置由独立仓库维护，方便单独使用和维护：
 
 > **https://github.com/laubeing-droid/codex-legal-mcp-connectors**
 
-本仓库的 `install.ps1` / `update.ps1` 会自动克隆并调用该仓库的安装脚本。
+本仓库的 `install.ps1` / `update.ps1` 会自动克隆并调用该仓库的安装/更新脚本。
 
 ## 能力概览
 
@@ -16,7 +16,11 @@ MCP 连接器配置已独立为单独的仓库，方便单独使用和维护：
 
 ## 快速配置
 
-安装后编辑 config.toml：`notepad "$env:USERPROFILE\.codex\config.toml"`
+安装后编辑 config.toml：
+
+```powershell
+notepad "$env:USERPROFILE\.codex\config.toml"
+```
 
 **chineselaw（推荐）**：找到 `[mcp_servers.chineselaw.env]` → 将 `CHINESELAW_API_KEY` 替换为真实 Key
 注册：https://open.chineselaw.com

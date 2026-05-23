@@ -11,25 +11,25 @@
 
 ### 安装步骤
 
-`powershell
+```powershell
 git clone https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex.git
 cd Claude-for-Legal-CN-to-Codex
 .\install.ps1
-`
+```
 
 安装脚本自动完成：
-1. 克隆上游法律内容到 ~/.codex/vendor/claude-for-legal-CN/
+1. 克隆上游法律内容到 `~/.codex/vendor/claude-for-legal-CN/`
 2. 创建 13 个技能目录和入口文件（SKILL.md）
 3. 复制工作流指令（CLAUDE.md）和法律参考文件（references/）
-4. 写入 MCP 连接器配置到 ~/.codex/config.toml
+4. 委托 MCP 连接器仓库写入 `~/.codex/config.toml`
 5. 配置 PowerShell 执行策略
 6. 验证安装完整性
 
 ### 验证安装
 
-`powershell
+```powershell
 .\verify.ps1
-`
+```
 
 应显示全部 13 个技能均为 [OK]。
 
@@ -37,40 +37,48 @@ cd Claude-for-Legal-CN-to-Codex
 
 ## 二、配置 MCP 法律检索
 
-法律技能连接了权威数据库后效果最佳。三种连接方式说明如下：
+法律技能连接权威数据库后效果最佳。三种连接方式说明如下：
 
 ### 方式一：chineselaw（首选，33 个工具）
 
-基于 [chineselaw-mcp](https://www.npmjs.com/package/chineselaw-mcp)（作者 zooges）。
+基于 [chineselaw-mcp](https://www.npmjs.com/package/chineselaw-mcp)（作者 zooges，MIT 协议）。
+将元典智库 API 包装为 33 个 MCP 工具，支持法律法规检索、案例文书查询、企业信息查询。
 
-1. 打开 https://open.chineselaw.com，注册并获取 API Key
-2. 编辑 config.toml：
-otepad "C:\Users\being\.codex\config.toml"
-3. 找到 [mcp_servers.chineselaw.env]，将 CHINESELAW_API_KEY 替换为真实 Key
-4. 重启 Codex Desktop
+```powershell
+# 1. 注册 https://open.chineselaw.com，获取 API Key
+# 2. 编辑 config.toml
+notepad "$env:USERPROFILE\.codex\config.toml"
+# 3. 找到 [mcp_servers.chineselaw.env]，替换 CHINESELAW_API_KEY
+# 4. 重启 Codex Desktop
+```
 
 ### 方式二：北大法宝 MCP 协议（10 个服务）
 
-1. 打开 https://mcp.pkulaw.com，注册并获取 Access Token
-2. 编辑 config.toml，将所有 pkulaw-* 段中的 YOUR_ACCESS_TOKEN 替换为真实 Token
-3. 如有 NL SQL 服务，替换 YOUR_NL_SQL_SERVICE_ID
-4. 重启 Codex Desktop
+基于 [北大法宝 MCP](https://mcp.pkulaw.com)（北大法宝官方，MIT 协议）。
+提供 10 个 HTTP MCP 服务，支持法律法规、司法案例、行政处罚等检索。
+
+```powershell
+# 1. 注册 https://mcp.pkulaw.com，获取 Access Token
+# 2. 编辑 config.toml，替换所有 YOUR_ACCESS_TOKEN
+# 3. 如有 NL SQL 服务，替换 YOUR_NL_SQL_SERVICE_ID
+# 4. 重启 Codex Desktop
+```
 
 ### 方式三：北大法宝 CLI 命令行（调试工具）
 
 基于 [@pkulaw/mcp-cli](https://www.npmjs.com/package/@pkulaw/mcp-cli)（北大法宝官方，MIT 协议）。
 用于验证 Token、查看可用服务、脚本自动化。
 
-`ash
+```bash
 npm install -g @pkulaw/mcp-cli
 pkulaw-mcp init --authorization "Bearer YOUR_ACCESS_TOKEN"
 pkulaw-mcp update
 pkulaw-mcp tools
-`
+```
 
 **建议的组合**：方式一（chineselaw）或方式二（北大法宝 MCP），二选一即可。方式三可选安装用于调试。
 
-**完整配置指南和工具列表见 docs/connectors.md**。
+**完整配置指南和工具列表见 [MCP 连接器仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)**。
 
 ---
 
@@ -90,16 +98,16 @@ pkulaw-mcp tools
 
 ### 手动指定
 
-`
+```
 @codex-for-legal-cn 帮我审这份合同
 @litigation-legal 分析一下证据问题
-`
+```
 
 ---
 
 ## 四、自动更新
 
-每次使用法律技能时自动同步上游。手动更新：.\update.ps1
+每次使用法律技能时自动同步上游。手动更新：`.\update.ps1`
 
 ---
 
@@ -120,14 +128,15 @@ pkulaw-mcp tools
 
 ## 七、卸载
 
-`powershell
+```powershell
 .\uninstall.ps1
-`
+```
 
-如需清理 config.toml 中的 MCP 条目，手动删除对应 [mcp_servers.*] 段。
+如需清理 config.toml 中的 MCP 条目，手动删除对应 `[mcp_servers.*]` 段。
 
 ---
 
 ## 八、故障排查
 
-MCP 配置问题优先查看 docs/connectors.md。常见问题见 docs/troubleshooting.md。
+MCP 配置问题优先查看 [MCP 连接器仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)。
+常见问题见 docs/troubleshooting.md。
