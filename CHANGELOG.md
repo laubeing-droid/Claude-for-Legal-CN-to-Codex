@@ -1,22 +1,24 @@
 ﻿# 更新日志
 
+## [1.2.1] - 2026-05-23
+
+### 文档全面重写
+- 全站文档修正 MCP 配置路径（.mcp.json → config.toml）
+- README.md：MCP 部分改为 config.toml 说明，架构图补充 MCP 层
+- QUICKSTART.md：新增 MCP 配置步骤
+- docs/architecture.md：重写为四层架构，新增 MCP 层说明
+- docs/connectors.md：补充 chineselaw 工具列表，完善排查方法
+- docs/usage-guide.md：统一格式，补充架构概览
+- docs/troubleshooting.md：补充 MCP 诊断命令
+- docs/contributing.md：补充 MCP 修改指南
+
 ## [1.2.0] - 2026-05-23
 
-### 修复
-- 彻底修正 MCP 连接器架构：不再向 .mcp.json 注入配置
-- 改为写入 ~/.codex/config.toml 的 [mcp_servers] 段（Codex Desktop 正确格式）
-- 根技能 SKILL.md：增加 MCP 配置检查流程说明
-
-### 新增
-- chineselaw-mcp（元典智库）：33 个工具（法规 5 + 案例 4 + 企业 24）
-- 北大法宝 10 个 MCP 服务的完整 TOML 配置
-- install.ps1 智能追加：不删除不覆盖已有配置，只添加缺失条目
-- update.ps1 MCP 状态检查：运行后检测各连接器的配置和启用状态
-
-### 文档
-- connectors.md：重写为 config.toml 格式，增加 chineselaw 工具列表
-- usage-guide.md：MCP 配置步骤更新为 config.toml 操作
-- troubleshooting.md：增加 MCP 相关排查项
+### 重要变更
+- MCP 配置从 .mcp.json 改为 ~/.codex/config.toml 的 [mcp_servers] 段
+- 新增 chineselaw-mcp（33 工具） + 北大法宝（10 服务）
+- install.ps1：智能追加 config.toml，不覆盖已有配置
+- update.ps1：MCP 状态检查
 
 ## [1.1.0] - 2026-05-23
 
@@ -29,9 +31,7 @@
 - install.ps1 根技能目录 Bug
 - update.ps1 转义错误
 - SKILL.md 格式统一
-
-### 新增
-- uninstall.ps1, verify.ps1, .gitattributes
+- 新增 uninstall.ps1, verify.ps1, .gitattributes
 
 ## [1.0.0] - 2026-05-23
 

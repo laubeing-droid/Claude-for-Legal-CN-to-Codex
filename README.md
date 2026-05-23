@@ -20,8 +20,8 @@ cd codex-legal-cn-skills
 ---
 
 > **重要声明**
-> 这些技能的所有输出均为律师审查草稿 —— 不是法律意见，不是法律结论，不能替代律师。
-> 律师审查、核实并对所有对外产出承担专业责任。
+> 所有技能输出均为律师审查草稿，不构成法律意见，不能替代律师。
+> 引用法规须核验现行有效性，提交/发送前需经执业律师审核。
 
 ---
 
@@ -29,10 +29,10 @@ cd codex-legal-cn-skills
 
 | 文件 | 说明 |
 |------|------|
-| install.ps1 | 一键安装：克隆上游、部署技能、注入 MCP 连接器 |
-| update.ps1 | 手动同步上游最新内容到本地 |
-| uninstall.ps1 | 一键卸载所有已安装技能 |
-| verify.ps1 | 检查安装是否完整 |
+| install.ps1 | 一键安装：克隆上游、部署技能、写入 MCP 配置到 config.toml |
+| update.ps1 | 手动同步上游最新内容 + 检查 MCP 状态 |
+| uninstall.ps1 | 一键卸载所有已安装技能和上游缓存 |
+| verify.ps1 | 检查安装完整性 |
 | skills/ | 13 个技能入口定义（SKILL.md） |
 | docs/ | 完整中文文档 |
 | .github/workflows/ | 上游监测 GitHub Actions |
@@ -41,18 +41,22 @@ cd codex-legal-cn-skills
 
 ## MCP 法律检索连接器
 
-本仓库预配置了两个中国法律数据库 MCP 连接器：
+法律技能连接了权威数据源后效果最佳。安装脚本自动在 `~/.codex/config.toml` 中写入两组 MCP 配置：
 
-| 连接器 | 工具数 | 覆盖内容 | 推荐 |
-|--------|--------|---------|------|
-| **chineselaw（元典智库）** | 33 个 | 法规检索、法条查询、案例检索、企业信息查询 | ⭐ 首选 |
-| **北大法宝** | — | 法律法规与裁判文书检索 | 备选 |
+### chineselaw（推荐）
+> 基于 [chineselaw-mcp](https://www.npmjs.com/package/chineselaw-mcp)（作者 zooges）封装。
 
-**配置方法**（详见 docs/connectors.md）：
+33 个工具，覆盖法规检索、案例检索、企业信息查询。
 
-**chineselaw（推荐）**：注册 https://open.chineselaw.com → 获取 API Key → 填入 `.mcp.json`
+**配置方式**：注册 https://open.chineselaw.com → 获取 API Key → 编辑 `config.toml`，将 `[mcp_servers.chineselaw.env]` 中的 `CHINESELAW_API_KEY` 替换为真实 Key。
 
-**北大法宝**：注册 https://mcp.pkulaw.com → 获取 Service ID + Token → 填入 `.mcp.json`
+### 北大法宝（备选）
+
+10 个独立 MCP 服务，覆盖法规检索、案例检索、引证验证、案号识别等。
+
+**配置方式**：注册 https://mcp.pkulaw.com → 获取 Access Token → 编辑 `config.toml`，将所有 `pkulaw-*` 条目中的 `YOUR_ACCESS_TOKEN` 替换为真实 Token。
+
+> **二选一即可**，不需要两个都配。完整指南见 docs/connectors.md。
 
 ---
 
@@ -90,13 +94,20 @@ cd codex-legal-cn-skills
 | 帮我分析这个法考案例 | law-student |
 | 法律援助接谈记录 | legal-clinic |
 
+也可手动指定：
+
+```
+@codex-for-legal-cn 帮我审这份合同
+@litigation-legal 分析一下证据问题
+```
+
 ---
 
 ## 自动更新机制
 
-每次在 Codex 中触发法律任务时，根技能自动执行：
+每次触发法律任务时，根技能自动执行：
 1. 查找上游缓存 `~/.codex/vendor/claude-for-legal-CN/`
-2. git pull 拉取最新内容
+2. git pull 拉取上游最新内容
 3. 同步 CLAUDE.md + references 到 `~/.codex/skills/`
 4. 本次对话直接生效，无需重启
 
@@ -110,30 +121,45 @@ cd codex-legal-cn-skills
 
 ## 架构
 
+本仓库采用四层架构：
+
 ```
-codex-legal-cn-skills                <- 包装层（本仓库）
-  skills/SKILL.md                    入口定义 + 路由规则
-  install.ps1 / update.ps1           安装与更新（含 MCP 注入）
-  docs/                              文档
+codex-legal-cn-skills                  ← 包装层（本仓库）
+  skills/SKILL.md                      入口定义 + 路由规则
+  install.ps1 / update.ps1             安装与更新
+  docs/                                文档
        |
        | 依赖上游
        v
-~/.codex/vendor/claude-for-legal-CN/ <- 内容层（自动缓存）
+~/.codex/vendor/claude-for-legal-CN/   ← 内容层（自动缓存）
+  CLAUDE.md + references                完整工作流指令 + 中国法核心规则
        |
-       | 安装到（含 MCP 连接器注入）
+       | 安装到
        v
-~/.codex/skills/<domain>/             <- 运行层
-  SKILL.md                            本仓库提供（入口）
-  CLAUDE.md + references              上游同步
-  .mcp.json                           本仓库注入（chineselaw/北大法宝）
+~/.codex/skills/<domain>/              ← 运行层
+  SKILL.md                              本仓库提供（入口）
+  CLAUDE.md + references                上游同步（主指令 + 法条参考）
+  skills/ + agents/                     上游同步（子技能）
+       |
+       | MCP 连接器写入
+       v
+~/.codex/config.toml                   ← MCP 层
+  [mcp_servers.chineselaw]              chineselaw-mcp（33 个工具）
+  [mcp_servers.pkulaw-*]                北大法宝（10 个服务）
 ```
+
+### 设计原则
+
+每个技能包含两层指令：
+- **SKILL.md** —— 入口定义：做什么、何时触发、路由规则
+- **CLAUDE.md** —— 完整工作流：步骤、输出框架、质量标准和安全护栏
 
 ---
 
 ## 上游依赖链
 
 ```
-anthropics/claude-for-legal            <- 美国法原版
+anthropics/claude-for-legal            <- 美国法原版（Anthropic 官方）
   | fork + 全面汉化
   v
 zhou210712/claude-for-legal-ZH         <- 中文汉化版
@@ -144,6 +170,8 @@ SH88-source/claude-for-legal-CN        <- 当前直接上游
   v
 codex-legal-cn-skills                  <- 你在这里
 ```
+
+详细项目分析见 docs/project-analysis.md。
 
 ---
 
