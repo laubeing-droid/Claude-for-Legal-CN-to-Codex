@@ -39,17 +39,17 @@ codex-legal-cn-skills                    ← 包装层（本仓库）
 | 运行层 | 技能实际执行目录 | install.ps1 自动管理 |
 | MCP 层 | 法律检索连接器配置 | install.ps1 写入 + 用户替换凭证 |
 
-## MCP 连接器架构
+## MCP 连接器配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubeing-droid/codex-legal-mcp-connectors) 管理，
+`install.ps1` / `update.ps1` 自动委托。支持三个客户端：
 
-| 连接器 | 方式 | 用途 |
-|--------|------|------|
-| chineselaw-mcp | stdio（npx） | Codex 内法律检索（33 工具） |
-| 北大法宝 MCP 协议 | HTTP（10 服务） | Codex 内法律检索 |
-| @pkulaw/mcp-cli | CLI 命令行 | 调试 Token、查看服务、脚本自动化 |
+| 客户端 | MCP 配置路径 |
+|--------|-------------|
+| Codex Desktop | `~/.codex/config.toml` |
+| Claude Code | `~/.claude/settings.json` |
+| Claude Desktop | `claude_desktop_config.json` |
 
-chineselaw 和北大法宝 MCP 协议直接集成到 Codex，通过 config.toml 的 [mcp_servers] 段加载。
-@pkulaw/mcp-cli 为独立 CLI 工具，安装在系统级，用于调试和验证。
-
+支持 chineselaw（stdio，33 工具）和北大法宝（HTTP，10 服务）两种连接器。
+配置详情见 [mcp-connectors 仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)。
 ## 更新流程
 
 `
