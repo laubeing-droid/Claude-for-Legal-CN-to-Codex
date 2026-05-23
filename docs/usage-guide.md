@@ -37,18 +37,43 @@ cd codex-legal-cn-skills
 
 ## 二、配置 MCP 法律检索
 
-MCP 连接器配置由独立仓库管理。安装本仓库时，`install.ps1` 的步骤 3 会自动克隆并调用 [codex-legal-mcp-connectors](https://github.com/laubeing-droid/codex-legal-mcp-connectors) 的安装脚本。
+法律技能连接了权威数据库后效果最佳。三种连接方式说明如下：
 
-配置完成后，运行 `.\mcp-connectors\update.ps1` 可验证凭证状态。
+### 方式一：chineselaw（首选，33 个工具）
 
-如需手动替换凭证，编辑对应客户端的配置文件：
+基于 [chineselaw-mcp](https://www.npmjs.com/package/chineselaw-mcp)（作者 zooges）。
 
-| 客户端 | 配置文件 | 要替换的值 |
-|--------|---------|-----------|
-| Codex Desktop | `~/.codex/config.toml` | `CHINESELAW_API_KEY` / `YOUR_ACCESS_TOKEN` |
-| Claude Code | `~/.claude/settings.json` | `CHINESELAW_API_KEY` / `YOUR_ACCESS_TOKEN` |
+1. 打开 https://open.chineselaw.com，注册并获取 API Key
+2. 编辑 config.toml：
+otepad "C:\Users\being\.codex\config.toml"
+3. 找到 [mcp_servers.chineselaw.env]，将 CHINESELAW_API_KEY 替换为真实 Key
+4. 重启 Codex Desktop
 
-详情见 [mcp-connectors 配置指南](https://github.com/laubeing-droid/codex-legal-mcp-connectors/blob/main/docs/connectors.md)。
+### 方式二：北大法宝 MCP 协议（10 个服务）
+
+1. 打开 https://mcp.pkulaw.com，注册并获取 Access Token
+2. 编辑 config.toml，将所有 pkulaw-* 段中的 YOUR_ACCESS_TOKEN 替换为真实 Token
+3. 如有 NL SQL 服务，替换 YOUR_NL_SQL_SERVICE_ID
+4. 重启 Codex Desktop
+
+### 方式三：北大法宝 CLI 命令行（调试工具）
+
+基于 [@pkulaw/mcp-cli](https://www.npmjs.com/package/@pkulaw/mcp-cli)（北大法宝官方，MIT 协议）。
+用于验证 Token、查看可用服务、脚本自动化。
+
+`ash
+npm install -g @pkulaw/mcp-cli
+pkulaw-mcp init --authorization "Bearer YOUR_ACCESS_TOKEN"
+pkulaw-mcp update
+pkulaw-mcp tools
+`
+
+**建议的组合**：方式一（chineselaw）或方式二（北大法宝 MCP），二选一即可。方式三可选安装用于调试。
+
+**完整配置指南和工具列表见 docs/connectors.md**。
+
+---
+
 ## 三、使用方式
 
 ### 自动路由（推荐）
