@@ -41,35 +41,17 @@ cd codex-legal-cn-skills
 
 ## MCP 法律检索连接器
 
-本仓库支持三种连接方式，安装脚本自动在 ~/.codex/config.toml 写入 MCP 协议配置：
+MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubeing-droid/codex-legal-mcp-connectors) 管理，
+`install.ps1` 会自动克隆并部署。支持三种方式：
 
 | 连接器 | 方式 | 工具数 | 推荐 |
 |--------|------|--------|------|
 | **chineselaw（元典智库）** | MCP 协议 stdio | 33 | ⭐ 首选 |
 | **北大法宝 MCP 协议** | MCP 协议 HTTP | 10 服务 | 推荐 |
-| **北大法宝 CLI 命令行** | CLI 工具 | 调试/验证用 | 配合使用 |
+| **北大法宝 CLI 命令行** | CLI 工具 | — | 调试/验证 |
 
-### chineselaw（首选）
-基于 [chineselaw-mcp](https://www.npmjs.com/package/chineselaw-mcp)（作者 zooges）。
-注册 https://open.chineselaw.com → 获取 API Key → 编辑 config.toml → 替换 CHINESELAW_API_KEY。
-
-### 北大法宝 MCP 协议
-安装脚本已写入全部 10 个 MCP 服务配置。注册 https://mcp.pkulaw.com → 获取 Access Token → 编辑 config.toml → 替换所有 YOUR_ACCESS_TOKEN。
-
-### 北大法宝 CLI 命令行（调试工具）
-基于 [@pkulaw/mcp-cli](https://www.npmjs.com/package/@pkulaw/mcp-cli)（北大法宝官方，MIT 协议）。
-可选安装，用于验证 Token、查看可用服务、脚本自动化：
-`ash
-npm install -g @pkulaw/mcp-cli
-pkulaw-mcp init --authorization "Bearer YOUR_ACCESS_TOKEN"
-pkulaw-mcp update
-`
-
-> **推荐组合**：chineselaw 或 北大法宝 MCP 协议（二选一）+ 北大法宝 CLI（可选）。
-> 完整配置指南见 docs/connectors.md。
-
----
-
+快速配置：编辑 `~/.codex/config.toml` → 替换凭证 → 重启 Codex。
+详细指南见 docs/connectors.md。
 ## 技能清单
 
 | skill | area | size |
