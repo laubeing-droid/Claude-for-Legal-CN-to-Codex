@@ -15,36 +15,33 @@ Claude-for-Legal-CN-to-Codex/
 
 ## 设计原则
 
-本仓库是**包装层**，不直接包含上游法律内容。技能使用两层指令设计：
+本仓库是**包装层**，不直接包含上游法律内容。
 
-1. **SKILL.md** — 入口定义：做什么、何时使用、路由关键词
-2. **CLAUDE.md** — 完整工作流（位于上游仓库）：步骤、输出框架、质量标准和护栏
+- **SKILL.md** — 入口定义：做什么、何时使用、路由关键词
+- **CLAUDE.md** — 完整工作流（位于上游仓库）
 
-## 编辑指南
+## 本仓库适合修改的内容
 
-### 本仓库适合修改的内容
-
-- SKILL.md 中的路由关键词和触发规则
-- 安装/更新/卸载脚本（install.ps1, update.ps1, uninstall.ps1, verify.ps1）
+- SKILL.md 的路由关键词和触发规则
+- 安装/更新/卸载脚本
 - MCP 连接器委托逻辑
-- 文档完善（docs/ 目录下所有文件）
+- 文档完善
 - GitHub Actions 工作流配置
 
-### 本仓库不直接修改的内容
+## 本仓库不直接修改的内容
 
 - 法律工作流指令（CLAUDE.md）— 请直接编辑上游仓库
 - 法律参考文件（references/）— 请直接编辑上游仓库
-- 子技能内容 — 请直接编辑上游仓库
 
-### 法律内容修改流程
+## 法律内容修改流程
 
 1. 修改上游仓库（SH88-source/claude-for-legal-CN 或更上游）
 2. 本仓库的自动更新机制会在下次使用时同步变更
 
-### MCP 连接器修改
+## MCP 连接器修改
 
-MCP 连接器配置由独立的 [Codex-Claude-legal-CN-mcp-connectors](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors) 仓库管理。
-如需新增或修改连接器，修改该仓库的对应文件。
+MCP 连接器由独立的 [Codex-Claude-legal-CN-mcp-connectors](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors) 仓库管理。
+如需新增或修改连接器，修改该仓库的文件。
 
 ## 提交 PR
 

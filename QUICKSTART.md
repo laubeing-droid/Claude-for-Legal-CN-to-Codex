@@ -1,6 +1,6 @@
 ﻿# 快速入门
 
-60 秒完成安装并开始使用法律技能。
+60 秒完成安装，立即使用中国法律 AI 技能。
 
 ## 安装
 
@@ -13,7 +13,7 @@ cd Claude-for-Legal-CN-to-Codex
 安装过程自动完成：
 - 克隆上游法律内容到 `~/.codex/vendor/claude-for-legal-CN/`
 - 部署 13 个技能入口到 `~/.codex/skills/`
-- 自动克隆 MCP 连接器配置并写入 `config.toml`
+- 克隆 MCP 连接器仓库并写入 `~/.codex/config.toml`
 
 ## 验证
 
@@ -32,7 +32,7 @@ cd Claude-for-Legal-CN-to-Codex
 
 详细指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors)。
 
-## 开始使用
+## 使用
 
 重启 Codex Desktop，直接输入：
 
@@ -46,10 +46,12 @@ cd Claude-for-Legal-CN-to-Codex
 
 ## 常见问题
 
-- **技能没生效？** 重启 Codex Desktop
-- **引用标注[需验证]？** MCP 连接器未配置，运行 `.\update.ps1` 查看状态
-- **如何更新？** 运行 `.\update.ps1`
-- **MCP 连接器问题？** 直接运行 `.\mcp-connectors\update.ps1` 获取详细诊断
-- **如何卸载？** 运行 `.\uninstall.ps1`
+| 问题 | 解决 |
+|------|------|
+| 技能没生效？ | 重启 Codex Desktop |
+| 引用标注[需验证]？ | MCP 未配置，运行 `.\update.ps1` 查看状态 |
+| 如何更新？ | 运行 `.\update.ps1` |
+| MCP 连接器问题？ | 运行 `.\mcp-connectors\update.ps1` |
+| 如何卸载？ | 运行 `.\uninstall.ps1` |
 
 详细说明见 [docs/usage-guide.md](docs/usage-guide.md)。

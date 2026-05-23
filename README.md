@@ -1,12 +1,18 @@
 ﻿# Claude for Legal CN to Codex
 
-将 [Claude for Legal (China Law)](https://github.com/SH88-source/claude-for-legal-CN) 技能包一键移植到 **Codex Desktop** 平台。覆盖诉讼仲裁、商事合同、劳动用工、数据合规、知识产权等 12 个核心法律领域，安装即用、自动更新。
+将 [Claude for Legal (China Law)](https://github.com/SH88-source/claude-for-legal-CN) 的中国法工作流一键移植到 **Codex Desktop**。覆盖诉讼仲裁、商事合同、劳动用工、数据合规、知识产权等 12 个核心法律领域，安装即用、自动更新。
 
-> **新用户？** 从 [QUICKSTART.md](QUICKSTART.md) 开始 —— 60 秒完成安装。本文档是完整参考手册。
+> **新用户？** 从 [QUICKSTART.md](QUICKSTART.md) 开始 —— 60 秒完成安装。
 
 ---
 
-## 快速安装
+> **重要声明**
+> 所有技能输出均为律师审查草稿，不构成法律意见，不能替代执业律师。
+> 引用法规须核验现行有效性，提交/发送前需经执业律师审核。
+
+---
+
+## 一键安装
 
 ```powershell
 git clone https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex.git
@@ -18,30 +24,23 @@ cd Claude-for-Legal-CN-to-Codex
 
 ---
 
-> **重要声明**
-> 所有技能输出均为律师审查草稿，不构成法律意见，不能替代律师。
-> 引用法规须核验现行有效性，提交/发送前需经执业律师审核。
-
----
-
 ## 仓库内容
 
 | 文件 | 说明 |
 |------|------|
-| install.ps1 | 一键安装：克隆上游、部署技能、委托 MCP 连接器安装 |
-| update.ps1 | 同步上游 + 技能更新 + 委托 MCP 连接器验证/更新 |
-| uninstall.ps1 | 一键卸载所有已安装技能和上游缓存 |
-| verify.ps1 | 检查安装完整性 |
-| skills/ | 13 个技能入口定义（SKILL.md） |
-| docs/ | 完整中文文档 |
-| .github/workflows/ | 上游监测 GitHub Actions |
+| `install.ps1` | 一键安装：克隆上游、部署 13 个技能、委托 MCP 连接器安装 |
+| `update.ps1` | 手动同步：上游更新 → 技能同步 → MCP 验证/更新 |
+| `uninstall.ps1` | 删除所有已安装技能和上游缓存 |
+| `verify.ps1` | 检查 13 个技能是否安装完整 |
+| `skills/` | 13 个技能入口定义（SKILL.md） |
+| `docs/` | 完整中文文档 |
+| `.github/workflows/` | 上游监测 GitHub Actions |
 
 ---
 
 ## MCP 法律检索连接器
 
-MCP 配置由独立仓库 [Codex-Claude-legal-CN-mcp-connectors](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors) 管理，
-`install.ps1` 和 `update.ps1` 均自动委托给该仓库。支持三种方式：
+本仓库的 MCP 配置委托给独立仓库 [Codex-Claude-legal-CN-mcp-connectors](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors) 管理，`install.ps1` 和 `update.ps1` 自动调用。支持三种连接方式：
 
 | 连接器 | 方式 | 工具数 | 推荐 |
 |--------|------|--------|------|
@@ -49,55 +48,49 @@ MCP 配置由独立仓库 [Codex-Claude-legal-CN-mcp-connectors](https://github.
 | **北大法宝 MCP 协议** | MCP 协议 HTTP | 10 服务 | 推荐 |
 | **北大法宝 CLI 命令行** | CLI 工具 | — | 调试/验证 |
 
-快速配置：编辑 `~/.codex/config.toml` → 替换凭证 → 重启 Codex。
-详细指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors)。
+> 编辑 `~/.codex/config.toml` → 替换凭证 → 重启 Codex。
 
 ---
 
 ## 技能清单
 
-| 技能 | 领域 | 大小 |
-|------|------|------|
-| codex-claude-legal-cn | 根技能（路由+更新） | — |
-| commercial-legal | 商事合同 | 43KB + 12 子技能 |
-| litigation-legal | 诉讼仲裁 | 28KB + 19 子技能 |
-| employment-legal | 劳动用工 | 32KB + 20 子技能 |
-| privacy-legal | 数据合规 | 25KB + 9 子技能 |
-| corporate-legal | 公司交易 | 27KB + 13 子技能 |
-| ip-legal | 知识产权 | 17KB + 12 子技能 |
-| product-legal | 产品合规 | 23KB + 7 子技能 |
-| regulatory-legal | 监管合规 | 10KB + 9 子技能 |
-| ai-governance-legal | AI 治理 | 16KB + 10 子技能 |
-| law-student | 法学生/法考 | 35KB + 13 子技能 |
-| legal-clinic | 法律诊所 | 29KB + 16 子技能 |
-| legal-builder-hub | 技能治理中心 | 11KB + 10 子技能 |
+| 技能 | 领域 | 子技能数 |
+|------|------|:--------:|
+| `codex-claude-legal-cn` | 根技能（路由+自动更新） | — |
+| `commercial-legal` | 商事合同 | 12 |
+| `litigation-legal` | 诉讼仲裁 | 19 |
+| `employment-legal` | 劳动用工 | 20 |
+| `privacy-legal` | 数据合规 | 9 |
+| `corporate-legal` | 公司交易 | 13 |
+| `ip-legal` | 知识产权 | 12 |
+| `product-legal` | 产品合规 | 7 |
+| `regulatory-legal` | 监管合规 | 9 |
+| `ai-governance-legal` | AI 治理 | 10 |
+| `law-student` | 法学生/法考 | 13 |
+| `legal-clinic` | 法律诊所 | 16 |
+| `legal-builder-hub` | 技能治理中心 | 10 |
 
 ---
 
 ## 自动路由
 
+直接在 Codex 中描述法律任务，系统自动识别并调用对应技能：
+
 | 你说 | 路由到 |
 |------|--------|
-| 帮我审查这份 SaaS 服务协议 | commercial-legal |
-| 分析这个案件的管辖权问题 | litigation-legal |
-| 评估个人信息保护合规风险 | privacy-legal |
-| 起草一份竞业限制协议 | employment-legal |
-| 做个并购尽调问题清单 | corporate-legal |
-| 查一下这个商标能不能注册 | ip-legal |
-| 检查这个产品上线合规性 | product-legal |
-| 追踪最近三个月的监管动态 | regulatory-legal |
-| 评估这个 AI 产品的法律风险 | ai-governance-legal |
-| 帮我分析这个法考案例 | law-student |
-| 法律援助接谈记录 | legal-clinic |
+| 帮我审查这份 SaaS 服务协议 | `commercial-legal` |
+| 分析这个案件的管辖权问题 | `litigation-legal` |
+| 评估个人信息保护合规风险 | `privacy-legal` |
+| 起草一份竞业限制协议 | `employment-legal` |
+| 做个并购尽调问题清单 | `corporate-legal` |
+| 查一下这个商标能不能注册 | `ip-legal` |
+| 检查这个产品上线合规性 | `product-legal` |
+| 追踪最近三个月的监管动态 | `regulatory-legal` |
+| 评估这个 AI 产品的法律风险 | `ai-governance-legal` |
+| 帮我分析这个法考案例 | `law-student` |
+| 法律援助接谈记录 | `legal-clinic` |
 
 也可手动指定：`@codex-claude-legal-cn 帮我审这份合同`
-
----
-
-## 自动更新机制
-
-每次触发法律任务时，根技能自动 git pull 同步上游。手动更新：`.\update.ps1`
-`update.ps1` 会同步技能包装层，并委托 `Codex-Claude-legal-CN-mcp-connectors` 仓库处理 MCP 连接器检查与更新。
 
 ---
 
@@ -105,18 +98,18 @@ MCP 配置由独立仓库 [Codex-Claude-legal-CN-mcp-connectors](https://github.
 
 ```
 Claude-for-Legal-CN-to-Codex           ← 包装层（本仓库）
-  skills/SKILL.md                      入口定义 + 路由规则
+  skills/*/SKILL.md                    入口定义 + 路由规则
   install.ps1 / update.ps1             安装与更新
   docs/                                文档
-       |
+       │
        ▼
 ~/.codex/vendor/claude-for-legal-CN/   ← 内容层（上游缓存）
   CLAUDE.md + references                工作流指令 + 法条参考
-       |
+       │
        ▼
 ~/.codex/skills/<domain>/             ← 运行层
   SKILL.md + CLAUDE.md + references
-       |
+       │
        ▼
 ~/.codex/config.toml                  ← MCP 层（由 mcp-connectors 仓库管理）
   [mcp_servers.chineselaw]
@@ -128,17 +121,20 @@ Claude-for-Legal-CN-to-Codex           ← 包装层（本仓库）
 ## 上游依赖链
 
 ```
-anthropics/claude-for-legal → zhou210712/claude-for-legal-ZH
-→ SH88-source/claude-for-legal-CN → Claude-for-Legal-CN-to-Codex（本仓库）
+anthropics/claude-for-legal        ─  Anthropic 官方, 美国法参考实现
+  → zhou210712/claude-for-legal-ZH ─  首版中国法汉化适配
+    → SH88-source/claude-for-legal-CN ─  持续维护（本仓库直接上游）
+      → gjhcsjamin/codex-for-legal-CN ─  Codex 平台首次封装
+        → Claude-for-Legal-CN-to-Codex ─  本仓库（全功能整合）
 ```
 
-详细项目分析见 [docs/project-analysis.md](docs/project-analysis.md)。
+详细分析见 [docs/project-analysis.md](docs/project-analysis.md)。
 
 ---
 
 ## 上游监测
 
-GitHub Actions 每周一自动检查上游链更新，仅在检测到实际变化时创建 Issue。
+GitHub Actions 每周一自动检查上游链和 npm 包更新，仅在检测到实际变化时创建 Issue。
 
 ---
 

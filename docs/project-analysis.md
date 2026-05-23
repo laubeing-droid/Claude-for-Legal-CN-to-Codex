@@ -1,101 +1,68 @@
 ﻿# 项目关系分析
 
-## 一、总览
+## 一、生态总览
 
-七个项目分布在三个平台上（Claude Code、Codex、浏览器、Workbuddy），初步构成中国法律 AI 工作流的生态链。本仓库作为 Codex 平台的整合入口，将上游内容整合后以一键安装的方式交付给中国律师使用。
+七个项目分布在四个平台（Claude Code、Codex、浏览器、Workbuddy），初步构成中国法律 AI 工作流的生态链。本仓库作为 Codex 平台的整合入口，将上游内容以一键安装的方式交付给中国律师。
 
 ## 二、演进路线
 
 ```
-anthropics/claude-for-legal  (Anthropic 官方, 美国法参考实现)
-        │
-        ▼
-zhou210712/claude-for-legal-ZH  (首版中国法汉化适配)
-        │
-        ▼
-SH88-source/claude-for-legal-CN  (持续维护版本)
-        │
-        ├──→ drdavid-kor/claude-for-legal-cn-online  (在线网页版)
-        ├──→ MAXXXXXLI/workbuddy-cn-legal-skills     (豆包工作台版)
-        │
-        ▼
-gjhcsjamin/codex-for-legal-CN  (Codex 平台首次封装)
-        │
-        ▼
-laubeing-droid/Claude-for-Legal-CN-to-Codex  (本仓库, 全功能整合)
+anthropics/claude-for-legal         ─  Anthropic 官方, 美国法参考
+  → zhou210712/claude-for-legal-ZH  ─  中国法首次汉化
+    → SH88-source/claude-for-legal-CN ─  持续维护版（本仓库直接上游）
+      ├→ drdavid-kor/...-online     ─  在线网页版（浏览器）
+      ├→ MAXXXXXLI/workbuddy-...    ─  豆包工作台版
+      └→ gjhcsjamin/codex-for-legal-CN ─  Codex 首次封装
+           └→ Claude-for-Legal-CN-to-Codex ─  本仓库（全功能整合）
 ```
 
 ## 三、逐项目介绍
 
-### 1. anthropics/claude-for-legal
-- **作者**: Anthropic PBC
-- **定位**: Claude Code 平台的法律工作流参考实现
-- **内容**: 12 个法律领域插件 + 5 个托管 Agent 蓝图 + 16 个 MCP 连接器
+### anthropics/claude-for-legal
+- **作者**: Anthropic PBC | **平台**: Claude Code | **许可证**: Apache 2.0
+- **定位**: 法律工作流参考实现（12 插件 + 5 Agent 蓝图 + 16 MCP 连接器）
 - **法律基础**: 美国法
-- **平台**: Claude Code（终端）/ Claude Cowork（桌面）
-- **许可证**: Apache 2.0
 - **意义**: 整个生态的源头项目
 
-### 2. zhou210712/claude-for-legal-ZH（中文汉化版）
-- **作者**: CSlawyer1985 / zhou210712
-- **定位**: 对 Anthropic 官方项目进行中国法适配的版本
-- **核心工作**: 将 12 个插件领域从美国法体系替换为中国法体系
-  - 合同法 → 民法典合同编；诉讼法 → 民事诉讼法；劳动法 → 劳动合同法
-  - 隐私法 → 个人信息保护法、数据安全法；公司法 → 中国公司法
-  - 检索工具 → 元典 MCP、北大法宝
-- **额外工作**: 新增中国法核心规则参考文件
-- **平台**: Claude Code
+### zhou210712/claude-for-legal-ZH
+- **作者**: CSlawyer1985 / zhou210712 | **平台**: Claude Code
+- **定位**: 对 Anthropic 官方版进行中国法替换的首个版本
+- **核心工作**: 合同法→民法典合同编、诉讼法→民事诉讼法、劳动法→劳动合同法
 - **意义**: 中国法律 AI 工作流的基础版本
 
-### 3. SH88-source/claude-for-legal-CN
-- **作者**: SH88-source
+### SH88-source/claude-for-legal-CN
+- **作者**: SH88-source | **平台**: Claude Code
 - **定位**: 在 zhou210712 基础上持续维护的中国法版本
-- **平台**: Claude Code
-- **意义**: 当前最活跃维护的中国法版本，作为本仓库的直接上游
+- **意义**: 当前最活跃维护的中国法版本，本仓库的直接上游
 
-### 4. drdavid-kor/claude-for-legal-cn-online（在线网页版）
-- **作者**: drdavid-kor
-- **定位**: BYOK（自带 API Key）在线 Web 应用
-- **技术栈**: Cloudflare Workers + Static Assets
-- **来源**: 以 SH88-source 仓库为 git submodule
-- **使用方式**: 无需安装 CLI 工具，打开浏览器即可使用
-- **意义**: 降低使用门槛，让不熟悉终端的律师也能用上中国法律 AI 技能
+### drdavid-kor/claude-for-legal-cn-online
+- **作者**: drdavid-kor | **平台**: 浏览器（Cloudflare Workers）
+- **定位**: BYOK 在线 Web 应用，无需 CLI
+- **意义**: 降低使用门槛，让不熟悉终端的律师也能使用
 
-### 5. MAXXXXXLI/workbuddy-cn-legal-skills（豆包版）
-- **作者**: MAXXXXXLI
-- **定位**: Workbuddy（字节跳动豆包工作台）的技能包
-- **来源**: 从 Anthropic 官方版适配到 Workbuddy 平台
-- **内容**: 151 个中文命名的技能包，覆盖 12 个法律领域
-- **平台**: Workbuddy（豆包）
-- **意义**: 将法律 AI 技能扩展到 Workbuddy 平台用户
+### MAXXXXXLI/workbuddy-cn-legal-skills
+- **作者**: MAXXXXXLI | **平台**: Workbuddy（豆包）
+- **定位**: 151 个中文命名的技能包，覆盖 12 个法律领域
+- **意义**: 将法律 AI 技能扩展到豆包工作台用户
 
-### 6. gjhcsjamin/codex-for-legal-CN（Codex 封装版）
-- **作者**: gjhcsjamin
-- **定位**: 面向 Codex（OpenAI CLI）的封装层
-- **核心功能**: 自动路由 + Python 安装脚本 + 兼容入口
-- **安装方式**: `python scripts/install.py`
-- **平台**: Codex（OpenAI CLI）
-- **意义**: 首次将中国法律技能带到 Codex 平台
+### gjhcsjamin/codex-for-legal-CN
+- **作者**: gjhcsjamin | **平台**: Codex（OpenAI CLI）
+- **定位**: 首次将中国法律技能带到 Codex 平台的封装层
+- **意义**: 本仓库的技术前身和灵感来源
 
-### 7. laubeing-droid/Claude-for-Legal-CN-to-Codex（本仓库）
-- **作者**: laubeing-droid
-- **定位**: Codex 平台的整合包装层 — 一键安装 + 自动更新 + 完整中文文档
-- **上游**: SH88-source/claude-for-legal-CN
+### Claude-for-Legal-CN-to-Codex（本仓库）
+- **作者**: laubeing-droid | **平台**: Codex Desktop
+- **定位**: Codex 平台的全功能整合包装层
 - **核心资产**:
 
   | 资产 | 说明 |
   |------|------|
-  | 12 个领域 SKILL.md | 精简入口定义，自动指向上游内容 |
-  | 根技能 codex-claude-legal-cn | 关键词自动路由 + 自动更新指令 |
-  | install.ps1 | 一键自动拉取上游 + 部署到 Codex |
-  | update.ps1 | 手动同步最新内容 + 委托 MCP 连接器验证 |
-  | 自动更新机制 | 每次使用法律功能时自动同步上游 |
-  | GitHub Actions | 每周自动检查上游仓库 + npm 包更新 |
-  | 全中文文档 | 使用说明、架构设计、连接器指南等 |
-
-- **安装方式**: `.\install.ps1` 一键完成
-- **许可证**: Apache 2.0
-- **平台**: Codex（OpenAI Desktop）
+  | 12 + 1 个 SKILL.md | 精简入口定义 + 根技能路由 |
+  | install.ps1 | 一键安装（上游+技能+MCP） |
+  | update.ps1 | 手动同步（5 步流程） |
+  | 自动更新 | 每次使用法律功能时自动同步上游 |
+  | GitHub Actions | 每周监测上游链 + npm 包更新 |
+  | 全中文文档 | 使用指南、架构、项目分析等 |
 
 ## 四、关键对比
 
@@ -103,47 +70,23 @@ laubeing-droid/Claude-for-Legal-CN-to-Codex  (本仓库, 全功能整合)
 |------|-----------|------------|-------------|-------------|-----------|------------|-----------|
 | 目标平台 | Claude Code | Claude Code | Claude Code | 浏览器 | Workbuddy | Codex | **Codex** |
 | 法律体系 | 美国法 | 中国法 | 中国法 | 中国法 | 中国法 | 中国法 | **中国法** |
-| 安装方式 | plugin install | plugin install | plugin install | 打开网页 | 上传 zip | install.py | **install.ps1** |
-| 自动更新 | git pull | git pull | git pull | 重新部署 | 重新下载 | git pull | **自动集成** |
+| 安装方式 | 多步 | 多步 | 多步 | 打开网页 | 上传 zip | 1 步 | **1 步** |
+| 自动更新 | 手动 | 手动 | 手动 | 重新部署 | 重新下载 | 手动 | **自动** |
 | 文档语言 | 英文 | 中文 | 中文 | 中文 | 中文 | 中/英 | **中文** |
-| 安装步骤 | 多步 | 多步 | 多步 | 1 步 | 2 步 | 1 步 | **1 步** |
 
-## 五、本仓库的定位与价值
+## 五、本仓库的定位
 
 ### 解决的问题
 
 | 需求 | 上游状态 | 本仓库方案 |
 |------|---------|-----------|
-| 在 Codex 上用中国法技能 | 需手动克隆配置 | install.ps1 一键安装 |
+| 在 Codex 上使用中国法技能 | 需手动克隆配置 | `install.ps1` 一键安装 |
 | 保持技能最新 | 各项目手动更新 | 自动 git pull + Actions 监测 |
 | 中文文档 | 英文为主 | 完整中文文档体系 |
-| 使用便捷性 | 需了解多个仓库 | 单一仓库 clone 即用 |
+| MCP 连接器配置 | 需手动编辑 | 委托独立仓库自动管理 |
 
-### 本仓库的工作范围
-
-1. **选型集成**: 选择适合 Codex 的中国法内容源
-2. **一键安装**: 编写 install.ps1，自动完成克隆、部署、配置
-3. **技能入口**: 为 12 个领域编写 SKILL.md，创建根技能 codex-claude-legal-cn
-4. **自动路由**: 在根技能中实现关键词到对应法律领域的自动分发
-5. **更新机制**: 每次调用技能时自动同步上游最新内容
-6. **上游监测**: GitHub Actions 每周自动检查上游链更新
-7. **文档建设**: 完整的项目分析、使用指南、架构说明、故障排除等
-8. **分发交付**: 打包为可发布的 GitHub 仓库
-
-### 本仓库不涉及的范围
+### 不涉及的范围
 
 - 不直接修改上游的法律内容原文
 - 不提供在线网页版服务
 - 不跨平台转码（如转为 Workbuddy 格式）
-
-## 六、角色汇总
-
-| 项目 | 角色定位 | 面向平台 |
-|------|---------|---------|
-| anthropics/claude-for-legal | 上游源头 | Claude Code |
-| zhou210712/claude-for-legal-ZH | 中国法首版汉化 | Claude Code |
-| SH88-source/claude-for-legal-CN | 持续维护的中国法版本 | Claude Code |
-| drdavid-kor/...-online | 在线网页版适配 | 浏览器 |
-| MAXXXXXLI/workbuddy-cn-legal-skills | 豆包平台适配 | Workbuddy |
-| gjhcsjamin/codex-for-legal-CN | 首次 Codex 封装 | Codex |
-| **本仓库** | **Codex 全功能整合** | **Codex** |
