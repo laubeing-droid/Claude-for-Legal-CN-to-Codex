@@ -6,7 +6,7 @@
 ```powershell
 Get-ChildItem "$env:USERPROFILE\.codex\skills\"
 ```
-应列出 13 个目录。如缺失，重新运行 `.\install.ps1`。
+应列出 14 个目录。如缺失，重新运行 `.\install.ps1`。
 
 ### PowerShell 执行策略限制
 ```powershell

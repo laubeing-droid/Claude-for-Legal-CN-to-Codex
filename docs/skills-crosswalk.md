@@ -1,13 +1,15 @@
-# 技能对照索引
+﻿# 技能对照索引
 
 本文档对照 [claude-for-legal-CN](https://github.com/SH88-source/claude-for-legal-CN) 领域技能与 [solo-law-firm-agents](https://github.com/saysoph/solo-law-firm-agents) 执业技能，帮助快速定位适用技能。
+
+> 🆕 **本仓库自研技能**以 🆕 标记，这些技能在上游 saysoph/solo-law-firm-agents 中不存在，由本仓库独立研发补全。
 
 ## 一、两套体系定位
 
 | 体系 | 来源 | 技能数 | 架构 | 适用场景 |
 |------|------|:------:|------|------|
 | **claude-for-legal-CN** | SH88-source 上游 | 12 领域 / 150+ 子技能 | 薄入口 + CLAUDE.md 工作流 + references 法条库 | 各法律领域的专业分析、审查、起草 |
-| **solo-law-firm-agents** | saysoph 上游（修改版） | 26 独立技能 / 8 部门 | 自包含厚 SKILL.md + 模板 + 禁止项 | 独立执业律师的端到端业务运营 |
+| **solo-law-firm-agents** | saysoph 上游（修改版 + 自研） | 27 独立技能 / 8 部门 | 自包含厚 SKILL.md + 模板 + 禁止项 | 独立执业律师的端到端业务运营 |
 
 ## 二、按场景选择技能
 
@@ -19,6 +21,7 @@
 | 证据分析、质证意见 | `litigation-legal` | `evidence-analyst` |
 | 策略设计、攻防方案 | `litigation-legal` | `litigation-strategist` |
 | 起诉状/答辩状起草 | `litigation-legal` | `legal-document-drafter` |
+| 🆕 开庭提纲自动生成 | — | `trial-outline-generator` |
 | 庭前准备核查 | — | `trial-preparation-checker` |
 | 案件排期管理 | — | `case-scheduler` |
 | 诉讼时效监控 | — | `deadline-monitor` |
@@ -83,6 +86,9 @@
   solo-law-firm: legal-research-expert → evidence-analyst → litigation-strategist
   claude-for-legal-CN: litigation-legal (补充法条库和 references)
 
+庭前阶段:
+  solo-law-firm: trial-outline-generator → trial-preparation-checker
+
 文书阶段:
   solo-law-firm: legal-document-drafter
   claude-for-legal-CN: litigation-legal (补充 CLAUDE.md 工作流)
@@ -99,5 +105,12 @@
 | 体系 | 入口技能 | 子技能/独立技能 | 合计 |
 |------|:------:|:------:|:------:|
 | claude-for-legal-CN | 13 (含根路由) | 150+ (上游) | 163+ |
-| solo-law-firm | 1 (solo-law-firm) | 26 (自包含) | 26 |
-| **本仓库合计** | **14** | **176+** | **189+** |
+| solo-law-firm（saysoph 原创） | 1 (solo-law-firm) | 26 (自包含) | 26 |
+| 🆕 solo-law-firm（本仓库自研） | — | 1 (自包含) | 1 |
+| **本仓库合计** | **14** | **177+** | **190+** |
+
+## 五、本仓库自研技能清单
+
+| 技能 | 部门 | 说明 | 填补的空白 |
+|------|------|------|------|
+| 🆕 `trial-outline-generator` | 02-案件管理部 | 五阶段流水线生成标准化开庭提纲，6 板块输出 | 补齐证据分析→庭前核查之间缺少的开庭发言准备环节 |
