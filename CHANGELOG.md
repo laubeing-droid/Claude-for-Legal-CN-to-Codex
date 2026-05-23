@@ -1,5 +1,17 @@
 ﻿# 更新日志
 
+## [1.1.0] - 2026-05-23
+
+### 新增
+- MCP 连接器：chineselaw（元典智库）— 33 个工具，覆盖法律法规、案例、企业信息
+- MCP 连接器：北大法宝 HTTP 方案（备选）
+- install.ps1 / update.ps1 自动注入两个 MCP 连接器到每个技能目录
+- docs/connectors.md 完整的配置指南（注册、配置、工具列表、使用示例）
+
+### 变更
+- README 更新 MCP 连接器部分，突出 chineselaw 为首选方案
+- 连接器架构：install 时自动注入，不依赖上游 .mcp.json
+
 ## [1.0.1] - 2026-05-23
 
 ### 修复
@@ -16,23 +28,11 @@
 
 ### 改进
 - GitHub Actions: 增加 commit SHA 缓存，仅在有实际更新时创建 Issue
-- README: 更新架构图，增加新脚本说明
-- 文档: 配置 .gitattributes 后消除 LF/CRLF 警告杂音
 
 ## [1.0.0] - 2026-05-23
 
 ### 新增
 - 13 个 Codex 技能（1 根技能 + 12 领域技能）
-- 自动路由：根据关键词自动分发到对应法律领域
-- 自动更新：每次调用法律技能时自动同步上游
-- 上游监测：GitHub Actions 每周自动检查
-- install.ps1 / update.ps1 安装更新脚本
-
-### 文档
-- README / QUICKSTART / CHANGELOG
-- project-analysis.md / usage-guide.md / architecture.md
-- connectors.md / troubleshooting.md / contributing.md
-
-### 上游
-- 基于 SH88-source/claude-for-legal-CN 整合
-- 源流：anthropics/claude-for-legal → zhou210712/claude-for-legal-ZH → SH88-source
+- 自动路由 + 自动更新 + 上游监测 Actions
+- install.ps1 / update.ps1
+- 全套中文文档
