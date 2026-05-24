@@ -2,8 +2,8 @@
 
 本仓库的 MCP 连接器配置委托给独立仓库管理。
 
-> **Codex-Claude-legal-CN-mcp-connectors**
-> https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors
+> **Codex-Claude-legal-cn-mcp-hub**
+> https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub
 
 `install.ps1` 和 `update.ps1` 会自动克隆并调用该仓库的安装/更新脚本。
 

@@ -1,39 +1,34 @@
-# 更新日志
+﻿# 鏇存柊鏃ュ織
 
-## [未发布]
+## [鏈彂甯僝
 
 ## [2.5.0] - 2026-05-24
-- 新增 solo-law-firm 独立执业技能集（26 个自包含技能，8 个部门）
-  - 上游来源: saysoph/solo-law-firm-agents（修改版 v1.1.0）
-  - 修改记录: 合并 2 项、重命名 2 项、部门调整 1 项、新增上下游协作引用 19 项
-- 根路由 claude-legal-cn 新增 solo-law-firm 关键词路由（7 条）
-- install.ps1 / update.ps1 / verify.ps1 / uninstall.ps1 新增 solo-law-firm 支持
-- upstream-monitor.yml 新增 saysoph/solo-law-firm-agents 上游监控
-- upstream-monitor.yml 新增 sync-solo-law-firm 自动同步 PR job
-  - 每周检测上游新技能，自动按部门合入并创建 PR
-  - 已合并/重命名技能（4 个）跳过自动同步，需人工审核
-- 新增 docs/skills-crosswalk.md 两套技能对照索引
-
+- 鏂板 solo-law-firm 鐙珛鎵т笟鎶€鑳介泦锛?6 涓嚜鍖呭惈鎶€鑳斤紝8 涓儴闂級
+  - 涓婃父鏉ユ簮: saysoph/solo-law-firm-agents锛堜慨鏀圭増 v1.1.0锛?  - 淇敼璁板綍: 鍚堝苟 2 椤广€侀噸鍛藉悕 2 椤广€侀儴闂ㄨ皟鏁?1 椤广€佹柊澧炰笂涓嬫父鍗忎綔寮曠敤 19 椤?- 鏍硅矾鐢?claude-legal-cn 鏂板 solo-law-firm 鍏抽敭璇嶈矾鐢憋紙7 鏉★級
+- install.ps1 / update.ps1 / verify.ps1 / uninstall.ps1 鏂板 solo-law-firm 鏀寔
+- upstream-monitor.yml 鏂板 saysoph/solo-law-firm-agents 涓婃父鐩戞帶
+- upstream-monitor.yml 鏂板 sync-solo-law-firm 鑷姩鍚屾 PR job
+  - 姣忓懆妫€娴嬩笂娓告柊鎶€鑳斤紝鑷姩鎸夐儴闂ㄥ悎鍏ュ苟鍒涘缓 PR
+  - 宸插悎骞?閲嶅懡鍚嶆妧鑳斤紙4 涓級璺宠繃鑷姩鍚屾锛岄渶浜哄伐瀹℃牳
+- 鏂板 docs/skills-crosswalk.md 涓ゅ鎶€鑳藉鐓х储寮?
 ## [2.4.0] - 2026-05-23
-- 根技能重命名：codex-for-legal-cn -> claude-legal-cn
-- MCP 连接器仓库重命名：codex-legal-mcp-connectors -> Codex-Claude-legal-CN-mcp-connectors
-- 更新全部脚本和文档中的引用
-
+- 鏍规妧鑳介噸鍛藉悕锛歝odex-for-legal-cn -> claude-legal-cn
+- MCP 杩炴帴鍣ㄤ粨搴撻噸鍛藉悕锛歝odex-legal-mcp-connectors -> Codex-Claude-legal-cn-mcp-hub
+- 鏇存柊鍏ㄩ儴鑴氭湰鍜屾枃妗ｄ腑鐨勫紩鐢?
 ## [2.3.0] - 2026-05-23
-- 全部 docs 从零重写（README/QUICKSTART/CHANGELOG + 6 篇文档）
+- 鍏ㄩ儴 docs 浠庨浂閲嶅啓锛圧EADME/QUICKSTART/CHANGELOG + 6 绡囨枃妗ｏ級
 
 ## [2.2.1] - 2026-05-23
-- 删除 .mcp.json 复制行（Claude Code 格式，Codex 不识别）
+- 鍒犻櫎 .mcp.json 澶嶅埗琛岋紙Claude Code 鏍煎紡锛孋odex 涓嶈瘑鍒級
 
 ## [2.2.0] - 2026-05-23
-- GitHub 仓库重命名为 Claude-for-Legal-CN-to-Codex
-- 全部文档和脚本显示名称统一更新
+- GitHub 浠撳簱閲嶅懡鍚嶄负 Claude-for-Legal-CN-to-Codex
+- 鍏ㄩ儴鏂囨。鍜岃剼鏈樉绀哄悕绉扮粺涓€鏇存柊
 
 ## [2.1.0] - 2026-05-23
-- update.ps1 5 步流程重构：MCP 委托给独立仓库
-
+- update.ps1 5 姝ユ祦绋嬮噸鏋勶細MCP 濮旀墭缁欑嫭绔嬩粨搴?
 ## [2.0.0] - 2026-05-23
-- MCP 配置逻辑迁移到 codex-legal-mcp-connectors 独立仓库
+- MCP 閰嶇疆閫昏緫杩佺Щ鍒?codex-legal-mcp-connectors 鐙珛浠撳簱
 
 ## [1.4.0-1.0.0] - 2026-05-23
-- MCP 集成、架构整改、文档体系搭建、初始发布
+- MCP 闆嗘垚銆佹灦鏋勬暣鏀广€佹枃妗ｄ綋绯绘惌寤恒€佸垵濮嬪彂甯?
