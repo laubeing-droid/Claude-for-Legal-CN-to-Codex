@@ -30,7 +30,7 @@ cd Claude-for-Legal-CN-to-Codex
 - **chineselaw（推荐）**：注册 https://open.chineselaw.com → 获取 API Key，替换 `CHINESELAW_API_KEY`
 - **北大法宝**：注册 https://mcp.pkulaw.com → 获取 Access Token，替换所有 `YOUR_ACCESS_TOKEN`
 
-详细指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors)。
+详细指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub)。
 
 ## 使用
 
@@ -55,3 +55,4 @@ cd Claude-for-Legal-CN-to-Codex
 | 如何卸载？ | 运行 `.\uninstall.ps1` |
 
 详细说明见 [docs/usage-guide.md](docs/usage-guide.md)。
+

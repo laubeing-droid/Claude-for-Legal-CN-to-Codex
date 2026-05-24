@@ -41,7 +41,7 @@
 | 内容层A（claude-for-legal） | CLAUDE.md（工作流指令）、references（法条参考） | 上游 zhou210712 |
 | 内容层B（solo-law-firm） | 自包含 SKILL.md（完整角色 prompt + 模板），含本仓库自研技能 | 上游 saysoph（本仓库修改版 + 自研） |
 | 运行层 | skills/ 下各领域执行目录 | install.ps1 自动管理 |
-| MCP 层 | chineselaw + 北大法宝连接器配置 | Codex-Claude-legal-CN-mcp-connectors |
+| MCP 层 | chineselaw + 北大法宝连接器配置 | Codex-Claude-legal-cn-mcp-hub |
 
 ## 两套技能架构对比
 
@@ -114,5 +114,6 @@ GitHub Actions 每周一触发
 
 - **zhou210712/claude-for-legal-ZH**（Apache 2.0）— claude-for-legal 直接上游
 - **saysoph/solo-law-firm-agents**（MIT）— solo-law-firm 上游，**本仓库持有修改版 + 自研新增**
-- **Codex-Claude-legal-CN-mcp-connectors**（独立仓库）— MCP 连接器管理
+- **Codex-Claude-legal-cn-mcp-hub**（独立仓库）— MCP 连接器管理
+
 

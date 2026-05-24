@@ -80,7 +80,7 @@ GitHub Actions 每周自动检测上游更新：
 
 ## MCP 连接器修改
 
-MCP 连接器由独立的 [Codex-Claude-legal-CN-mcp-connectors](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors) 仓库管理。
+MCP 连接器由独立的 [Codex-Claude-legal-cn-mcp-hub](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub) 仓库管理。
 如需新增或修改连接器，修改该仓库的文件。
 
 ## 提交 PR
@@ -88,3 +88,4 @@ MCP 连接器由独立的 [Codex-Claude-legal-CN-mcp-connectors](https://github.
 1. 确保更改不影响现有功能
 2. 更新相关文档（技能数、部门数、对照索引）
 3. 提交 PR 到 https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex
+

@@ -3,7 +3,7 @@
   手动更新 Claude for Legal CN to Codex
 .DESCRIPTION
   1. 从本仓库同步 skills/ 全部内容到 ~/.codex/skills/
-  2. MCP 连接器检查（委托给 Codex-Claude-legal-CN-mcp-connectors 仓库）
+  2. MCP 连接器检查（委托给 Codex-Claude-legal-cn-mcp-hub 仓库）
   3. 验证安装完整性
 #>
 
@@ -13,7 +13,7 @@ $ErrorActionPreference = 'Stop'
 $RepoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $SkillsDir = "$env:USERPROFILE\.codex\skills"
 $McpDir = "$RepoRoot\mcp-connectors"
-$McpRepoUrl = 'https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors.git'
+$McpRepoUrl = 'https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub.git'
 
 $domains = @(
     'commercial-legal','privacy-legal','product-legal','corporate-legal',
@@ -120,7 +120,8 @@ if ($missing.Count -eq 0) {
 
 Write-Host ''
 Write-Host '更新完成。重启 Codex Desktop 使新内容生效。' -ForegroundColor Green
-Write-Host 'MCP 连接器由 Codex-Claude-legal-CN-mcp-connectors 独立管理。' -ForegroundColor Cyan
+Write-Host 'MCP 连接器由 Codex-Claude-legal-cn-mcp-hub 独立管理。' -ForegroundColor Cyan
+
 
 
 

@@ -3,7 +3,7 @@
   一键安装 Claude for Legal CN to Codex
 .DESCRIPTION
   1. 安装本仓库 skills/ 全部内容到 ~/.codex/skills/
-  2. 配置 MCP 连接器（通过 Codex-Claude-legal-CN-mcp-connectors 独立仓库）
+  2. 配置 MCP 连接器（通过 Codex-Claude-legal-cn-mcp-hub 独立仓库）
   3. 配置环境
 #>
 
@@ -85,7 +85,7 @@ if (Test-Path $soloSrc) {
 
 # [2/3] MCP 连接器
 Write-Host '[2/3] 配置 MCP 连接器...' -ForegroundColor Yellow
-$McpRepoUrl = 'https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors.git'
+$McpRepoUrl = 'https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub.git'
 $McpDir = "$RepoRoot\mcp-connectors"
 if (-not (Test-Path "$McpDir\install.ps1")) {
     Write-Host '  正在克隆 MCP 连接器仓库...'
@@ -125,8 +125,9 @@ if ($missing.Count -eq 0) {
 
 Write-Host ''
 Write-Host '安装完成！重启 Codex Desktop 使技能生效。' -ForegroundColor Green
-Write-Host 'MCP 连接器由 Codex-Claude-legal-CN-mcp-connectors 管理。' -ForegroundColor Cyan
+Write-Host 'MCP 连接器由 Codex-Claude-legal-cn-mcp-hub 管理。' -ForegroundColor Cyan
 Write-Host '  配置指南: docs/connectors.md' -ForegroundColor Cyan
+
 
 
 
