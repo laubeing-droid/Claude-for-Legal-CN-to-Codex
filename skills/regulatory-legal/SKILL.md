@@ -4,6 +4,7 @@ description: 监管动态监测、合规缺口分析、征求意见稿跟踪
 version: 2.9.0
 module: regulatory-legal
 status: active
+triggers: 监管, 合规, 行政处罚, 网信办, 市监局
 ---
 
 # 监管合规 法务技能

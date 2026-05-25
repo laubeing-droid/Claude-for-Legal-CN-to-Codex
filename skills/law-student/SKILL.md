@@ -4,6 +4,7 @@ description: 法考备考、案例分析、法律写作与学术检索
 version: 2.9.0
 module: law-student
 status: active
+triggers: 学法, 法考, 案例研习, 法条学习
 ---
 
 # 法学生与法考 法务技能
