@@ -55,12 +55,16 @@ $judgmentDir = Join-Path $ParentDir "Codex-Legal-CN-Judgment-Predictor"
 if (Test-Path $judgmentDir) {
     Write-Host "  [OK] judgment-predictor 已存在" -ForegroundColor Green
 } else {
-    $choice = Read-Host "  安装 judgment-predictor (AI裁判预测)？[Y/n]"
+    $choice = Read-Host "  安装 judgment-predictor (AI裁判预测 + 类案检索)？[Y/n]"
     if ($choice -eq '' -or $choice -eq 'y' -or $choice -eq 'Y') {
         Write-Host "  [安装] judgment-predictor -> $judgmentDir" -ForegroundColor Yellow
         Push-Location $ParentDir
         git clone --depth 1 https://github.com/laubeing-droid/Codex-Legal-CN-Judgment-Predictor.git Codex-Legal-CN-Judgment-Predictor 2>&1 | Out-Null
         Pop-Location
+        if (Test-Path "$judgmentDir\install.ps1") {
+            Write-Host "  运行 judgment-predictor 安装..." -ForegroundColor Yellow
+            & "$judgmentDir\install.ps1"
+        }
         Write-Host "  [OK] judgment-predictor 安装完成" -ForegroundColor Green
     } else {
         Write-Host "  [跳过] judgment-predictor" -ForegroundColor DarkGray
