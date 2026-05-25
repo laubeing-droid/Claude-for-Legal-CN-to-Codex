@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "description": "法律检索路由器配置 — 本地优先 -> MCP降级 -> 浏览器兜底",
+  "fallback_chain": [
+    "local",
+    "mcp",
+    "browser"
+  ],
+  "local": {
+    "priority": 1,
+    "description": "本地语义树 + 法条全文 + 司法解释",
+    "sources": [
+      {
+        "file": "law-semantic-tree.json",
+        "search_fields": [
+          "article",
+          "title",
+          "elements",
+          "legal_effect",
+          "keywords"
+        ]
+      },
+      {
+        "file": "judicial-interpretations.json",
+        "search_fields": [
+          "article",
+          "target_law",
+          "key_rule",
+          "keywords"
+        ]
+      },
+      {
+        "file": "regulatory-compliance-tree.json",
+        "search_fields": [
+          "name",
+          "trigger",
+          "obligation",
+          "keywords"
+        ]
+      },
+      {
+        "file": "law-versions.json",
+        "search_fields": [
+          "current_version",
+          "status"
+        ]
+      }
+    ],
+    "search_method": "keyword_match_then_fuzzy",
+    "cache_ttl_days": 90
+  },
+  "mcp": {
+    "priority": 2,
+    "description": "MCP连接器 — 实时查询外部法律数据库",
+    "servers": [
+      {
+        "name": "pkulaw",
+        "description": "北大法宝"
+      },
+      {
+        "name": "weike",
+        "description": "威科先行"
+      }
+    ],
+    "timeout_ms": 5000,
+    "cache_results": true,
+    "cache_ttl_days": 30
+  },
+  "browser": {
+    "priority": 3,
+    "description": "浏览器自动查询 — 官方->百科->专业网站",
+    "timeout_ms": 10000,
+    "user_agent": "Codex-Legal-CN-Retrieval/1.0",
+    "urls": [
+      {
+        "name": "全国人大法工委",
+        "priority": 1,
+        "template": "https://flk.npc.gov.cn/search.html?keyword={query}"
+      },
+      {
+        "name": "国务院政策库",
+        "priority": 1,
+        "template": "https://www.gov.cn/zhengce/?q={query}"
+      },
+      {
+        "name": "国家网信办",
+        "priority": 1,
+        "template": "https://www.cac.gov.cn/search?searchword={query}"
+      },
+      {
+        "name": "百度百科",
+        "priority": 2,
+        "template": "https://baike.baidu.com/item/{query}"
+      },
+      {
+        "name": "北大法宝",
+        "priority": 3,
+        "template": "https://www.pkulaw.com/law?keyword={query}"
+      }
+    ]
+  },
+  "cache": {
+    "directory": "skills/references/retrieval-cache/",
+    "invalidation": "law-versions.json过期则自动失效"
+  }
+}

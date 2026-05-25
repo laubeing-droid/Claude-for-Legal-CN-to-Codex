@@ -5,13 +5,14 @@
   默认：检查技能目录 + 护栏层 + 文件哈希 + MCP 连接器
   -Benchmark：加载对抗测试用例
   -Quick：仅快速检查技能根目录
+.PARAMETER TestRetrieval
+  测试法律检索路由器的三级降级链路
 .PARAMETER Benchmark
-  运行中国法适配对抗测试
-.PARAMETER Quick
-  快速检查（仅技能根目录）
+  运行对抗测试
 #>
 
 param(
+    [switch]$TestRetrieval,
     [switch]$Benchmark,
     [switch]$Quick,
     [switch]$NoHash,
@@ -305,3 +306,39 @@ if ($allOk -and $guardOk) {
     Write-Host '  存在问题，请检查以上标记项。' -ForegroundColor Yellow
 }
 Write-Host '========================================' -ForegroundColor Cyan
+
+# ============================================================
+# 法律检索路由器测试
+# ============================================================
+if ($TestRetrieval) {
+    Write-Host ""
+    Write-Host "=== 法律检索路由器测试 ===" -ForegroundColor Cyan
+    
+    $router = Join-Path $PSScriptRoot "patches\legal-retrieval-router.ps1"
+    if (-not (Test-Path $router)) {
+        Write-Host "[!!] legal-retrieval-router.ps1 不存在" -ForegroundColor Red
+        return
+    }
+    
+    $testQueries = @(
+        @{Query="民法典第153条"; Expect="local hit"; Desc="法条精确查询"},
+        @{Query="经济补偿金"; Expect="local hit"; Desc="关键词查询"},
+        @{Query="数据出境安全评估"; Expect="local hit or browser"; Desc="合规规则查询"},
+        @{Query="指导案例18号"; Expect="local hit"; Desc="指导案例查询"}
+    )
+    
+    $passed = 0
+    foreach ($t in $testQueries) {
+        Write-Host "  [$($t.Desc)] $($t.Query)..." -NoNewline
+        $out = & $router $t.Query 2>&1 | Out-String
+        if ($out -match "本地命中" -or $out -match "浏览器查询队列") {
+            Write-Host " [$($t.Expect)]" -ForegroundColor Green
+            $passed++
+        } else {
+            Write-Host " [UNEXPECTED: no hit]" -ForegroundColor Red
+        }
+    }
+    
+    Write-Host "  通过: $passed/$($testQueries.Count)" -ForegroundColor $(if ($passed -eq $testQueries.Count) { 'Green' } else { 'Red' })
+    return
+}
