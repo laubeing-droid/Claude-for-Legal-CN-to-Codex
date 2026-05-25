@@ -1,0 +1,19 @@
+﻿{
+    "key_provisions":  {
+
+                       },
+    "_meta":  {
+                  "version":  "2012年",
+                  "full_text_md":  "skills/regulatory-legal/references/admin-law-core.md",
+                  "source":  "全国人大官方公布文本",
+                  "total_articles":  71,
+                  "law_name":  "中华人民共和国行政强制法",
+                  "note":  "全文参见 skills/regulatory-legal/references/admin-law-core.md。本JSON仅含章节结构和已引用核心条款。",
+                  "short_name":  "行政强制法",
+                  "parsed_date":  "2026-05-25"
+              },
+    "structure":  null,
+    "cited_articles":  [
+
+                       ]
+}

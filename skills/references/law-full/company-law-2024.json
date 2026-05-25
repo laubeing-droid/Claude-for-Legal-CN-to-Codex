@@ -1,0 +1,19 @@
+﻿{
+    "key_provisions":  {
+
+                       },
+    "_meta":  {
+                  "version":  "2024年修订",
+                  "full_text_md":  "skills/corporate-legal/references/company-law-2024-core.md",
+                  "source":  "全国人大官方公布文本",
+                  "total_articles":  266,
+                  "law_name":  "中华人民共和国公司法",
+                  "note":  "全文参见 skills/corporate-legal/references/company-law-2024-core.md。本JSON仅含章节结构和已引用核心条款。",
+                  "short_name":  "公司法",
+                  "parsed_date":  "2026-05-25"
+              },
+    "structure":  "总则/公司登记/有限责任公司/股份有限公司/国有独资公司/公司董监高资格义务/公司债券/公司财务/合并分立增资减资/解散清算/外国公司分支机构/法律责任/附则 15章",
+    "cited_articles":  [
+
+                       ]
+}

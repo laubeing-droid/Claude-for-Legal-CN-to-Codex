@@ -1,0 +1,19 @@
+﻿{
+    "key_provisions":  {
+
+                       },
+    "_meta":  {
+                  "version":  "2017年修正",
+                  "full_text_md":  "skills/regulatory-legal/references/admin-law-core.md",
+                  "source":  "全国人大官方公布文本",
+                  "total_articles":  103,
+                  "law_name":  "中华人民共和国行政诉讼法",
+                  "note":  "全文参见 skills/regulatory-legal/references/admin-law-core.md。本JSON仅含章节结构和已引用核心条款。",
+                  "short_name":  "行政诉讼法",
+                  "parsed_date":  "2026-05-25"
+              },
+    "structure":  "总则/受案范围/管辖/诉讼参加人/证据/起诉受理/审理判决/执行/侵权赔偿责任/涉外/附则 11章",
+    "cited_articles":  [
+
+                       ]
+}

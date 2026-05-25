@@ -1,0 +1,19 @@
+﻿{
+    "key_provisions":  {
+
+                       },
+    "_meta":  {
+                  "version":  "2023年修正",
+                  "full_text_md":  "skills/litigation-legal/references/",
+                  "source":  "全国人大官方公布文本",
+                  "total_articles":  306,
+                  "law_name":  "中华人民共和国民事诉讼法",
+                  "note":  "全文参见 skills/litigation-legal/references/。本JSON仅含章节结构和已引用核心条款。",
+                  "short_name":  "民事诉讼法",
+                  "parsed_date":  "2026-05-25"
+              },
+    "structure":  "总则/审判程序/执行程序/涉外 4编",
+    "cited_articles":  [
+
+                       ]
+}

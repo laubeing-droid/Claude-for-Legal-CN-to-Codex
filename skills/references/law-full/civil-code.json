@@ -1,0 +1,19 @@
+﻿{
+    "key_provisions":  {
+
+                       },
+    "_meta":  {
+                  "version":  "2021年",
+                  "full_text_md":  "skills/knowledge-base/civil_code.md",
+                  "source":  "全国人大官方公布文本",
+                  "total_articles":  1260,
+                  "law_name":  "中华人民共和国民法典",
+                  "note":  "全文参见 skills/knowledge-base/civil_code.md。本JSON仅含章节结构和已引用核心条款。",
+                  "short_name":  "民法典",
+                  "parsed_date":  "2026-05-25"
+              },
+    "structure":  "总则/物权/合同/人格权/婚姻家庭/继承/侵权责任 7编+附则",
+    "cited_articles":  [
+
+                       ]
+}

@@ -1,0 +1,19 @@
+﻿{
+    "key_provisions":  {
+
+                       },
+    "_meta":  {
+                  "version":  "2021年",
+                  "full_text_md":  "skills/privacy-legal/references/personal_information_protection_law.md",
+                  "source":  "全国人大官方公布文本",
+                  "total_articles":  74,
+                  "law_name":  "中华人民共和国个人信息保护法",
+                  "note":  "全文参见 skills/privacy-legal/references/personal_information_protection_law.md。本JSON仅含章节结构和已引用核心条款。",
+                  "short_name":  "个人信息保护法",
+                  "parsed_date":  "2026-05-25"
+              },
+    "structure":  "总则/处理规则/跨境/个人权利/处理者义务/部门/法律责任/附则 8章",
+    "cited_articles":  [
+
+                       ]
+}

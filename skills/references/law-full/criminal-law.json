@@ -1,0 +1,19 @@
+﻿{
+    "key_provisions":  {
+
+                       },
+    "_meta":  {
+                  "version":  "2020年修正(十一)",
+                  "full_text_md":  "skills/litigation-legal/references/china-criminal-procedure-alignment.md",
+                  "source":  "全国人大官方公布文本",
+                  "total_articles":  452,
+                  "law_name":  "中华人民共和国刑法",
+                  "note":  "全文参见 skills/litigation-legal/references/china-criminal-procedure-alignment.md。本JSON仅含章节结构和已引用核心条款。",
+                  "short_name":  "刑法",
+                  "parsed_date":  "2026-05-25"
+              },
+    "structure":  "总则(5章)/分则(10章)",
+    "cited_articles":  [
+
+                       ]
+}

@@ -1,0 +1,19 @@
+﻿{
+    "key_provisions":  {
+
+                       },
+    "_meta":  {
+                  "version":  "2021年",
+                  "full_text_md":  "skills/privacy-legal/references/data_security_law.md",
+                  "source":  "全国人大官方公布文本",
+                  "total_articles":  55,
+                  "law_name":  "中华人民共和国数据安全法",
+                  "note":  "全文参见 skills/privacy-legal/references/data_security_law.md。本JSON仅含章节结构和已引用核心条款。",
+                  "short_name":  "数据安全法",
+                  "parsed_date":  "2026-05-25"
+              },
+    "structure":  null,
+    "cited_articles":  [
+
+                       ]
+}
