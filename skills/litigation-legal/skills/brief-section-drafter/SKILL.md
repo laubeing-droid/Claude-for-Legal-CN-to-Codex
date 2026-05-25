@@ -12,6 +12,15 @@ status: active
 
 # /brief-section-drafter
 
+
+> **法院文书格式约束（最高法 67 类要素式范本）**
+> 生成起诉状/答辩状/申请书时，必须：
+> 1. 使用表格格式（当事人信息 + 诉讼请求 + 证据清单）
+> 2. 禁止美式 Pleading 叙述体（长段落背景陈述）
+> 3. 禁止翻译腔（Whereas / Hereby / In Witness Whereof）
+> 4. 先查 `element-style-pleading.md` 确认本案是否有对应最高法范本
+> 5. 金额必须附计算公式（本金 + LPR×N倍×天数）
+
 1. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 案件理论、内部风格。
 2. 遵循以下工作流。
 3. 按内部格式/语气/引用风格起草。与理论一致。
