@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 2.10.0
 module: root
 status: active
@@ -17,6 +17,9 @@ status: active
 > **免责**：所有 AI 输出均为律师辅助草稿，不构成正式法律意见，需经执业律师审查。
 
 ---
+
+
+> **法条数据**: 法律全文 JSON 已独立为 [codex-claude-legal-cn-core-codices](https://github.com/laubeing-droid/codex-claude-legal-cn-core-codices)（162部，v0.2-beta），建议作为 submodule 引入。
 
 ## 安装
 
@@ -46,7 +49,7 @@ bash install.sh
 | **法律领域** | 12 个（商事合同 / 诉讼仲裁 / 劳动用工 / 数据合规 / 公司交易 / 知识产权 / 产品合规 / 监管合规 / AI 治理 / 法学教育 / 法律援助 / 技能构建器） |
 | **子技能** | 150+（审查合同、起草律师函、分析管辖权、评估合规风险等） |
 | **独立执业技能** | 27 个（8 个科室：案件实务 / 案件管理 / 客户关系 / 尽职调查 / 市场拓展 / 财务行政 / 知识管理 / 合规风控） |
-| **法条引用** | 22 部中国法律原文（截至 2026-05-25，含公司法2024修订。来源：中国法律官方文本） |
+| **法条引用** | 162 部中国法律原文（截至 2026-05-25，含公司法2024修订。来源：中国法律官方文本） |
 | **PRC-US 概念对齐** | 12 个领域的中美法律概念映射 + 8 个护栏文件 |
 | **MCP 连接器** | 12 个领域的中国法律工具链，由独立仓库管理 |
 
@@ -110,7 +113,7 @@ MCP 连接器由独立仓库 [Codex-Claude-legal-cn-mcp-hub](https://github.com/
 以下内容由本仓库自行研发，不涉及上游：
 
 - **PRC-US 法律语义对齐框架** — 12 个领域中美法律概念一对一映射 + 配套护栏
-- **中国法律知识库**（上游：中国法律官方文本）— 22 部中国法律官方 PDF 全文
+- **中国法律知识库**（上游：中国法律官方文本）— 162 部中国法律官方 PDF 全文
 - **4 路 diff-tool 参考窗口架构** — zhou210712 / MAXXXXXLI / saysoph / 自研框架各一路独立比对
 - **MCP 连接器独立仓库** — 与技能内容解耦管理
 
@@ -147,7 +150,7 @@ Claude-for-Legal-CN-to-Codex/
 │   ├── privacy-legal/       # 数据合规
 │   ├── product-legal/       # 产品合规
 │   ├── regulatory-legal/    # 监管合规
-│   ├── knowledge-base/      # 法条知识库（22 部中国法律）
+│   ├── knowledge-base/      # 法条知识库（162 部中国法律）
 │   ├── references/          # 跨领域共用参照（护栏 / 语义树 / 司法解释）
 │   └── solo-law-firm/       # 独立执业技能集（8 科室 27 技能）
 ├── install.sh / install.ps1 # 安装脚本（Windows + macOS/Linux）
