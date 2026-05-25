@@ -136,7 +136,7 @@ Write-Host "[2/3] 安装 MCP 连接器..." -ForegroundColor Yellow
 $McpDir = Join-Path $ParentDir "codex-claude-legal-cn-mcp-hub"
 if (Test-Path "$McpDir\install.ps1") {
     Write-Host "  运行 MCP 连接器安装..."
-    & "$McpDir\install.ps1"
+    & "$McpDir\install.ps1" -Quick
 } else {
     Write-Host "  [警告] MCP 连接器未找到: $McpDir" -ForegroundColor Red
 }
