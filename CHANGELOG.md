@@ -71,6 +71,70 @@
 ### Fixes
 - MAPPING.md: add 3 missing laws (Civil Code, Personal Info Export Contract, AI Content Label)
 - Blocking list count unified to 29
+
+## [2.12.0] - 2026-05-25
+### 新增
+- **法律断言全量验证引擎** (`patches/law-verify.ps1`): 四仓提取→核验→交互确认→自动更新
+  - 6种断言类型: citation/viewpoint/skill/principle/threshold/timeliness
+  - 联网验证模式 (-Online): 通过 chineselaw-mcp API 实时核验法条
+  - 交互确认模式 (-Interactive): 逐条展示差异，用户确认后应用
+  - 自动应用模式 (-AutoApply): 机械化修正全自动
+  - 确认记录持久化: 已确认条目自动跳过，避免重复审查
+- **月度验证 CI** (`.github/workflows/law-verify-monthly.yml`): 每月1日自动验证+修正
+- **法名规范化**: 471→942 处简称→全称自动替换（如 民法典→中华人民共和国民法典）
+- **法条引用索引升级**: 1118→4774 引用（法名规范化后匹配精度大幅提升）
+
+### 修复
+- 双重前缀污染: 修复并清除 1183+264 处"中华人民共和国中华人民共和国XX法"
+- law-verify.ps1 防双重前缀守卫
+- law-citation-scan.ps1 跨平台路径兼容
+- law-citation-update.ps1 跨平台路径兼容
+
+### 清理
+- 批量清除所有 qulv/Daknniel-0881 引用 (34 文件) → 统一改为"中国法律官方文本"
+
+## [2.11.0] - 2026-05-25
+### 新增
+- **法条引用追踪系统**
+  - `law-citation-scan.ps1`: 全量扫描器（655文件→1118引用/141部法律）
+  - `law-citation-update.ps1`: 批量更新器（读映射→替换→重扫→报告）
+  - `law-citation-index.json`: 当前引用索引（自动生成）
+  - `law-version-map.json`: 版本映射表（`_effective` + `_applied` 状态追踪）
+  - `law-name-normalize.json`: 法名归一化（简称→全称 40+映射）
+- **月度过期扫描 CI** (`.github/workflows/law-citation-scan.yml`): 
+  - 每月1日自动扫描→过期检测→自动更新→标注同步→提交
+  - 预览模式 (`-DryRun`) 仅生成报告不修改
+
+## [2.10.0] - 2026-05-25
+### 新增
+- 反翻译腔全面升级: 四维句法规则 + 法律词汇映射 + 12领域CLAUDE约束
+- 仲裁立案模板: 厦/漳/福三地对比提取 8 类通用文书
+- 课件脱敏注入: 虚拟货币裁判规则/医保诈骗/政府信息公开
+- SPC 67类全部注入: 民商事12类/IP8类/海事/环境/刑事/国赔/执行综合模板
+- 课件语料注入: 行政处罚框架/金融消费者保护/建设工程实务
+- SPC 67类语料: 6个案由要素式诉状模板
+- 最高法67类要素式诉状映射: CLAUDE.md §4 + brief-section-drafter 约束
+- Gemini深度审查落地: 公章护栏 + 要素式诉状 + 翻译腔禁令词表
+
+### 基础设施
+- ECOSYSTEM.md: 四仓库职责/调用链/结构速查
+- 四仓库文件元数据标准: 581文件注入 version/module/status
+- 四仓库 FILE_INDEX.md
+- 四仓库 README 目录树 + macOS/Linux 安装说明
+- Bash 安装脚本: install.sh/update.sh/uninstall.sh (CN + MCP)
+- 中国法 Benchmark: 12正面测试用例 + 双模式runner + 双平台
+
+### 清理
+- 删除 BASELINE.md (冗余，git tag + CHANGELOG 已覆盖)
+- 删除旧版 spc-elements-*.md
+
+## [2.9.0] - 2026-05-25
+### 新增
+- 版本号同步体系: 四仓库统一版本管理
+- verify.ps1 regex 兼容修复 (PowerShell 不支持 \Q)
+
+---
+
 ## [2.8.0] - 2026-05-25
 ### 架构变更
 - 断开 zhou210712 上游依赖，改为本地部署+参考窗口模式
@@ -93,7 +157,7 @@
 - install/update: solo-law-firm 独立部署逻辑（嵌套 8 科室结构）
 
 ### 清理
-- 删除 patches/references/laws/（11 个旧法条文件，已被 qulv 替代）
+- 删除 patches/references/laws/（11 个旧法条文件，已替换为中国法律官方文本）
 - 删除 patches/full/（79 KB 完整框架，已拆分为 alignment + guards）
 - 删除 docs/gjhcsjamin-adaptation-analysis.md（上游已移除）
 - 移除 @pkulaw/mcp-cli 监控（属 MCP 仓库范畴）

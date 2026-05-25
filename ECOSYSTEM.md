@@ -60,7 +60,7 @@ CN 收到用户问题
 | zhou210712/claude-for-legal-ZH | 断开，参考窗口 | GitHub Issue + diff-tool-zhou.ps1 |
 | MAXXXXXLI/workbuddy-cn-legal-skills | 断开，参考窗口 | GitHub Issue + diff-tool-max.ps1 |
 | saysoph/solo-law-firm-agents | 断开，参考窗口 | GitHub Issue + diff-tool-solo.ps1 |
-| Daknniel-0881/qulv-china-legal-counsel-skill | 法条原文来源 | `gen-knowledge-index.ps1` |
+| 中国法律官方文本 | 法条原文来源 | `gen-knowledge-index.ps1` |
 
 > 已断开自动同步。上游有更新时发 Issue 通知，人工审查决定是否合并。
 

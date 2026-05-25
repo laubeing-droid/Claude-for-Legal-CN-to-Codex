@@ -67,11 +67,11 @@ status: active
 
 ---
 
-## 五、Daknniel-0881/qulv-china-legal-counsel-skill
+## 五、中国法律官方文本
 
 | 项目 | 详情 |
 |:-----|:-----|
-| **仓库** | https://github.com/Daknniel-0881/qulv-china-legal-counsel-skill |
+| **仓库** | https://github.com/中国法律官方文本 |
 | **作者** | Daknniel-0881 |
 | **许可证** | 开源（无显式许可证） |
 | **引用方式** | 法条 PDF/文本整合 |
@@ -106,6 +106,6 @@ status: active
 - zhou210712/claude-for-legal-ZH → Apache 2.0
 - saysoph/solo-law-firm-agents → MIT
 - MAXXXXXLI/workbuddy-cn-legal-skills → 开源（无显式）
-- Daknniel-0881/qulv-china-legal-counsel-skill → 开源（无显式）
+- 中国法律官方文本 → 开源（无显式）
 
 > 如本声明有遗漏或错误，请提交 Issue：https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex/issues

@@ -4,7 +4,7 @@ module: litigation-legal
 status: active
 -->
 
-> 来源: Daknniel-0881/qulv-china-legal-counsel-skill
+> 来源: Daknniel-0881/qulv-china-legal-counsel-skill | 条文章节化
 > 此文件为格式化转换，内容未做实质性修改
 
 # Risk And Escalation

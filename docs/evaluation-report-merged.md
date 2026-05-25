@@ -47,7 +47,7 @@ status: active
 | zhou210712/claude-for-legal-ZH | CLAUDE.md 中文化 + MCP 替换 + 9 个法条文件 | 断开自动同步，本地快照比对 |
 | MAXXXXXLI/workbuddy-cn-legal-skills | 14 个中国法语境文件 | 整合进各领域参考目录 |
 | saysoph/solo-law-firm-agents | 26 个独立执业技能（8 科室） | 重命名 + 格式适配 + 新增庭审提纲 |
-| Daknniel-0881/qulv-china-legal-counsel-skill | 22 部中国法律 PDF | 整合进各领域 references/ |
+| 中国法律官方文本 | 22 部中国法律 PDF | 整合进各领域 references/ |
 | **自研** | PRC-US 对齐框架、护栏、diff-tool、MCP Hub | — |
 
 ---

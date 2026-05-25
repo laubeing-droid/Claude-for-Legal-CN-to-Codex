@@ -47,7 +47,7 @@ Claude-for-Legal-CN-to-Codex/
 | 新增/修改中国法律子技能 | `skills/*/skills/` |
 | 增强护栏（新增阻断概念） | `patches/guards/blocking-list.md` |
 | 完善中美概念映射 | `patches/references/alignment/` |
-| 补充法条引用 | `skills/*/references/`（引用 qulv） |
+| 补充法条引用 | `skills/*/references/`（引用法律知识库） |
 | 新增对抗测试用例 | `benchmark/adversarial-tests.md` |
 | 改进部署脚本 | `install.ps1` / `update.ps1` |
 | 优化 CI 工作流 | `.github/workflows/` |

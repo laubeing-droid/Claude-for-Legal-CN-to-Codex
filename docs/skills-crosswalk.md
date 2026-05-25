@@ -15,7 +15,7 @@ status: active
 | **zhou210712** | 12 个法律领域 × 150 子技能（汉化版） | 5 个重写为中国版 + 添加护栏 + 接入 qulv 法条 |
 | **MAXXXXXLI** | 14 个中国法语境文件 | 整合进 12 领域 + 自研补充 |
 | **saysoph** | 26 个独立执业技能 | 补充庭审提纲 + 格式适配 + 引用补全 |
-| **Daknniel-0881** | 22 部中国法律官方 PDF（qulv 知识库） | 整合进 skills/*/references/ |
+| **Daknniel-0881** | 22 部中国法律官方 PDF（中国法律知识库） | 整合进 skills/*/references/ |
 | **自研** | PRC-US 对齐框架、4 路 diff-tool | 本仓库开发 |
 
 ## 中国化子技能（本仓库独有）
@@ -39,5 +39,5 @@ status: active
 | 中国法语境背景 | 14 | MAXXXXXLI |
 | PRC-US 概念映射 | 12 | **本仓库自研** |
 | 护栏文件 | 8 | **本仓库自研** |
-| qulv 官方 PDF | 22 | Daknniel-0881/qulv-china-legal-counsel-skill |
+| qulv 官方 PDF | 22 | 中国法律官方文本 |
 

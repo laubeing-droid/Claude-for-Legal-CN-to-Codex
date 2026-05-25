@@ -435,7 +435,9 @@ function Invoke-BatchUpdate($confirmed, $allFiles) {
                         $oldName = [regex]::Match($disc.discrepancy, '"([^"]+)"').Groups[1].Value
                         $newName = [regex]::Match($disc.discrepancy, '"([^"]+)"$').Groups[1].Value
                         if ($oldName -and $newName) {
-                            $content = $content -replace [regex]::Escape($oldName), $newName
+                    if ($content -notmatch [regex]::Escape($newName)) {
+                        $content = $content -replace [regex]::Escape($oldName), $newName
+                    }
                             $modified = $true
                             $updated++
                         }
