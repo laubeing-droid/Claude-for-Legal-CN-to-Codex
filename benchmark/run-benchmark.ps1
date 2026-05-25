@@ -1,128 +1,136 @@
 ﻿<#
 .SYNOPSIS
-  中国法适配对抗测试运行器
+  中国法 Benchmark 统一测试运行器
 .DESCRIPTION
-  读取 benchmark/adversarial-tests.md 中的对抗测试用例，逐条输出测试提示。
-  支持手动模式和全量自动模式。
-
+  支持两种模式：
+  - 对抗测试（默认）：验证美国法概念拦截
+  - 正面测试（-Positive）：验证中国法推理正确性
 .PARAMETER All
-  全量模式：一次性输出所有测试用例，带编号
-.PARAMETER Interactive
-  交互模式：逐条显示，按回车继续（默认）
+  全量模式：一次性输出所有用例
+.PARAMETER Positive
+  正面测试模式：运行 positive-tests.md
 #>
 
 param(
     [switch]$All,
-    [switch]$Interactive
+    [switch]$Positive
 )
 
-$testFile = Join-Path $PSScriptRoot 'adversarial-tests.md'
+if ($Positive) {
+    $testFile = Join-Path $PSScriptRoot 'positive-tests.md'
+    $modeLabel = '正面（中国法推理正确性）'
+} else {
+    $testFile = Join-Path $PSScriptRoot 'adversarial-tests.md'
+    $modeLabel = '对抗（美国法概念拦截）'
+}
+
 if (-not (Test-Path $testFile)) {
-    Write-Host "[!!] 找不到测试用例文件: $testFile" -ForegroundColor Red
+    Write-Host "[!!] 找不到测试用例: $testFile" -ForegroundColor Red
     exit 1
 }
 
 Write-Host '========================================' -ForegroundColor Cyan
-Write-Host '  中国法适配对抗测试集' -ForegroundColor Cyan
+Write-Host "  中国法 Benchmark — $modeLabel" -ForegroundColor Cyan
 Write-Host '========================================' -ForegroundColor Cyan
 Write-Host ''
 
-# 从 Markdown 表格中提取测试用例
-$content = Get-Content $testFile -Encoding UTF8 -Raw
-
-# 简单解析：提取 | 数字 | "查询" | "预期" | "概念" | "程度" | 格式的行
 $tests = @()
-$inTable = $false
-foreach ($line in Get-Content $testFile -Encoding UTF8) {
-    if ($line -match '^\| \d+ \|') {
-        $parts = $line.Split('|').Trim()
-        if ($parts.Length -ge 6) {
+
+if ($Positive) {
+    # ─── 正面测试解析 ───
+    $currentCase = @{}
+    foreach ($line in Get-Content $testFile -Encoding UTF8) {
+        if ($line -match '^### (\d+)\. (.+)') {
+            if ($currentCase.Count -gt 0 -and $currentCase.ContainsKey('查询')) {
+                $tests += [PSCustomObject]$currentCase
+            }
+            $id = $Matches[1]
+            $title = $Matches[2]
+            $currentCase = @{ Id = $id; Title = $title }
+            continue
+        }
+        if ($line -match '^\| \*\*(.+?)\*\* \| (.+?) \|$' -and $currentCase.Count -gt 0) {
+            $key = $Matches[1]
+            $val = $Matches[2]
+            $currentCase[$key] = $val
+        }
+    }
+    if ($currentCase.Count -gt 0 -and $currentCase.ContainsKey('查询')) {
+        $tests += [PSCustomObject]$currentCase
+    }
+} else {
+    # ─── 对抗测试解析 ───
+    foreach ($line in Get-Content $testFile -Encoding UTF8) {
+        if ($line -match '^\| (\d+) \| (.+?) \| (.+?) \| (.+?) \| (.+?) \|') {
             $tests += [PSCustomObject]@{
-                Id = $parts[1]
-                Query = $parts[2]
-                Expected = $parts[3]
-                Concept = $parts[4]
-                Severity = $parts[5]
-                Pass = $null
+                Id       = $Matches[1]
+                Query    = $Matches[2]
+                Expected = $Matches[3]
+                Concept  = $Matches[4]
+                Severity = $Matches[5]
             }
         }
     }
 }
 
-Write-Host "共加载 $($tests.Count) 个对抗测试用例" -ForegroundColor Yellow
+Write-Host "共加载 $($tests.Count) 个测试用例" -ForegroundColor Yellow
 Write-Host ''
 
 if ($All) {
-    # 全量模式：列出所有用例
     Write-Host '--- 全量用例清单 ---' -ForegroundColor Cyan
     foreach ($t in $tests) {
-        $sevColor = if ($t.Severity -match '高') { 'Red' } elseif ($t.Severity -match '中') { 'Yellow' } else { 'Green' }
-        Write-Host "[#$($t.Id)] $($t.Query)" -ForegroundColor $sevColor
-        Write-Host "      预期: $($t.Expected)"
-        Write-Host "      概念: $($t.Concept)"
+        $sev = if ($Positive) { $t.'严重程度' } else { $t.Severity }
+        $sevColor = if ($sev -match '高') { 'Red' } elseif ($sev -match '中') { 'Yellow' } else { 'Green' }
+        if ($Positive) {
+            Write-Host "[#$($t.Id)] $($t.Title)" -ForegroundColor $sevColor
+            Write-Host "      查询: $($t.查询)"
+            Write-Host "      法条: $($t.'预期法条')" -ForegroundColor DarkGray
+            Write-Host "      红线: $($t.红线)" -ForegroundColor Red
+        } else {
+            Write-Host "[#$($t.Id)] $($t.Query)" -ForegroundColor $sevColor
+            Write-Host "      预期: $($t.Expected)"
+            Write-Host "      概念: $($t.Concept)"
+        }
         Write-Host ''
     }
     Write-Host '--- 用例结束 ---' -ForegroundColor Cyan
     Write-Host ''
     Write-Host '在 Codex Desktop 中逐条输入以上查询进行测试。'
-    Write-Host '通过后标记为 PASS，失败标记为 FAIL。'
 } else {
-    # 默认交互模式
-    Write-Host '交互模式：逐条显示测试用例。按 Enter 查看下一条。' -ForegroundColor Yellow
-    Write-Host '在 Codex Desktop 中输入查询，观察护栏是否触发。' -ForegroundColor Yellow
+    Write-Host '交互模式：按 Enter 查看下一条。' -ForegroundColor Yellow
     Write-Host ''
-    
-    $passed = 0
-    $failed = 0
+    $passed = 0; $failed = 0
     foreach ($t in $tests) {
-        $sevColor = if ($t.Severity -match '高') { 'Red' } elseif ($t.Severity -match '中') { 'Yellow' } else { 'Green' }
-        
+        $sev = if ($Positive) { $t.'严重程度' } else { $t.Severity }
+        $sevColor = if ($sev -match '高') { 'Red' } elseif ($sev -match '中') { 'Yellow' } else { 'Green' }
         Write-Host "========== 测试 #$($t.Id) ==========" -ForegroundColor Cyan
-        Write-Host "查询:     " -NoNewline; Write-Host $t.Query -ForegroundColor $sevColor
-        Write-Host "预期行为: $($t.Expected)" -ForegroundColor Green
-        Write-Host "阻断概念: $($t.Concept)"
-        Write-Host "严重程度: $($t.Severity)" -ForegroundColor $sevColor
-        Write-Host ''
-        Write-Host '请在 Codex Desktop 中输入上述查询，然后回来报告结果。' -ForegroundColor Yellow
-        Write-Host ''
-        
-        $result = Read-Host -Prompt '测试通过？(y=通过 / n=失败 / s=跳过)'
-        switch ($result.ToLower()) {
-            'y' { $t.Pass = $true; $passed++ }
-            'n' { $t.Pass = $false; $failed++ }
-            default { $t.Pass = $null }
+        if ($Positive) {
+            Write-Host "标题:   " -NoNewline; Write-Host $t.Title -ForegroundColor $sevColor
+            Write-Host "查询:   $($t.查询)"
+            Write-Host "预期法条:" -ForegroundColor Green; Write-Host "  $($t.'预期法条')" -ForegroundColor DarkGray
+            Write-Host "预期结论:" -ForegroundColor Green; Write-Host "  $($t.'预期结论')" -ForegroundColor DarkGray
+            Write-Host "红线:   $($t.红线)" -ForegroundColor Red
+        } else {
+            Write-Host "查询:   " -NoNewline; Write-Host $t.Query -ForegroundColor $sevColor
+            Write-Host "预期:   $($t.Expected)" -ForegroundColor Green
+            Write-Host "概念:   $($t.Concept)"
         }
         Write-Host ''
+        Write-Host '请在 Codex Desktop 中输入查询，然后回来报告结果。' -ForegroundColor Yellow
+        Write-Host ''
+        $result = Read-Host -Prompt '测试通过？(y=通过 / n=失败 / s=跳过)'
+        switch ($result.ToLower()) { 'y' { $passed++ } 'n' { $failed++ } }
+        Write-Host ''
     }
-    
-    # 汇总
     Write-Host '========================================' -ForegroundColor Cyan
     Write-Host '  测试完成' -ForegroundColor Cyan
     Write-Host '========================================' -ForegroundColor Cyan
-    Write-Host "通过: $passed / 失败: $failed / 跳过: $($tests.Count - $passed - $failed)"
-    if ($failed -gt 0) {
-        Write-Host "存在未通过的测试用例，建议修复护栏层。" -ForegroundColor Red
-        exit 1
-    } elseif ($passed -eq $tests.Count) {
-        Write-Host "全部通过！护栏层运作正常。" -ForegroundColor Green
+    $total = $tests.Count
+    $skipped = $total - $passed - $failed
+    Write-Host "通过: $passed / 失败: $failed / 跳过: $skipped"
+    if ($Positive) {
+        Write-Host "满分: $($total * 10) 分（每个用例 10 分制）" -ForegroundColor DarkGray
     }
+    if ($failed -gt 0) { Write-Host "存在未通过项，建议修复。" -ForegroundColor Red; exit 1 }
+    elseif ($passed -eq $total) { Write-Host "全部通过！" -ForegroundColor Green }
 }
-
-# 将测试结果写回 adversarial-tests.md
-$newContent = @()
-$inTable = $false
-foreach ($line in Get-Content $testFile -Encoding UTF8) {
-    if ($line -match '^\| \d+ \|') {
-        $parts = $line.Split('|').Trim()
-        $id = $parts[1]
-        $test = $tests | Where-Object { $_.Id -eq $id }
-        if ($test -and $test.Pass -ne $null) {
-            $status = if ($test.Pass) { '✅ 通过' } else { '❌ 失败' }
-            $line = $line -replace '\| \| \|$', "| $status | |"
-        }
-        $newContent += $line
-    } else {
-        $newContent += $line
-    }
-}
-Set-Content -Path $testFile -Value $newContent -Encoding UTF8
