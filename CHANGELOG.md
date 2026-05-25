@@ -1,4 +1,10 @@
-﻿# 鏇存柊鏃ュ織
+﻿
+## v2.13.0 (2026-05-25)
+
+- 依赖自动安装链: install.ps1 自动拉取 core-codices + alignment + mcp-hub
+- judgment-predictor 可选安装
+- 五仓 README 统一重写 + 生态引用对齐
+# 鏇存柊鏃ュ織
 
 ## [鏈彂甯僝
 
@@ -162,3 +168,4 @@
 - 删除 docs/gjhcsjamin-adaptation-analysis.md（上游已移除）
 - 移除 @pkulaw/mcp-cli 监控（属 MCP 仓库范畴）
 - 全量重写 docs/ 文档体系（适配当前架构）
+
