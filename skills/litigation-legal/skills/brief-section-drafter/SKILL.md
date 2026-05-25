@@ -18,7 +18,7 @@ status: active
 > 1. 使用表格格式（当事人信息 + 诉讼请求 + 证据清单）
 > 2. 禁止美式 Pleading 叙述体（长段落背景陈述）
 > 3. 禁止翻译腔（Whereas / Hereby / In Witness Whereof）
-> 4. 先查 `element-style-pleading.md` 确认本案是否有对应最高法范本
+> 4. 先查 `spc-pleading-*.md（对应案由）` 确认本案是否有对应最高法范本
 > 5. 金额必须附计算公式（本金 + LPR×N倍×天数）
 
 1. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 案件理论、内部风格。
