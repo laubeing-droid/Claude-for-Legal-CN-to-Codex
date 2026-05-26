@@ -1,4 +1,4 @@
-﻿param([switch]$Update)
+param([switch]$Update)
 $ErrorActionPreference='Stop'
 $RepoRoot=Split-Path -Parent $PSScriptRoot
 $PatchDir="$RepoRoot/patches"
@@ -29,7 +29,7 @@ $lines[885..932] -join "`r`n" | Out-File "$PatchDir/guards/workflows.md" -Encodi
 $lines[933..961] -join "`r`n" | Out-File "$PatchDir/guards/blocking-list.md" -Encoding UTF8
 $lines[962..994] -join "`r`n" | Out-File "$PatchDir/guards/china-unique.md" -Encoding UTF8
 $lines[995..1094] -join "`r`n" | Out-File "$PatchDir/guards/appendix.md" -Encoding UTF8
-Write-Host "    guards/ 6 文件 ✅"
+Write-Host "    guards/ 全部文件 ✅"
 
 # Domain alignment (9 domain-specific + 3 general)
 $sections = @(
@@ -79,5 +79,5 @@ foreach ($d in @('law-student','legal-clinic','legal-builder-hub')) {
   $general | Out-File "$PatchDir/references/alignment/$d.md" -Encoding UTF8
 }
 
-Write-Host "    references/alignment/ 12 文件 ✅"
+Write-Host "    references/alignment/ 全部文件 ✅"
 Write-Host "快照已更新，已完成自动拆分。" -ForegroundColor Green

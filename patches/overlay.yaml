@@ -1,4 +1,4 @@
-﻿# Claude-for-Legal-CN-to-Codex — 修改声明（Overlay）
+# Claude-for-Legal-CN-to-Codex — 修改声明（Overlay）
 # 最后更新: 2026-05-25
 # 格式: +新增 ~修改 -删除
 
@@ -54,7 +54,7 @@ references:
   qulv_source: Daknniel-0881/qulv-china-legal-counsel-skill
   context_source: MAXXXXXLI/workbuddy-cn-legal-skills (14 个语境文件)
 connectors:
-  path: patches/connectors/ (12 文件)
+  path: patches/connectors/ (全部文件)
   managed_by: Codex-Claude-legal-cn-mcp-hub
   replacements: Ironclad→e签宝, DocuSign→法大大, iManage→飞书, Westlaw→北大法宝
 deployment:
