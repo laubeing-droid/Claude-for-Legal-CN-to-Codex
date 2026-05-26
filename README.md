@@ -1,60 +1,38 @@
-<!--
-version: 2.13.0
--->
+﻿# legal-cn
 
-# Codex-Claude-legal-cn-main
+> 中国法律 AI 技能集 · Codex Desktop / Claude Code / WorkBuddy / Trae 四平台通用
 
-> 中国法律 AI 技能集 — skills/ 下全部子技能 · Codex Desktop / Claude Code 双平台
+覆盖商事合同、诉讼仲裁、劳动用工、数据合规、知识产权等多个法律领域的 AI 编程技能。
+从法条引用到工作流指令、从 MCP 连接到护栏阻断，逐层适配中国法律体系。
 
-覆盖商事合同、诉讼仲裁、劳动用工、数据合规、知识产权等 全部法律领域（见 skills/ 目录） + 独立执业技能集。从法条引用到工作流指令、从 MCP 连接到护栏阻断，逐层适配中国法律体系。
+## 平台支持
+
+| 平台 | 安装方式 |
+|:-----|:-----|
+| **Codex Desktop** | `.\install.ps1` → 自动部署到 `~/.codex/skills/` |
+| **Claude Code** | `.\install.ps1` → 自动部署到 `~/.claude/plugins/` |
+| **WorkBuddy** | `.\install.ps1` → 自动部署 + 生成 ZIP 包到 `~/.workbuddy/skills/` |
+| **Trae** | `.\install.ps1` → 自动部署到 `~/.trae/skills/` |
 
 ## 快速开始
 
 ```powershell
-git clone https://github.com/laubeing-droid/codex-claude-legal-cn-main.git
-cd codex-claude-legal-cn-main
+git clone https://github.com/laubeing-droid/legal-cn-main.git
+cd legal-cn-main
 .\install.ps1
 ```
 
-重启 Codex Desktop / Claude Code 即可使用。安装脚本自动拉取所有必需依赖。
+安装脚本自动执行环境校验 + 安装全部依赖 + 部署到所有已检测到的平台。
 
-## 功能全景
-
-| 维度 | 说明 |
-|:-----|:------|
-| **法律领域** | 全部（商事合同 / 诉讼仲裁 / 劳动用工 / 数据合规 / 公司交易 / 知识产权 / 产品合规 / 监管合规 / AI 治理 / 法学教育 / 法律援助 / 技能构建器） |
-| **子技能** | 150+（审查合同、起草律师函、分析管辖权、评估合规风险等） |
-| **护栏阻断** | 22 项美式法律概念强制拦截 + 中国法域隔离 |
-| **MCP 集成** | 元典智库、北大法宝、飞书工作流 |
-| **法条检索** | 162 部法律全文 JSON（通过 core-codices submodule） |
-
-## 安装链路
-
-运行 `install.ps1` 自动安装：
-- **[必需]** `codex-claude-legal-cn-core-codices` — 162部法律全文JSON
-- **[必需]** `PRC-US-Legal-Semantic-Alignment-Framework` — 中美法律语义对齐
-- **[必需]** `codex-claude-legal-cn-mcp-hub` — MCP 连接器（Quick 模式）
-- **[可选]** `codex-claude-legal-cn-judgment-predictor` — AI 裁判预测
-
-所有依赖安装到同级目录，互不冲突。
-
-## 配套项目
+## 生态项目
 
 | 仓库 | 说明 |
-|------|------|
-| [core-codices](https://github.com/laubeing-droid/codex-claude-legal-cn-core-codices) | 法律数据库 — 162 部法律全文 JSON |
-| [mcp-hub](https://github.com/laubeing-droid/codex-claude-legal-cn-mcp-hub) | MCP 连接器中心 — 元典/北大法宝/飞书 |
-| [judgment-predictor](https://github.com/laubeing-droid/codex-claude-legal-cn-judgment-predictor) | 裁判预测框架 |
+|:-----|:-----|
+| [legal-cn-mcp-hub](https://github.com/laubeing-droid/legal-cn-mcp-hub) | MCP 连接器中心（法规库/案例库/元典/北大法宝/飞书） |
+| [legal-cn-core-codices](https://github.com/laubeing-droid/legal-cn-core-codices) | 中国法律数据库（法律全文 + 司法解释 JSON） |
+| [legal-cn-judgment-predictor](https://github.com/laubeing-droid/legal-cn-judgment-predictor) | 裁判预测框架 |
 | [alignment-framework](https://github.com/laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework) | 中美法律语义对齐框架 |
 
-## 上游来源
+## 开发准则
 
-基于以下上游项目整合与适配：
-- Anthropic [claude-for-legal](https://github.com/anthropics/claude-for-legal)
-- [claude-for-legal-ZH](https://github.com/zhou210712/claude-for-legal-ZH)
-- [solo-law-firm-agents](https://github.com/saysoph/solo-law-firm-agents)
-- [workbuddy-cn-legal-skills](https://github.com/MAXXXXXLI/workbuddy-cn-legal-skills)
-
-## 许可证
-
-MIT
+参见 [AGENTS.md](AGENTS.md) — AI Agent 自动加载并强制执行。

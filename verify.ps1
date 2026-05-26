@@ -1,6 +1,6 @@
-﻿<#
+<#
 .SYNOPSIS
-  验证 Claude for Legal CN to Codex 的安装状态、护栏效果、文件完整性与 MCP 可达性
+  验证 legal-cn 的安装状态、护栏效果、文件完整性与 MCP 可达性
 .DESCRIPTION
   默认：检查技能目录 + 护栏层 + 文件哈希 + MCP 连接器
   -Benchmark：加载对抗测试用例
@@ -56,7 +56,7 @@ if ($Quick) {
 # ============================================================
 # 1. 技能目录检查
 # ============================================================
-Write-Host '=== Claude for Legal CN to Codex 完整性验证 ===' -ForegroundColor Cyan
+Write-Host '=== legal-cn 完整性验证 ===' -ForegroundColor Cyan
 Write-Host ''
 
 $domains = @(

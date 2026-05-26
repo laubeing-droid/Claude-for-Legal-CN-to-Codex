@@ -1,6 +1,6 @@
 {
   "meta": {
-    "project": "Claude-for-Legal-CN-to-Codex",
+    "project": "legal-cn-main",
     "format_version": "1.0",
     "description": "中国行政监管合规语义树 — 覆盖网信/数据跨境/生成式AI/平台治理/算法备案。面向企业合规实务，每项规则 = 触发条件→合规义务→操作步骤→罚则。",
     "last_updated": "2026-05-25",

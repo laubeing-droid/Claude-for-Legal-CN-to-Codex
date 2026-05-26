@@ -13,7 +13,7 @@ status: active
 ## 一、项目架构速览
 
 ```
-Claude-for-Legal-CN-to-Codex/
+legal-cn-main/
 ├── skills/                  # skills/ 目录下全部领域 + solo-law-firm
 │   ├── commercial-legal/    # 每个领域 = claude-for-legal 结构
 │   │   ├── CLAUDE.md        # 领域级系统指令（含护栏注入）

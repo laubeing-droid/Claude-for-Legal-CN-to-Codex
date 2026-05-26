@@ -1,4 +1,4 @@
-﻿name: Upstream Monitor
+name: Upstream Monitor
 
 on:
   schedule:
@@ -46,7 +46,7 @@ jobs:
           check_repo "中文汉化版" "zhou210712/claude-for-legal-ZH"
           check_repo "solo-law-firm 独立执业技能" "saysoph/solo-law-firm-agents"
           check_repo "MAXXXXXLI WorkBuddy 中国法版" "MAXXXXXLI/workbuddy-cn-legal-skills"
-          check_repo "core-codices 本家法律库" "laubeing-droid/codex-claude-legal-cn-core-codices"
+          check_repo "core-codices 本家法律库" "laubeing-droid/legal-cn-core-codices"
 
           echo "report=$REPORT" >> $GITHUB_OUTPUT
           echo "changed=$CHANGED" >> $GITHUB_OUTPUT
@@ -84,7 +84,7 @@ jobs:
         run: |
           CACHE_FILE=".upstream-last-check"
           > "$CACHE_FILE"
-          for repo in anthropics/claude-for-legal zhou210712/claude-for-legal-ZH MAXXXXXLI/workbuddy-cn-legal-skills saysoph/solo-law-firm-agents laubeing-droid/codex-claude-legal-cn-core-codices; do
+          for repo in anthropics/claude-for-legal zhou210712/claude-for-legal-ZH MAXXXXXLI/workbuddy-cn-legal-skills saysoph/solo-law-firm-agents laubeing-droid/legal-cn-core-codices; do
             sha=$(curl -s "https://api.github.com/repos/$repo/commits?per_page=1" | jq -r '.[0].sha // ""')
             if [ -n "$sha" ]; then
               echo "$repo=$sha" >> "$CACHE_FILE"

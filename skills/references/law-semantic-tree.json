@@ -1,6 +1,6 @@
 {
   "meta": {
-    "project": "Claude-for-Legal-CN-to-Codex",
+    "project": "legal-cn-main",
     "format_version": "1.0",
     "description": "中国法律语义树 — 10部核心法律 + 2部新增(消保条例+合同监管办法)。法条 → 构成要件 → 法律效果。",
     "last_updated": "2026-05-25",

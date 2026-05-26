@@ -1,6 +1,6 @@
 {
   "meta": {
-    "project": "Claude-for-Legal-CN-to-Codex",
+    "project": "legal-cn-main",
     "format_version": "1.0",
     "description": "最高人民法院司法解释·指导性案例·裁判规则层。与 law-semantic-tree.json 互补——后者是法条原文结构，此层是司法适用规则。",
     "last_updated": "2026-05-25",

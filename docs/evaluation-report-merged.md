@@ -4,7 +4,7 @@ module: docs
 status: active
 -->
 
-# Claude-for-Legal-CN-to-Codex — 项目双审评估报告
+# legal-cn-main — 项目双审评估报告
 
 > 上篇：项目自述与代理词（本仓库提交给外部 LLM 的评估材料）
 > 下篇：外部 LLM 独立评估意见
@@ -14,7 +14,7 @@ status: active
 
 # 上篇 · 项目自述与代理词
 
-﻿# Claude-for-Legal-CN-to-Codex — 项目评估代理词
+﻿# legal-cn-main — 项目评估代理词
 
 > 本文档是给其他 LLM 评估本仓库的输入材料。请阅读后对项目进行全面评估，指出改进方向。
 
@@ -63,7 +63,7 @@ status: active
 | 护栏文件 | 8 个自研 |
 | 概念映射 | 12 领域一对一映射 + alignment 子目录 |
 | diff-tool | 4 路独立比对脚本 |
-| MCP 连接器 | 由独立仓库管理（Codex-Claude-legal-cn-mcp-hub） |
+| MCP 连接器 | 由独立仓库管理（legal-cn-mcp-hub） |
 | 上游监控 | GitHub Actions 自动 Issue + 参考窗口模式 |
 
 ---

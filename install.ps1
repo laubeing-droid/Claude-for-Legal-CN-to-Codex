@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  一键安装 Claude for Legal CN to Codex
+  一键安装 legal-cn
 .DESCRIPTION
   自动安装必需依赖（core-codices + alignment-framework + mcp-hub），
   可选安装 judgment-predictor，然后部署技能到 ~/.codex/skills/。
@@ -30,7 +30,7 @@ if (Test-Path $envCheckScript) {
     Write-Host "  [!] env-check.ps1 未找到，跳过环境校验" -ForegroundColor DarkYellow
 }
 Write-Host ""
-Write-Host "=== Claude for Legal CN to Codex 安装 ===" -ForegroundColor Green
+Write-Host "=== legal-cn 安装 ===" -ForegroundColor Green
 Write-Host ""
 
 # =========================================================
@@ -54,22 +54,22 @@ function Install-Required {
 
 # 三项必需
 Install-Required -Name "core-codices (162部法律全文JSON)" `
-    -RepoUrl "https://github.com/laubeing-droid/codex-claude-legal-cn-core-codices.git" `
-    -DirName "codex-claude-legal-cn-core-codices"
+    -RepoUrl "https://github.com/laubeing-droid/legal-cn-core-codices.git" `
+    -DirName "legal-cn-core-codices"
 
 Install-Required -Name "PRC-US-Legal-Semantic-Alignment-Framework (中美法律对齐)" `
     -RepoUrl "https://github.com/laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework.git" `
     -DirName "PRC-US-Legal-Semantic-Alignment-Framework"
 
-Install-Required -Name "codex-claude-legal-cn-mcp-hub (MCP连接器)" `
-    -RepoUrl "https://github.com/laubeing-droid/codex-claude-legal-cn-mcp-hub.git" `
-    -DirName "codex-claude-legal-cn-mcp-hub"
+Install-Required -Name "legal-cn-mcp-hub (MCP连接器)" `
+    -RepoUrl "https://github.com/laubeing-droid/legal-cn-mcp-hub.git" `
+    -DirName "legal-cn-mcp-hub"
 
 # =========================================================
 # [0b] 可选 — judgment-predictor
 # =========================================================
 Write-Host ""
-$judgmentDir = Join-Path $ParentDir "Codex-Legal-CN-Judgment-Predictor"
+$judgmentDir = Join-Path $ParentDir "legal-cn-judgment-predictor"
 if (Test-Path $judgmentDir) {
     Write-Host "  [OK] judgment-predictor 已存在" -ForegroundColor Green
 } else {
@@ -77,7 +77,7 @@ if (Test-Path $judgmentDir) {
     if ($choice -eq '' -or $choice -eq 'y' -or $choice -eq 'Y') {
         Write-Host "  [安装] judgment-predictor -> $judgmentDir" -ForegroundColor Yellow
         Push-Location $ParentDir
-        git clone --depth 1 https://github.com/laubeing-droid/Codex-Legal-CN-Judgment-Predictor.git Codex-Legal-CN-Judgment-Predictor 2>&1 | Out-Null
+        git clone --depth 1 https://github.com/laubeing-droid/legal-cn-judgment-predictor.git legal-cn-judgment-predictor 2>&1 | Out-Null
         Pop-Location
         if (Test-Path "$judgmentDir\install.ps1") {
             Write-Host "  运行 judgment-predictor 安装..." -ForegroundColor Yellow
@@ -151,7 +151,7 @@ if (Test-Path $soloSrc) {
 # [2/3] MCP 连接器安装
 # =========================================================
 Write-Host "[2/3] 安装 MCP 连接器..." -ForegroundColor Yellow
-$McpDir = Join-Path $ParentDir "codex-claude-legal-cn-mcp-hub"
+$McpDir = Join-Path $ParentDir "legal-cn-mcp-hub"
 if (Test-Path "$McpDir\install.ps1") {
     Write-Host "  运行 MCP 连接器安装..."
     & "$McpDir\install.ps1" -Quick
@@ -194,10 +194,10 @@ Write-Host "========================================" -ForegroundColor Green
 Write-Host "  安装完成！重启 Codex Desktop 使技能生效。" -ForegroundColor Green
 Write-Host ""
 Write-Host "  已安装:" -ForegroundColor Cyan
-Write-Host "    [必需] codex-claude-legal-cn-core-codices    — 162部法律全文JSON" -ForegroundColor White
+Write-Host "    [必需] legal-cn-core-codices    — 162部法律全文JSON" -ForegroundColor White
 Write-Host "    [必需] PRC-US-Legal-Semantic-Alignment-Framework — 中美法律语义对齐" -ForegroundColor White
-Write-Host "    [必需] codex-claude-legal-cn-mcp-hub          — MCP连接器" -ForegroundColor White
+Write-Host "    [必需] legal-cn-mcp-hub          — MCP连接器" -ForegroundColor White
 if (Test-Path $judgmentDir) {
-    Write-Host "    [可选] Codex-Legal-CN-Judgment-Predictor     — AI裁判预测" -ForegroundColor White
+    Write-Host "    [可选] legal-cn-judgment-predictor     — AI裁判预测" -ForegroundColor White
 }
 Write-Host "========================================" -ForegroundColor Green

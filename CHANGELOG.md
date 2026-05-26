@@ -19,7 +19,7 @@
 - 鏂板 docs/skills-crosswalk.md 涓ゅ鎶€鑳藉鐓х储寮?
 ## [2.4.0] - 2026-05-23
 - 鏍规妧鑳介噸鍛藉悕锛歝odex-for-legal-cn -> claude-legal-cn
-- MCP 杩炴帴鍣ㄤ粨搴撻噸鍛藉悕锛歝odex-legal-mcp-connectors -> Codex-Claude-legal-cn-mcp-hub
+- MCP 杩炴帴鍣ㄤ粨搴撻噸鍛藉悕锛歝odex-legal-mcp-connectors -> legal-cn-mcp-hub
 - 鏇存柊鍏ㄩ儴鑴氭湰鍜屾枃妗ｄ腑鐨勫紩鐢?
 ## [2.3.0] - 2026-05-23
 - 鍏ㄩ儴 docs 浠庨浂閲嶅啓锛圧EADME/QUICKSTART/CHANGELOG + 6 绡囨枃妗ｏ級
@@ -28,7 +28,7 @@
 - 鍒犻櫎 .mcp.json 澶嶅埗琛岋紙Claude Code 鏍煎紡锛孋odex 涓嶈瘑鍒級
 
 ## [2.2.0] - 2026-05-23
-- GitHub 浠撳簱閲嶅懡鍚嶄负 Claude-for-Legal-CN-to-Codex
+- GitHub 浠撳簱閲嶅懡鍚嶄负 legal-cn-main
 - 鍏ㄩ儴鏂囨。鍜岃剼鏈樉绀哄悕绉扮粺涓€鏇存柊
 
 ## [2.1.0] - 2026-05-23

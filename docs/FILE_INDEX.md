@@ -1,10 +1,10 @@
-﻿<!--
+<!--
 version: 1.0.0
 module: docs
 status: active
 -->
 
-# Claude-for-Legal-CN-to-Codex — 全局文件索引
+# legal-cn-main — 全局文件索引
 
 > 主技能仓库
 > 自动生成于 2026-05-25

@@ -90,7 +90,7 @@ status: active
 | 护栏层（阻断清单/元规则/香港桥梁/核心原则） | `patches/guards/` |
 | 4 路 diff-tool 参考窗口脚本 | `patches/diff-tool-*.ps1` |
 | 5 个全量重写中国法子技能 | `skills/*/skills/` |
-| MCP 连接器独立仓库 | https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub |
+| MCP 连接器独立仓库 | https://github.com/laubeing-droid/legal-cn-mcp-hub |
 | 概念阻断清单（全部条目 → 29 条扩展） | `skills/references/22-blocked-concepts.md` |
 | 全部领域推理模板（自研） | `patches/workflows/*/CLAUDE.md` 注入段落 |
 | 声明式 override 配置 | `patches/overlay.yaml` |
@@ -108,4 +108,4 @@ status: active
 - MAXXXXXLI/workbuddy-cn-legal-skills → 开源（无显式）
 - 中国法律官方文本 → 开源（无显式）
 
-> 如本声明有遗漏或错误，请提交 Issue：https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex/issues
+> 如本声明有遗漏或错误，请提交 Issue：https://github.com/laubeing-droid/legal-cn-main/issues

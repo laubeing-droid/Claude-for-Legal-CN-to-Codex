@@ -92,33 +92,33 @@ foreach ($p in $active) {
 
 ## 三、仓库特定准则
 
-### 3.1 codex-claude-legal-cn-main（技能主仓库）
+### 3.1 legal-cn-main（技能主仓库）
 
 - **skills/ 目录下全部子技能**的 SKILL.md 必须声明 `platforms` 字段
 - `install.ps1` 必须部署到全部四个平台的技能目录
 - 新增技能时同时生成四平台配置
 - 护栏/阻断规则（blocking-list.md 中全部条目，数量会持续增长）四平台通用，但需确认 WorkBuddy 和 Trae 的加载路径
 
-### 3.2 codex-claude-legal-cn-mcp-hub（MCP 连接器）
+### 3.2 legal-cn-legal-cn-mcp-hub（MCP 连接器）
 
 - `detect.ps1` 必须检测全部四个平台
 - 每个连接器的 `install-*` 函数必须输出四种 MCP 配置
 - `verify.ps1` 必须验证四种平台配置的正确性
 - Python MCP Server 代码不受影响（平台无关），仅配置生成需要四路输出
 
-### 3.3 codex-claude-legal-cn-core-codices（法律数据库）
+### 3.3 legal-cn-core-codices（法律数据库）
 
 - 本仓库是数据层，平台无关
 - 但 `install.ps1` 必须确保数据 JSON 能被所有四个平台访问
 - 符号链接策略：在四个平台的技能目录下创建指向数据的符号链接
 
-### 3.4 PRC-US-Legal-Semantic-Alignment-Framework（语义对齐）
+### 3.4 alignment-framework（语义对齐）
 
 - 框架文档是平台无关的纯文本
 - 但 `install.ps1` 必须将框架注入到所有四个平台的 System Prompt / 知识库路径
 - 对齐映射表的 JSON 版本需放在可被四平台共同访问的位置
 
-### 3.5 codex-claude-legal-cn-judgment-predictor（裁判预测）
+### 3.5 legal-cn-judgment-predictor（裁判预测）
 
 - `SKILL.md` 的 `platforms` 字段必填
 - Prompt 文件（plaintiff/defendant/judge）平台无关
@@ -253,7 +253,7 @@ if (Test-Path $envCheck) {
 
 | Type | 用途 | 示例 |
 |:-----|:-----|:-----|
-| `feat` | 新功能/新技能 | `feat(mcp-hub): add Trae MCP config support` |
+| `feat` | 新功能/新技能 | `feat(legal-cn-mcp-hub): add Trae MCP config support` |
 | `fix` | Bug 修复 | `fix(env-check): pydantic v1 detection false negative` |
 | `docs` | 文档变更 | `docs: update PLATFORM_SPEC.md with Trae path` |
 | `chore` | 构建/工具/依赖 | `chore: bump mcp from 1.0.0 to 1.1.0` |
@@ -266,7 +266,7 @@ if (Test-Path $envCheck) {
 
 | Scope | 含义 |
 |:-----|:-----|
-| `mcp-hub` | MCP 连接器中心 |
+| `legal-cn-mcp-hub` | MCP 连接器中心 |
 | `cn-main` | 法律技能主仓库 |
 | `jdp` | 裁判预测 |
 | `aln` | 中美法律对齐 |
@@ -342,10 +342,10 @@ node_modules/
 
 | 仓库 | 提交前必测 | 测试方式 |
 |:-----|:-----|:-----|
-| mcp-hub | MCP Server 启动 | `python servers/*/scripts/server.py --help` |
-| mcp-hub | 配置生成 | `.\verify.ps1` |
-| CN main | 技能加载 | Codex Desktop 中验证 |
-| CN main | 护栏有效 | `.\benchmark\run-benchmark.ps1` |
+| legal-cn-mcp-hub | MCP Server 启动 | `python servers/*/scripts/server.py --help` |
+| legal-cn-mcp-hub | 配置生成 | `.\verify.ps1` |
+| legal-cn-main | 技能加载 | Codex Desktop 中验证 |
+| legal-cn-main | 护栏有效 | `.\benchmark\run-benchmark.ps1` |
 | JDP | Prompt 有效 | 模拟输入测试 |
 | codices | JSON 格式 | `python -m json.tool` 校验 |
 | ALN | 阻断清单完整 | blocking-list.md 中全部条目存在 |

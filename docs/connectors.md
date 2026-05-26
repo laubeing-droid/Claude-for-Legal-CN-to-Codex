@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 2.10.0
 module: docs
 status: active
@@ -9,7 +9,7 @@ status: active
 ## 为什么单独搞一个仓库？
 
 所有上游版本（zhou210712、gjhcsjamin）都把 MCP 配置硬编码在仓库里。  
-你做了一个**关键决策**：把它拆成独立仓库 `Codex-Claude-legal-cn-mcp-hub`。
+你做了一个**关键决策**：把它拆成独立仓库 `legal-cn-mcp-hub`。
 
 好处：
 - 凭证信息不会混入主仓库

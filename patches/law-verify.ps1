@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
   法律断言全量验证引擎 — 四仓提取→联网核验→交互确认→自动更新
 .DESCRIPTION
@@ -13,7 +13,7 @@
 
 param(
     [string]$CNRoot = "$PSScriptRoot\..",       # CN 主仓库
-    [string]$JDPRoot = "D:\Codex-Legal-CN-Judgment-Predictor",
+    [string]$JDPRoot = "D:\legal-cn-judgment-predictor",
     [string]$MCPRoot = "$env:TEMP\mcp-hub",
     [string]$ALNRoot = "$env:TEMP\align-framework",
     [string]$OutputDir = "skills\references\verify",

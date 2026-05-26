@@ -20,8 +20,8 @@ status: active
 ## 安装
 
 ```powershell
-git clone https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex.git
-cd Claude-for-Legal-CN-to-Codex
+git clone https://github.com/laubeing-droid/legal-cn-main.git
+cd legal-cn-main
 .\install.ps1
 ```
 

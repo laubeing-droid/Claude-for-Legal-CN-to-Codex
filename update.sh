@@ -1,11 +1,11 @@
-﻿#!/usr/bin/env bash
-# update.sh — 更新 Claude for Legal CN to Codex (macOS / Linux)
+#!/usr/bin/env bash
+# update.sh — 更新 legal-cn (macOS / Linux)
 # 用法: bash update.sh
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 SKILLS_DIR="$HOME/.codex/skills"
-MCP_REPO="https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub.git"
+MCP_REPO="https://github.com/laubeing-droid/legal-cn-mcp-hub.git"
 GREEN='\033[0;32m'; YELLOW='\033[0;33m'; RED='\033[0;31m'; CYAN='\033[0;36m'; NC='\033[0m'
 
 echo -e "${GREEN}=== 更新 Codex 中国法律技能 ===${NC}\n"
@@ -103,4 +103,4 @@ else
 fi
 
 echo -e "\n${GREEN}更新完成。重启 Codex Desktop 使新内容生效。${NC}"
-echo -e "${CYAN}MCP 连接器由 Codex-Claude-legal-cn-mcp-hub 独立管理。${NC}"
+echo -e "${CYAN}MCP 连接器由 legal-cn-mcp-hub 独立管理。${NC}"

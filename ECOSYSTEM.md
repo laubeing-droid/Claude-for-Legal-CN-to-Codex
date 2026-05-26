@@ -32,9 +32,9 @@ status: active
 
 | 仓库 | 一句话 | 格式 | 规模 |
 |:--|:--|:--|--:|
-| **[CN](https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex)** | 法律技能主仓库——全部领域 + skills/ 下全部子技能 | SKILL.md + CLAUDE.md | ~数百个文件（持续增长） |
-| **[MCP](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub)** | MCP 连接器中心——把北大法宝/元典/飞书接到 Codex | PS1 + Bash + Python | ~数十个文件 |
-| **[JDP](https://github.com/laubeing-droid/Codex-Legal-CN-Judgment-Predictor)** | 裁判预测框架——三角色对抗辩论 → 判决预测 | SKILL.md + Prompt | ~数十个文件 |
+| **[CN](https://github.com/laubeing-droid/legal-cn-main)** | 法律技能主仓库——全部领域 + skills/ 下全部子技能 | SKILL.md + CLAUDE.md | ~数百个文件（持续增长） |
+| **[MCP](https://github.com/laubeing-droid/legal-cn-mcp-hub)** | MCP 连接器中心——把北大法宝/元典/飞书接到 Codex | PS1 + Bash + Python | ~数十个文件 |
+| **[JDP](https://github.com/laubeing-droid/legal-cn-judgment-predictor)** | 裁判预测框架——三角色对抗辩论 → 判决预测 | SKILL.md + Prompt | ~数十个文件 |
 | **[ALN](https://github.com/laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework)** | 中美概念对齐——美国法概念 → 中国法对应 | 映射表 + 护栏 | ~数个文件 |
 
 ---

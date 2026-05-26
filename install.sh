@@ -1,14 +1,14 @@
-﻿#!/usr/bin/env bash
-# install.sh — 一键安装 Claude for Legal CN to Codex (macOS / Linux)
+#!/usr/bin/env bash
+# install.sh — 一键安装 legal-cn (macOS / Linux)
 # 用法: bash install.sh
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 SKILLS_DIR="$HOME/.codex/skills"
-MCP_REPO="https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub.git"
+MCP_REPO="https://github.com/laubeing-droid/legal-cn-mcp-hub.git"
 GREEN='\033[0;32m'; YELLOW='\033[0;33m'; RED='\033[0;31m'; CYAN='\033[0;36m'; NC='\033[0m'
 
-echo -e "${GREEN}=== Claude for Legal CN to Codex 安装 ===${NC}\n"
+echo -e "${GREEN}=== legal-cn 安装 ===${NC}\n"
 
 DOMAINS=(
     commercial-legal privacy-legal product-legal corporate-legal
@@ -102,5 +102,5 @@ else
 fi
 
 echo -e "\n${GREEN}安装完成！重启 Codex Desktop 使技能生效。${NC}"
-echo -e "${CYAN}MCP 连接器由 Codex-Claude-legal-cn-mcp-hub 管理。${NC}"
+echo -e "${CYAN}MCP 连接器由 legal-cn-mcp-hub 管理。${NC}"
 echo -e "${CYAN}  配置指南: docs/connectors.md${NC}"

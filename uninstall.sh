@@ -1,12 +1,12 @@
-﻿#!/usr/bin/env bash
-# uninstall.sh — 卸载 Claude for Legal CN to Codex (macOS / Linux)
+#!/usr/bin/env bash
+# uninstall.sh — 卸载 legal-cn (macOS / Linux)
 # 用法: bash uninstall.sh
 set -euo pipefail
 
 SKILLS_DIR="$HOME/.codex/skills"
 GREEN='\033[0;32m'; YELLOW='\033[0;33m'; NC='\033[0m'
 
-echo -e "${YELLOW}=== 卸载 Claude for Legal CN to Codex ===${NC}\n"
+echo -e "${YELLOW}=== 卸载 legal-cn ===${NC}\n"
 
 DOMAINS=(
     claude-legal-cn
