@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 2.10.0
 module: docs
 status: active
@@ -38,7 +38,7 @@ workbuddy-cn-legal-skills/
 ├── LICENSE                  Apache 2.0（保留原版）
 ├── NOTICE                   改编来源说明（1241 字节）
 ├── docs/images/import-flow/ 导入教程截图（2 张 PNG）
-└── 可导入技能包/             151 个 ZIP 技能包
+└── 可导入技能包/             全部 ZIP 技能包
     ├── 商事合同法务-保密协议审查.zip
     ├── 商事合同法务-供应商合同审查.zip
     ├── 争议解决法务-事实时间线.zip
@@ -190,7 +190,7 @@ MAXXXXXLI 是唯一一个把 anthropic 的法律工作流带到**非 Claude/Code
 
 ### 6.3 唯一按技能粒度打包
 
-每个技能一个 ZIP，独立导入、独立使用。相比 anthropic 的 12 个 plugin（每个含多个技能），MAXXXXXLI 的 151 个 ZIP 粒度更细。
+每个技能一个 ZIP，独立导入、独立使用。相比 anthropic 的全部 plugin（每个含多个技能），MAXXXXXLI 的全部 ZIP 粒度更细。
 
 ### 6.4 保留了完整的原文质量
 

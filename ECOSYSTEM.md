@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 2.10.0
 module: root
 status: active
@@ -32,7 +32,7 @@ status: active
 
 | 仓库 | 一句话 | 格式 | 规模 |
 |:--|:--|:--|--:|
-| **[CN](https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex)** | 法律技能主仓库——12 领域 + 150+ 子技能 | SKILL.md + CLAUDE.md | ~600 文件 |
+| **[CN](https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex)** | 法律技能主仓库——12 领域 + 150+ 子技能 | SKILL.md + CLAUDE.md | ~数百个文件（持续增长） |
 | **[MCP](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub)** | MCP 连接器中心——把北大法宝/元典/飞书接到 Codex | PS1 + Bash + Python | ~30 文件 |
 | **[JDP](https://github.com/laubeing-droid/Codex-Legal-CN-Judgment-Predictor)** | 裁判预测框架——三角色对抗辩论 → 判决预测 | SKILL.md + Prompt | ~20 文件 |
 | **[ALN](https://github.com/laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework)** | 中美概念对齐——美国法概念 → 中国法对应 | 映射表 + 护栏 | ~10 文件 |
@@ -47,7 +47,7 @@ CN 收到用户问题
     ├─ 需要查法条？ → MCP (元典智库 / 北大法宝 / 国家法规库)
     ├─ 出现美国法概念？ → ALN (22 阻断概念 + 12 领域映射)
     ├─ 需要判赔多少？ → JDP (裁判预测 / 金额区间)
-    └─ 本地知识库 → CN skills/references/ (语义树 + 司法解释 + 22 部 PDF)
+    └─ 本地知识库 → CN skills/references/ (语义树 + 司法解释 + PDF 文件（持续增长）)
 ```
 
 ---
@@ -82,7 +82,7 @@ skills/
 ├── privacy-legal/          # 数据合规 — 9 子技能
 ├── product-legal/          # 产品合规 — 8 子技能
 ├── regulatory-legal/       # 监管合规 — 9 子技能
-├── solo-law-firm/          # 独立执业 — 8 科室 27 技能
+├── solo-law-firm/          # 独立执业 — skills/solo-law-firm/ 下全部技能
 ├── references/             # 共用参照：语义树 / 司法解释 / 护栏 / 输出标准
 └── knowledge-base/         # 法条知识库索引
 ```

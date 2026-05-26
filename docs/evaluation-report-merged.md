@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 2.10.0
 module: docs
 status: active
@@ -31,9 +31,9 @@ status: active
 ```
 ⑥ 上游监控层 — 4 路 diff-tool + GitHub Actions（参考窗口模式，不自动合并）
 ⑤ 护栏层     — 阻断清单/元规则/香港桥梁/核心原则（8 个自研文件）
-④ 概念对齐层 — 12 领域 × 中美法律概念一对一手动映射（自研）
+④ 概念对齐层 — 全部技能领域 × 中美法律概念手动映射（自研）
 ③ 法条层     — 22 部中国法律官方 PDF 全文（qulv 上游）
-② 内容层     — 150+ 子技能 + 12 领域 CLAUDE.md（上游中文化 + 本仓库重写）
+② 内容层     — skills/ 下全部子技能 + 全部领域 CLAUDE.md（上游中文化 + 本仓库重写）
 ① 部署层     — install/update/uninstall/verify 脚本（从本仓库直接部署）
 ```
 
@@ -236,7 +236,7 @@ status: active
 
 ### 4.1 最大技术债：补丁爆炸
 
-603 文件 + 215 patches 叠加式维护，时间久了会导致 patch 相互冲突、alignment 漂移、skill 失配、diff 审查成本暴涨。
+大量文件 + patches 叠加式维护，时间久了会导致 patch 相互冲突、alignment 漂移、skill 失配、diff 审查成本暴涨。
 
 > 建议：从"复制整个 skill"转向"声明式 override 架构"（skill virtualization）。
 

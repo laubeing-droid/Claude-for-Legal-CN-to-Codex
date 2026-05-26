@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 2.10.0
 module: root
 status: active
@@ -14,7 +14,7 @@ status: active
 
 ```
 Claude-for-Legal-CN-to-Codex/
-├── skills/                  # 12 领域 + solo-law-firm 技能
+├── skills/                  # skills/ 目录下全部领域 + solo-law-firm
 │   ├── commercial-legal/    # 每个领域 = claude-for-legal 结构
 │   │   ├── CLAUDE.md        # 领域级系统指令（含护栏注入）
 │   │   ├── skills/          # 子技能目录
