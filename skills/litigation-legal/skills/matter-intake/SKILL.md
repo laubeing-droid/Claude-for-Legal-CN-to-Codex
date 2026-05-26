@@ -1,6 +1,7 @@
-﻿---
+---
 name: matter-intake
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   登记新案件——统一问题涵盖标识信息、利益冲突检索、来源、
   风险分流、重要性、外聘律师、内部负责人、证据保全和关键日期；
   写入 matter.md 和 history.md 并在 _log.yaml 中追加结构化行。
@@ -10,6 +11,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /matter-intake
 

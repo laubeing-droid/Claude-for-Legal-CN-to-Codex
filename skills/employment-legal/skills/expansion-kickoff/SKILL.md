@@ -1,6 +1,7 @@
-﻿---
+---
 name: expansion-kickoff
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   启动在新省/直辖市或地域的用工扩张规划——收集基础信息，运行
   劳务派遣 vs 业务外包 vs 直接用工的用工结构框架分析，起草跨职能问题清单，
   浮现该地域的特定风险标记，并创建持续追踪文件。当有人说"我们要在[地域]招人"、
@@ -10,6 +11,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /expansion-kickoff
 

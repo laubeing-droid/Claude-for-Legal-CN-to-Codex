@@ -1,6 +1,7 @@
-﻿---
+---
 name: case-brief
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   按你偏好的格式撰写案例摘要。在训练模式下，要求学生在写摘要前先陈述裁判要旨。
   当用户说"摘要[案例]""[案例]的裁判要旨是什么""案例摘要"或粘贴案例文本时使用。
 argument-hint: "[案例名称或案号, 或粘贴案例文本]"
@@ -8,6 +9,7 @@ version: 2.10.0
 module: law-student
 status: active
 ---
+
 
 # /case-brief
 

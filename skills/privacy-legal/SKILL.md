@@ -1,11 +1,13 @@
-﻿---
+---
 name: privacy-legal
 description: 个人信息保护法合规、数据安全评估、隐私协议审查
+platforms: [codex, claude-code, workbuddy, trae]
 version: 2.10.0
 module: privacy-legal
 status: active
 triggers: 数据合规, 隐私, 个保法, PIA, GDPR, 数据出境
 ---
+
 
 # 数据合规与隐私 法务技能
 

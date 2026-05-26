@@ -1,6 +1,7 @@
-﻿---
+---
 name: international-expansion
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   Reference: implementation-planning framework for international hiring — EOR
   vs. entity decision framing, cross-functional triggers for tax/finance/HR,
   structured outside-counsel briefing requests, and a persistent gap tracker.
@@ -10,6 +11,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # International Expansion Skill
 

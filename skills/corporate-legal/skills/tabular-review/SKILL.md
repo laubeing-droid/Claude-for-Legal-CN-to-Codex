@@ -1,6 +1,7 @@
-﻿---
+---
 name: tabular-review
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   表格审查——一行一文件，一列一数据点，每个单元格标注来源。为并购尽调而构建
   （"审查这200份目标公司合同中的控制权变更、合同转让和重大不利变化条款"），
   但适用于任何需要产出电子表格的批量审查。当用户说"表格审查""审查网格""建一个网格"
@@ -10,6 +11,7 @@ version: 2.10.0
 module: corporate-legal
 status: active
 ---
+
 
 # /tabular-review
 

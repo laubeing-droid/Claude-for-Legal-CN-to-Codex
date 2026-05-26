@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   引导式自定义你的诉讼实践画像——修改一项而不重新运行整个首次配置访谈。
   调整执业角色、立场（原告/被告/混合）、风险校准、执业背景、
   文书风格、上报表联系人、严重性词汇或案件工作空间路径。
@@ -10,6 +11,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /customize
 

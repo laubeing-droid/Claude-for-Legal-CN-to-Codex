@@ -1,6 +1,7 @@
-﻿---
+---
 name: renewal-tracker
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   展示具有即将到来的取消截止日期的合同，在通知窗口关闭前发出预警，
   基于维护的续约登记册运行。当用户询问"什么即将续约""哪些续约即将到期"
   "我们是否错过了取消窗口""将此添加到续约追踪器"时使用，或按计划运行。
@@ -10,6 +11,7 @@ version: 2.10.0
 module: commercial-legal
 status: active
 ---
+
 
 # /renewal-tracker
 

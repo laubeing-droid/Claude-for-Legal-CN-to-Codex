@@ -1,6 +1,7 @@
-﻿---
+---
 name: chronology
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   从声明的文件来源和上传材料构建或更新大事记——提取带日期的事件、
   去重，并按案件理论标记重要性。当用户要求从证据材料或案件文件
   构建大事记或时间线，说"从材料中提取时间线"或"什么发生了什么时间"，
@@ -10,6 +11,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /chronology
 

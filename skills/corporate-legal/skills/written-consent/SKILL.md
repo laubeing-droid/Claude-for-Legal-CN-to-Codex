@@ -1,6 +1,7 @@
-﻿---
+---
 name: written-consent
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   以内部格式起草董事会或专门委员会的一致书面决议，从决议存储库中检索先例。
   处理多决议决议、董事冲突标记、适用法律下的通知要求以及签署人追踪，
   包含对重大单项行动的内置范围警示。当用户说"书面决议""一致决议"
@@ -10,6 +11,7 @@ version: 2.10.0
 module: corporate-legal
 status: active
 ---
+
 
 # /written-consent
 

@@ -1,6 +1,7 @@
-﻿---
+---
 name: ramp
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   学生学期导入——诊所程序、工具导览、真实案件之前的实践练习。
   读取指导老师在设置时上传的手册并以互动方式教学。
   当新诊所学生说"帮我导入""我是诊所新人""开始"，或每学期开始时使用；
@@ -10,6 +11,7 @@ version: 2.10.0
 module: legal-clinic
 status: active
 ---
+
 
 # /ramp
 

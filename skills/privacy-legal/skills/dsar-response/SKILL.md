@@ -1,6 +1,7 @@
-﻿---
+---
 name: dsar-response
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   处理个人信息主体权利请求（查阅、复制、删除、可携带、更正等）并起草回复——验证身份、
   按系统逐一定位数据、评估豁免、起草确认函和实质回复函。当收到个人信息主体权利请求，
   用户粘贴查阅/删除/可携带/更正请求，或说"来了个DSAR""查阅请求""删除权""有人想要
@@ -10,6 +11,7 @@ version: 2.10.0
 module: privacy-legal
 status: active
 ---
+
 
 # /dsar-response
 

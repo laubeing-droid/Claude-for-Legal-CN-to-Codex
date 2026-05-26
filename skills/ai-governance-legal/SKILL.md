@@ -1,11 +1,13 @@
-﻿---
+---
 name: ai-governance-legal
 description: 人工智能影响评估、AI政策起草、算法伦理审查
+platforms: [codex, claude-code, workbuddy, trae]
 version: 2.10.0
 module: ai-governance-legal
 status: active
 triggers: AI治理, AI合规, 算法审查, 算法备案, AI备案
 ---
+
 
 # AI治理 法务技能
 

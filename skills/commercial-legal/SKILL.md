@@ -1,11 +1,13 @@
-﻿---
+---
 name: commercial-legal
 description: 合同审查、交易文件起草、合同风险分层与业务化摘要
+platforms: [codex, claude-code, workbuddy, trae]
 version: 2.10.0
 module: commercial-legal
 status: active
 triggers: 审合同, 合同审查, 商铺租赁, 买卖, 加盟
 ---
+
 
 # 商事合同 法务技能
 

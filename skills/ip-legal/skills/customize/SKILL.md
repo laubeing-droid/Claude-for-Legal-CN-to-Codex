@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   Guided customization of your IP practice profile — change one thing without
   re-running the whole cold-start interview. Adjust risk posture, escalation
   contacts, portfolio scope, brand protection strategy, enforcement posture,
@@ -12,6 +13,7 @@ version: 2.10.0
 module: ip-legal
 status: active
 ---
+
 
 # /customize
 

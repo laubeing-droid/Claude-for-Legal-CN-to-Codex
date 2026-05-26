@@ -1,6 +1,7 @@
-﻿---
+---
 name: uninstall
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   卸载通过本中心安装的社区技能。删除文件前确认，拒绝触碰第一方插件技能，
   并记录每次操作。当用户想完全移除某个社区技能（"卸载[技能]"、
   "移除这个技能"）而非仅禁用它时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: legal-builder-hub
 status: active
 ---
+
 
 # /uninstall
 

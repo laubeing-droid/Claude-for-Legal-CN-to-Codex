@@ -1,6 +1,7 @@
-﻿---
+---
 name: gap-surfacer
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   参考资料：支持 /regulatory-legal:gaps 和 /regulatory-legal:comments
   的共享差距和意见征集跟踪框架。跟踪未关闭的政策差距及其整改状态，
   从 policy-diff 中获取差距，呈现开放和即将到期的事项，路由给负责人，
@@ -11,6 +12,7 @@ version: 2.10.0
 module: regulatory-legal
 status: active
 ---
+
 
 # 差距呈现
 

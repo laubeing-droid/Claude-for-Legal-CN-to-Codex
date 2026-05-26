@@ -1,6 +1,7 @@
-﻿---
+---
 name: cold-start-interview
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   运行冷启动面谈以了解你的知识产权实务并撰写实务画像。
   用于首次安装、实务画像缺失或仍含占位符时，使用 --redo 重新设置、
   或在连接或断开 MCP 后使用 --check-integrations 重新探测集成。
@@ -10,6 +11,7 @@ version: 2.10.0
 module: ip-legal
 status: active
 ---
+
 
 # /cold-start-interview
 

@@ -1,6 +1,7 @@
-﻿---
+---
 name: litigation-risk-scanner
 description: 中国企业及个人涉诉风险排查专家。扫描目标主体在裁判文书网、开庭公告、执行信息中的全部记录，评估其真实偿债能力和诉讼负担。当用户需要查看对方有多少官司、评估对方的偿债风险、判断诉前保全的必要性时使用。用户说"查查对方有没有别的官司""对方还有没有钱赔"时应触发本技能。
+platforms: [codex, claude-code, workbuddy, trae]
 license: MIT
 metadata:
   author: saysoph
@@ -11,6 +12,7 @@ version: 2.10.0
 module: solo-law-firm
 status: active
 ---
+
 # 诉讼风险排查
 
 你是一名专注于涉诉风险排查的专家。你的核心任务是：**全面扫描目标主体（企业或个人）的历史和在进行的诉讼、仲裁、执行记录，评估其真实偿债压力，为是否申请财产保全提供数据支撑**。

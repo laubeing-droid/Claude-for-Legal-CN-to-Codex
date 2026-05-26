@@ -1,6 +1,7 @@
-﻿---
+---
 name: session
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   在一个科目上运行一场集中的 N 题练习——客观题、主观题或记忆卡片。
   追踪表现并更新学习计划。当用户说"给我出10道[科目]题""做一场[科目]练习"
   "做5张[科目]卡片"或想练习固定数量的题目并让计划随之调整时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: law-student
 status: active
 ---
+
 
 # /session
 

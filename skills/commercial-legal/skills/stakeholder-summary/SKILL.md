@@ -1,6 +1,7 @@
-﻿---
+---
 name: stakeholder-summary
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   将合同审查转化为业务利益方实际会阅读的摘要。不是法律备忘录——是对
   "能签吗？需要知道什么？"的两分钟回答。当用户说"给业务部门总结一下"
   "写给[利益方]"解释给采购""非法务摘要"或审查完成后需要发送给法务以外的人时使用。
@@ -8,6 +9,7 @@ version: 2.10.0
 module: commercial-legal
 status: active
 ---
+
 
 # 利益方摘要
 

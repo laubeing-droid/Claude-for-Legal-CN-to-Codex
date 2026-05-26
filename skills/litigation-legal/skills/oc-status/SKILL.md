@@ -1,6 +1,7 @@
-﻿---
+---
 name: oc-status
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   为活跃案件组合中的各外聘律师生成每周状态请求邮件草稿——
   每案一份 markdown。当用户要求向外聘律师发状态请求、
   每周外聘律师检查或需要从案件组合日志中起草各案状态邮件时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /oc-status
 

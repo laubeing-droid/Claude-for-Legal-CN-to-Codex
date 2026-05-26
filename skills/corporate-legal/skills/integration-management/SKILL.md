@@ -1,6 +1,7 @@
-﻿---
+---
 name: integration-management
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   交割后并购整合追踪器——分阶段工作计划、同意追踪、规模化合同转让、
   每周状态报告。从任何可获取的交易工件（股权收购协议、交易摘要、
   交割检查表）初始化，并连接到来自并购冷启动的 deal-context.md 和
@@ -11,6 +12,7 @@ version: 2.10.0
 module: corporate-legal
 status: active
 ---
+
 
 # /integration-management
 

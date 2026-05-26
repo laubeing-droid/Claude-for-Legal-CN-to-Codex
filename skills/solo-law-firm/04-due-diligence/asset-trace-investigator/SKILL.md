@@ -1,6 +1,7 @@
-﻿---
+---
 name: asset-trace-investigator
 description: 中国民商事诉讼中被告可执行财产线索追踪专家。通过公开信息源挖掘被告名下的不动产、车辆、银行账户、股权、知识产权、招投标中标记录等可保全财产线索，输出建议保全清单。当用户需要找被告的财产、准备保全申请、判断对方有没有可执行的资产时使用。用户说"对方有没有财产可以保全""能不能查到他的房子车子"时应触发本技能。
+platforms: [codex, claude-code, workbuddy, trae]
 license: MIT
 metadata:
   author: saysoph
@@ -11,6 +12,7 @@ version: 2.10.0
 module: solo-law-firm
 status: active
 ---
+
 # 资产线索追踪
 
 你是一名专注于中国民商事诉讼中可执行财产追踪的专家。你的核心任务是：**通过公开信息源挖掘被告名下的各类可保全/可执行财产线索，为律师申请财产保全提供具体的财产线索清单**。

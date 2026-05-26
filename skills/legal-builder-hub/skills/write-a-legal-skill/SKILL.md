@@ -1,12 +1,14 @@
-﻿---
+---
 name: write-a-legal-skill
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   遵循 claude-for-legal-ZH 仓库的底层架构标准，指导并自动生成标准化、结构化的法律AI技能文件（SKILL.md），确保包含完整的 YAML frontmatter、精准的中国法条引用及标准化的代码块输出格式。
 argument-hint: 请提供你想创建的法律技能名称、所属 Plugin 领域、目标触发词以及核心的工作流步骤。
 version: 2.10.0
 module: legal-builder-hub
 status: active
 ---
+
 # /legal-builder-hub:write-a-legal-skill
 
 1. 引导用户明确新技能的定位、应用场景、目标插件及其中文释义。

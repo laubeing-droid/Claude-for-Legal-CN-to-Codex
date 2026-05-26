@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   引导式自定义你的劳动法实践画像——修改一项内容
   而不重新运行整个首次配置访谈。调整管辖范围、
   风险姿态、上报联系人、录用审查规则、解除审查规则、
@@ -12,6 +13,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /customize
 

@@ -1,6 +1,7 @@
-﻿---
+---
 name: investigation-summary
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   从调查备忘录起草面向特定受众的摘要——HR版本、管理层版本或外部律师版本。
   当调查备忘录需要传达给不应看到完整保密工作成果的受众时使用。
 argument-hint: "[调查事项名称] [受众：hr / 管理层 / 外部律师]"
@@ -8,6 +9,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /investigation-summary
 

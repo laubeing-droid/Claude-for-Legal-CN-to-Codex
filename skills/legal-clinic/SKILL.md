@@ -1,11 +1,13 @@
-﻿---
+---
 name: legal-clinic
 description: 法律援助接谈、客户信函、法律备忘录、检索路线图
+platforms: [codex, claude-code, workbuddy, trae]
 version: 2.10.0
 module: legal-clinic
 status: active
 triggers: 法律援助, 公益, 法律咨询
 ---
+
 
 # 法律诊所 法务技能
 

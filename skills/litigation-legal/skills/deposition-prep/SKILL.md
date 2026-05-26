@@ -1,6 +1,7 @@
-﻿---
+---
 name: 调查取证准备
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   为民事诉讼案件构建调查取证方案——含法院调查令申请、证据保全申请、证人询问提纲。
   当用户说"申请调查令"、"做证据保全"、"准备证人询问"或"制定取证方案"时使用。
 argument-hint: "[案件名称/案号]"
@@ -8,6 +9,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /调查取证准备
 

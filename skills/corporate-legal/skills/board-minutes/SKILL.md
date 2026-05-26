@@ -1,6 +1,7 @@
-﻿---
+---
 name: board-minutes
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   按你的内部格式起草董事会或专门委员会会议纪要。从你的日历中自动检测即将召开的
   董事会和委员会会议，询问议程及任何演示文稿或预读材料，并生成一份根据你的种子
   会议纪要学习的完整格式草案。同时处理替代会议的书面决议。触发："董事会纪要"
@@ -10,6 +11,7 @@ version: 2.10.0
 module: corporate-legal
 status: active
 ---
+
 
 # 董事会纪要
 

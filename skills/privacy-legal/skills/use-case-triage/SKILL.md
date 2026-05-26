@@ -1,6 +1,7 @@
-﻿---
+---
 name: use-case-triage
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   快速判断某项处理活动是否需要个人信息保护影响评估、是否触发个保法第55条法定评估义务，
   或可直接推进——同时排查个人信息处理规则冲突并路由至正确的下一步。当用户询问"这个需
   要做PIA吗""对这个功能做隐私分诊""对X做隐私检查""从隐私角度看这个行不行"，或描述一
@@ -10,6 +11,7 @@ version: 2.10.0
 module: privacy-legal
 status: active
 ---
+
 
 # /use-case-triage
 

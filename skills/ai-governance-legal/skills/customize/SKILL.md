@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   在不重新运行完整冷启动访谈的情况下定制AI治理实践配置。
   调整默认风险阈值、红线清单、审批流程或AI政策立场。
   适用于"把我们的AI风险偏好调整为更保守"、
@@ -11,6 +12,7 @@ version: 2.10.0
 module: ai-governance-legal
 status: active
 ---
+
 
 # /customize
 

@@ -1,6 +1,7 @@
-﻿---
+---
 name: skills-qa
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   对照法律技能设计框架评估一个技能——十三个设计参数（包括信任面、新鲜度、
   模式验证和冲突检测）、三种法律失败模式、以及三档裁决（就绪 / 某些关切 /
   重大关切）。在决定是否信任一个社区技能以安装前、向团队部署第一方技能前、
@@ -11,6 +12,7 @@ version: 2.10.0
 module: legal-builder-hub
 status: active
 ---
+
 
 # /skills-qa
 

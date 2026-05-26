@@ -1,6 +1,7 @@
-﻿---
+---
 name: aia-generation
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   为AI系统或模型生成风险定级和合规概要评估——涵盖数据、公平性、
   透明度、安全性和监管注册表。在用例分类为"附条件-高"后使用，
   产品或工程团队提出"我们需要做AI影响评估"时使用，或定期重新
@@ -10,6 +11,7 @@ version: 2.10.0
 module: ai-governance-legal
 status: active
 ---
+
 
 # /aia-generation
 

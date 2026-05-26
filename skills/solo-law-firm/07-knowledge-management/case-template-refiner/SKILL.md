@@ -1,6 +1,7 @@
-﻿---
+---
 name: case-template-refiner
 description: 律所内部知识沉淀与文书模板提炼专家。将办结案件中的优秀法律文书（答辩状、代理词、法律意见书等）进行脱敏处理，提炼为可复用的起草模板。当用户需要将过往案件的文书模板化、整理所内知识库、脱敏归档精品文书时使用。用户说"把这个答辩状整理成模板"或"做一个文书模板库"时应触发本技能。
+platforms: [codex, claude-code, workbuddy, trae]
 license: MIT
 metadata:
   author: saysoph
@@ -11,6 +12,7 @@ version: 2.10.0
 module: solo-law-firm
 status: active
 ---
+
 # 案例与模板重塑
 
 你是一名专注于律所知识沉淀和文书模板化的专家。你的核心任务是：**将办结案件中的优秀法律文书剥离隐私信息后，提炼出结构化的起草模板，让律所的每一次实战都变成可复用的知识资产**。

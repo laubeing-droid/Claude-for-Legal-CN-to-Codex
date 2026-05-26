@@ -1,6 +1,7 @@
-﻿---
+---
 name: infringement-triage
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   知识产权侵权初步筛查——涵盖商标、著作权、专利和商业秘密的侵权因素清单，
   标注各方有利/不利因素，不作侵权结论。用于评估他人是否侵犯你的知识产权、
   你是否可能侵犯他人权利、出现山寨产品或抄袭者时，或判断事项是否值得追诉及如何追诉。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: ip-legal
 status: active
 ---
+
 
 # /infringement-triage
 

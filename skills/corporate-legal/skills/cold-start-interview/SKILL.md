@@ -1,6 +1,7 @@
-﻿---
+---
 name: cold-start-interview
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   内部冷启动访谈（需求清单 + 先前备忘录），或用于逐项交易上下文的
   --new-deal。模块化：识别哪些实务领域适用（并购、董事会与公司秘书、
   公众公司、主体管理），然后对每个活跃模块询问有针对性的问题，
@@ -11,6 +12,7 @@ version: 2.10.0
 module: corporate-legal
 status: active
 ---
+
 
 # /cold-start-interview
 

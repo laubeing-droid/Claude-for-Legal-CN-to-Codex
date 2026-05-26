@@ -1,6 +1,7 @@
 ---
 name: cold-start-interview
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   冷启动访谈——连接您的上线追踪器、读取过往审查记录、学习您的风险校准。
   在全新安装、产品法务入职或插件配置含有占位符时使用。运行 --redo 重新访谈，
   或 --check-integrations 仅重新检测连接器。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: product-legal
 status: active
 ---
+
 
 # /cold-start-interview
 

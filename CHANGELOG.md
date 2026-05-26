@@ -1,4 +1,4 @@
-﻿
+
 ## v2.13.0 (2026-05-25)
 
 - 依赖自动安装链: install.ps1 自动拉取 core-codices + alignment + mcp-hub
@@ -97,12 +97,12 @@
 - law-citation-update.ps1 跨平台路径兼容
 
 ### 清理
-- 批量清除所有 qulv/Daknniel-0881 引用 (34 文件) → 统一改为"中国法律官方文本"
+- 批量清除所有 qulv/Daknniel-0881 引用 (多个文件) → 统一改为"中国法律官方文本"
 
 ## [2.11.0] - 2026-05-25
 ### 新增
 - **法条引用追踪系统**
-  - `law-citation-scan.ps1`: 全量扫描器（655文件→1118引用/141部法律）
+  - `law-citation-scan.ps1`: 全量扫描器（全部文件→1118引用/141部法律）
   - `law-citation-update.ps1`: 批量更新器（读映射→替换→重扫→报告）
   - `law-citation-index.json`: 当前引用索引（自动生成）
   - `law-version-map.json`: 版本映射表（`_effective` + `_applied` 状态追踪）

@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   Guided customization of your privacy practice profile — change one thing
   without re-running the whole cold-start interview. Adjust risk posture,
   escalation contacts, DPA playbook, privacy policy commitments, PIA house
@@ -12,6 +13,7 @@ version: 2.10.0
 module: privacy-legal
 status: active
 ---
+
 
 # /customize
 

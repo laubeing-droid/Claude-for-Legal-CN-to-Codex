@@ -1,6 +1,7 @@
-﻿---
+---
 name: deadlines
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   追踪案件截止日期——添加、跨案汇总报告、更新、完成、关闭。
   按可配置阈值预警（默认14/7/3/1天）；逾期项目保持标记直至解决。
   诊所工作量的运营记录。当学生或指导老师需要添加截止日期、查询本周
@@ -10,6 +11,7 @@ version: 2.10.0
 module: legal-clinic
 status: active
 ---
+
 
 # /deadlines
 

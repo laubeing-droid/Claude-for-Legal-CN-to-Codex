@@ -1,6 +1,7 @@
-﻿---
+---
 name: ai-inventory
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   按系统逐一定义AI角色、风险等级和监管义务——判定每个系统是
   AI服务提供者还是使用者，分配风险层级，并映射至中国AI法规
   的义务要求。适用于建立AI系统清单、进行年度AI审计、或新法
@@ -10,6 +11,7 @@ version: 2.10.0
 module: ai-governance-legal
 status: active
 ---
+
 
 # /ai-inventory
 

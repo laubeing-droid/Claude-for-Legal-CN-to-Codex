@@ -1,11 +1,13 @@
-﻿---
+---
 name: employment-legal
 description: 劳动合同、竞业限制、社保工伤、规章制度的起草与审查
+platforms: [codex, claude-code, workbuddy, trae]
 version: 2.10.0
 module: employment-legal
 status: active
 triggers: 劳动, 用工, 离职, 裁员, 竞业限制, 工伤
 ---
+
 
 # 劳动用工 法务技能
 

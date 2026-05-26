@@ -1,6 +1,7 @@
-﻿---
+---
 name: expansion-update
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   更新进行中的跨地域用工扩张项目状态——重新计算现已解封的项目，
   标记任何逾期的项目，浮现下一优先级。当自上次会话以来已有工作进展，
   且扩张追踪文件需要反映当前状态时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /expansion-update
 

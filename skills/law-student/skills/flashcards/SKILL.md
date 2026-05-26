@@ -1,6 +1,7 @@
-﻿---
+---
 name: flashcards
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   生成或训练法条概念记忆卡片——莱特纳式记忆桶，按科目的 Markdown 存储，
   带自我评估的训练模式。当用户说"训练记忆卡片""根据[材料]制作记忆卡片"
   "考我卡片"或想记忆法条时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: law-student
 status: active
 ---
+
 
 # /flashcards
 

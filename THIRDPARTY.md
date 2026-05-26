@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 2.10.0
 module: root
 status: active
@@ -33,7 +33,7 @@ status: active
 | **许可证** | Apache License 2.0 |
 | **引用方式** | 本地快照（非实时同步），通过 diff-tool 维护 |
 | **引用位置** | |
-| CLAUDE.md 中文化（12 领域） | `patches/workflows/` |
+| CLAUDE.md 中文化（全部领域） | `patches/workflows/` |
 | MCP 连接器配置 | `patches/connectors/` |
 | 子技能中文化 | `patches/sub-skills/` |
 | 中国法引用文件（民法典/公司法/劳动法等） | `patches/references/` |
@@ -62,7 +62,7 @@ status: active
 | **作者** | saysoph |
 | **许可证** | MIT |
 | **引用方式** | 格式适配 + 技能名映射后纳入 |
-| **引用位置** | `skills/solo-law-firm/`（26 个技能 × 8 科室 + 本仓库新增庭审提纲） |
+| **引用位置** | `skills/solo-law-firm/`（26 个技能 × 全部科室 + 本仓库新增庭审提纲） |
 | **合规状态** | ✅ MIT 兼容 |
 
 ---
@@ -86,13 +86,13 @@ status: active
 
 | 内容 | 位置 |
 |:-----|:-----|
-| PRC-US 法律语义对齐框架（12 领域 × 一对一映射） | `patches/references/alignment/` |
+| PRC-US 法律语义对齐框架（全部领域 × 一对一映射） | `patches/references/alignment/` |
 | 护栏层（阻断清单/元规则/香港桥梁/核心原则） | `patches/guards/` |
 | 4 路 diff-tool 参考窗口脚本 | `patches/diff-tool-*.ps1` |
 | 5 个全量重写中国法子技能 | `skills/*/skills/` |
 | MCP 连接器独立仓库 | https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub |
-| 概念阻断清单（22 条 → 29 条扩展） | `skills/references/22-blocked-concepts.md` |
-| 12 领域推理模板（自研） | `patches/workflows/*/CLAUDE.md` 注入段落 |
+| 概念阻断清单（全部条目 → 29 条扩展） | `skills/references/22-blocked-concepts.md` |
+| 全部领域推理模板（自研） | `patches/workflows/*/CLAUDE.md` 注入段落 |
 | 声明式 override 配置 | `patches/overlay.yaml` |
 
 ---

@@ -1,6 +1,7 @@
-﻿---
+---
 name: invention-intake
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   发明披露初步筛查——新颖性、创造性、可授权主题、公开日和
   可检测性及战略价值。用于收到发明披露、需要判断是否值得进行
   现有技术检索和专利律师审查、进一步调查或驳回时。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: ip-legal
 status: active
 ---
+
 
 # /invention-intake
 

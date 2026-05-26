@@ -1,6 +1,7 @@
-﻿---
+---
 name: claim-chart
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   构建或审查要件分析表——专利权利要求对照表（侵权、无效或审查）或
   民事构成要件分析表（任何诉讼请求或抗辩），每个单元格附精确引用，
   缺口检测为优先输出。当用户要求要件分析表、权利要求对照表、
@@ -10,6 +11,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /claim-chart
 

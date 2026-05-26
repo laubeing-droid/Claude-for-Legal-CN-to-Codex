@@ -1,6 +1,7 @@
-﻿---
+---
 name: registry-browser
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   搜索已监视注册表中的社区法律技能，显示匹配项及其描述，并提供在安装前
   查看完整 SKILL.md 的选项。当用户说"浏览""搜索技能""找某个方面的技能"
   "有什么可用的"或想添加新注册表到监视列表时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: legal-builder-hub
 status: active
 ---
+
 
 # /registry-browser
 

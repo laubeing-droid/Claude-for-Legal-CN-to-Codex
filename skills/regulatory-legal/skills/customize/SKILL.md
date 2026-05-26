@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   指导式定制监管实践配置——在不重新运行完整冷启动访谈的情况下对单项进行调整。
   调整监管机构监测清单、政策库索引、重要度阈值、差距响应流程、
   动态源配置或事务工作区路径。适用于用户说"改我的[某配置]"、"增加一个监管机构"、
@@ -10,6 +11,7 @@ version: 2.10.0
 module: regulatory-legal
 status: active
 ---
+
 
 # /customize
 

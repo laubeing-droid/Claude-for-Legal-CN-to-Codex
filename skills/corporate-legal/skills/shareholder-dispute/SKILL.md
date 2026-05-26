@@ -1,12 +1,14 @@
-﻿---
+---
 name: shareholder-dispute
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   依据《中华人民共和国公司法（2024年修订）》及相关司法解释，针对公司股东间因权利滥用、公司人格否认、异议股东回购请求权、强制解散等引发的纠纷进行深度法律风险评估，提供实务分析框架与应对策略。
 argument-hint: 请输入股东纠纷的基本案情、争议焦点（如大股东侵占、公司僵局、要求回购等）以及核心诉求。
 version: 2.10.0
 module: corporate-legal
 status: active
 ---
+
 # /corporate-legal:shareholder-dispute
 
 1. 识别争议核心主体与法律关系，核查涉案公司的股权结构、章程特殊约定及股东出资情况。

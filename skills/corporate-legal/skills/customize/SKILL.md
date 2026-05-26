@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   公司业务实务画像的引导式定制——修改一项配置而无需重新运行完整的冷启动访谈。
   调整风险姿态、上报联系人、活跃模块（并购/董事会与公司秘书/公众公司/主体管理）、
   重要性阈值、披露清单格式、决议先例或事项工作区路径。当用户说"改一下我的[某配置]"
@@ -10,6 +11,7 @@ version: 2.10.0
 module: corporate-legal
 status: active
 ---
+
 
 # /customize
 

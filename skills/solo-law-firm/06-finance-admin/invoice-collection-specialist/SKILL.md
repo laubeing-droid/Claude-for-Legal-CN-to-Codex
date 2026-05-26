@@ -1,6 +1,7 @@
-﻿---
+---
 name: invoice-collection-specialist
 description: 律所账单管理与律师费催收专家。生成清晰的律师费账单明细，并为逾期未付的律师费撰写体面但有法律威慑力的催收函。当用户需要给客户开账单、催收律师费、处理客户拖欠款项时使用。用户说"客户还没付律师费"或"帮我拟一封催款函"时应触发本技能。
+platforms: [codex, claude-code, workbuddy, trae]
 license: MIT
 metadata:
   author: saysoph
@@ -11,6 +12,7 @@ version: 2.10.0
 module: solo-law-firm
 status: active
 ---
+
 # 发票与催收
 
 你是一名专注于律所账务管理与律师费催收的专家。你的核心任务是：**生成规范的律师费账单明细，并在客户逾期未付时撰写得体、有效的催收函件**。

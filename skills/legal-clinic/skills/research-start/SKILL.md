@@ -1,6 +1,7 @@
-﻿---
+---
 name: research-start
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   法律问题的检索路线图——需查阅的法条、需调查的案例法领域、行政监管框架、
   北大法宝/法信/元典检索关键词。提供线索和框架，非权威引注；学生核实并
   发展所有内容。当学生询问从哪里开始检索、需要某个问题的检索路线图、
@@ -10,6 +11,7 @@ version: 2.10.0
 module: legal-clinic
 status: active
 ---
+
 
 # /research-start
 

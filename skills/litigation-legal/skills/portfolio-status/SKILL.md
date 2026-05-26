@@ -1,6 +1,7 @@
-﻿---
+---
 name: portfolio-status
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   从 _log.yaml 汇总案件组合——风险分布、即将到期的节点、
   陈旧案件、重要性汇总、阶段分布和异常标注。
   当用户问"案件总体情况如何"、"有多少个未结案件"或需要案件组合汇总时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /portfolio-status
 

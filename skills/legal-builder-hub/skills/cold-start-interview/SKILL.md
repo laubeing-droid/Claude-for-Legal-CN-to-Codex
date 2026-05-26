@@ -1,6 +1,7 @@
-﻿---
+---
 name: cold-start-interview
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   实践画像访谈，推荐并安装社区法律技能的入门包。这是整个生态系统的冷启动——
   询问你是什么类型的律师并推荐首先安装什么。在新安装、用户说"帮我开始"或
   "我应该安装什么"时使用，或在添加或移除 MCP 连接器后重新运行集成可用性检查。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: legal-builder-hub
 status: active
 ---
+
 
 # /cold-start-interview
 

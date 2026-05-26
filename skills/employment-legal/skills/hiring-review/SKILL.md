@@ -1,6 +1,7 @@
-﻿---
+---
 name: hiring-review
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   审查录用通知书及竞业限制/保密条款——含管辖地检查。实质性规则（竞业限制可执行性、
   工时制度分类、个人信息保护）在每次录用时研究提取，不预先存储。当用户提出
   "审查这个录用通知"、"这里能用竞业限制吗"、"检查这份录用通知书"、
@@ -10,6 +11,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /hiring-review
 

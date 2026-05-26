@@ -1,6 +1,7 @@
-﻿---
+---
 name: portfolio
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   追踪知识产权组合——注册、续展、维持费和商标使用声明。
   用于检查到期续展事项、添加或更新资产、记录维持费缴纳，
   或审计登记簿中的空白、失效及商业使用问题。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: ip-legal
 status: active
 ---
+
 
 # /portfolio
 

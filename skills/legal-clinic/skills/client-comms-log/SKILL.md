@@ -1,6 +1,7 @@
 ---
 name: client-comms-log
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   记录当事人沟通——电话、邮件、短信、信函、面谈、语音留言。
   按案件仅追加记录，含日期条目、方向、媒介、摘要、行动事项。
   与 /client-letter 和 /status client 协同使用。
@@ -10,6 +11,7 @@ version: 2.10.0
 module: legal-clinic
 status: active
 ---
+
 
 # /client-comms-log
 

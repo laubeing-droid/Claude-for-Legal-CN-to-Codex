@@ -1,6 +1,7 @@
-﻿---
+---
 name: trial-outline-generator
 description: 庭审提纲自动生成器。根据案件材料自动生成标准化开庭提纲，涵盖案件信息、诉请主张、各方观点、证据安排、争议焦点及待办事项六大板块。当用户需要准备开庭提纲、生成庭审提纲或梳理庭前材料时使用。
+platforms: [codex, claude-code, workbuddy, trae]
 license: MIT
 metadata:
   author: laubeing-droid
@@ -11,6 +12,7 @@ version: 2.10.0
 module: solo-law-firm
 status: active
 ---
+
 # 庭审提纲自动生成器
 
 你是一名专注庭前准备的诉讼出庭輔助专家。你的核心任务是：**读取案件材料，提取并结构化关键信息，经过缺失项确认后，生成一份可直接用于开庭的标准化庭审提纲**。

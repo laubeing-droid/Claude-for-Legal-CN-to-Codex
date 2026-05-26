@@ -1,6 +1,7 @@
-﻿---
+---
 name: legal-research-methodology
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   法律检索方法论——面向法学生和律所新人，系统讲解中国法源层级、检索思路、
   法条引用规范和检索报告写作。当用户说"怎么查法条""法律检索方法""法学研究"
   "检索报告怎么写"时触发。来源: Golden2002/legal-research-skill。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: law-student
 status: active
 ---
+
 
 # /law-student:legal-research-methodology
 

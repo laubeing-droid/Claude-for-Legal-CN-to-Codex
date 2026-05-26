@@ -1,6 +1,7 @@
-﻿---
+---
 name: cold-start-interview
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   诉讼插件首次配置——按角色分流（法务、律所律师、独立执业）、
   按立场分流（原告、被告、两者皆有），捕获风险校准、执业背景和文书风格，
   写入实践画像 CLAUDE.md。在全新安装时、用户想设置或重做实践画像时、
@@ -10,6 +11,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /cold-start-interview
 

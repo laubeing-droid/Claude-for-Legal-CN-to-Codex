@@ -1,6 +1,7 @@
-﻿---
+---
 name: use-case-triage
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   对提议的AI用例进行分类和风险排序：检索现有注册表、检查红线、
   对残余风险进行分级。输出为经核准/附条件/不核准，并附书面理由。
   适用于收到新的AI用例提案、产品团队询问"这个AI功能可以上线吗"、
@@ -10,6 +11,7 @@ version: 2.10.0
 module: ai-governance-legal
 status: active
 ---
+
 
 # /use-case-triage
 

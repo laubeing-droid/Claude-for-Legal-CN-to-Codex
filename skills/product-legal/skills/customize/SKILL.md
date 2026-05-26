@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   对产品法务实务画像进行引导式定制——修改单项设置，无需重新运行完整冷启动访谈。
   调整风险校准、上报联系人、上线审查框架、营销宣传立场或事项工作空间路径。当用户说
   "修改我的[某项设置]""更新我的画像""编辑我的框架""重调我的校准"或"定制"时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: product-legal
 status: active
 ---
+
 
 # /customize
 

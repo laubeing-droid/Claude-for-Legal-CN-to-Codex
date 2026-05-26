@@ -1,6 +1,7 @@
-﻿---
+---
 name: 证据保全与留存
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   指导证据保全操作——含公证保全、诉前/诉中保全、电子数据固化。当用户说
   "做证据保全"、"固定证据"、"保存电子数据"时使用。
 argument-hint: "[证据类型/保全方式]"
@@ -8,6 +9,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /证据保全与留存
 

@@ -1,6 +1,7 @@
-﻿---
+---
 name: demand-intake
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   律师函起草前的委托背景收集——当事人、事实、依据、筹码、
   最佳替代方案和保密过滤——写入结构化的委托登记文件供
   律师函起草技能读取。当用户想准备律师函、在起草前进行委托登记，
@@ -10,6 +11,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /demand-intake
 

@@ -1,6 +1,7 @@
-﻿---
+---
 name: cold-start-interview
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   首次配置访谈——从你的劳动规章制度和解除备忘录中学习你的管辖范围
   和上报规则。询问哪些省/直辖市有员工，阅读种子文件，并构建
   管辖地感知的上报表。在首次安装、CLAUDE.md 中仍有 [PLACEHOLDER]
@@ -10,6 +11,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /cold-start-interview
 

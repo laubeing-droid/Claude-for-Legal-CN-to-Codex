@@ -1,6 +1,7 @@
-﻿---
+---
 name: deal-team-summary
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   将尽调发现汇总为适合受众层级的交易团队简报——面向领导层的执行摘要、面向团队的
   工作摘要。当用户说"给交易团队简报""尽调现状如何""汇总发现给[受众]"
   "交易更新"或按简报频率触发时使用。
@@ -8,6 +9,7 @@ version: 2.10.0
 module: corporate-legal
 status: active
 ---
+
 
 # 交易团队摘要
 

@@ -1,6 +1,7 @@
-﻿---
+---
 name: termination-review
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   劳动合同解除审查——高风险标记检测、经济补偿/赔偿金计算及最终工资支付时点
   按管辖地（省/直辖市）逐项审查。管辖地特定规则（解除条件、补偿标准、通知义务）
   在每次审查时研究提取，不预先存储。当用户提出"审查这个解除"、"能解除这个人吗"、
@@ -10,6 +11,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /termination-review
 

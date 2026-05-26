@@ -1,6 +1,7 @@
-﻿---
+---
 name: skill-installer
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   从已监视注册表安装社区技能。先读白名单，获取，展示原始 SKILL.md
   （而非仅摘要），运行结构性信任检查，运行 skills-qa，仅在用户明确
   批准后才写入文件。当用户说"安装[技能]"、在浏览中选择安装、或提供
@@ -10,6 +11,7 @@ version: 2.10.0
 module: legal-builder-hub
 status: active
 ---
+
 
 # /skill-installer
 

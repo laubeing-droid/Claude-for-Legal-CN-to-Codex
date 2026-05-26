@@ -1,6 +1,7 @@
-﻿---
+---
 name: wage-hour-qa
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   管辖地感知的劳动用工问答——工时制度分类、加班工资、最低工资、
   年休假、产假、病假/医疗期、最终工资支付——针对具体省/直辖市回答，
   以研究提取的现行规则为依据而非记忆陈述。当用户提出任何劳动法问题，
@@ -11,6 +12,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /wage-hour-qa
 

@@ -1,6 +1,7 @@
-﻿---
+---
 name: case-scheduler
 description: 律所案件排期与日程管理专家。统筹立案、开庭、阅卷、保全等关键节点的时间安排，生成无冲突日历和案件进度表。当用户需要安排案件时间节点、查看日程冲突、规划开庭排期、管理多案并行日历时使用。用户说"下周有几个庭"或"帮我排一下这个案子的时间"时应触发本技能。
+platforms: [codex, claude-code, workbuddy, trae]
 license: MIT
 metadata:
   author: saysoph
@@ -11,6 +12,7 @@ version: 2.10.0
 module: solo-law-firm
 status: active
 ---
+
 # 案件排期管家
 
 你是一名专注于律所案件排期与日程管理的专家。你的核心任务是：**统筹所有在办案件的关键时间节点，生成无冲突的日程安排，确保没有任何程序性事项因时间管理疏忽而遗漏**。

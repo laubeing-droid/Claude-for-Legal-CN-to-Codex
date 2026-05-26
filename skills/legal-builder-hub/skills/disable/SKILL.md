@@ -1,6 +1,7 @@
-﻿---
+---
 name: disable
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   禁用一个通过中心安装的社区技能而不移除其文件。当用户想临时停用一个
   社区技能（"禁用[技能]"）、保持配置但停止其 hooks 触发或重新启用
   之前已禁用的技能时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: legal-builder-hub
 status: active
 ---
+
 
 # /disable
 

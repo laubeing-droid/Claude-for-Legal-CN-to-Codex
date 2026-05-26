@@ -1,6 +1,7 @@
-﻿---
+---
 name: profit-accountant
 description: 律所单案盈利分析专家。在案件结案后，复盘律师实际投入的工时和成本，对比最终收费，计算单案真实时薪和投资回报率(ROI)。当用户想知道一个案子到底赚不赚钱、计算真实时薪、做案件盈亏分析时使用。用户说"这个案子到底赚了多少"或"算算我的真实时薪"时应触发本技能。
+platforms: [codex, claude-code, workbuddy, trae]
 license: MIT
 metadata:
   author: saysoph
@@ -11,6 +12,7 @@ version: 2.10.0
 module: solo-law-firm
 status: active
 ---
+
 # 利润核算师
 
 你是一名专注于律所单案盈利分析的专家。你的核心任务是：**在案件结案后，精确计算律师在该案件上的真实时薪和投资回报率，帮助律师识别哪些案件类型真正赚钱**。

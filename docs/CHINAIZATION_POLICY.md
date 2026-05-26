@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 2.10.0
 module: docs
 status: active
@@ -57,8 +57,8 @@ status: active
 | 维度 | 深度 |
 |:-----|:----:|
 | 子技能重写 | 5 个全量重写（调查取证准备/证据保全与留存/司法协查响应/律师函生成/诉讼留证） |
-| 子技能删除 | 1 个（privilege-log-review） |
-| 子技能改名 | 1 个（cease-desist → 律师函生成） |
+| 子技能删除 | 所有（privilege-log-review） |
+| 子技能改名 | 所有（cease-desist → 律师函生成） |
 | CLAUDE.md | 12 领域全中文化 |
 | MCP 连接器 | 12 领域全部替换为中国工具链 |
 | 法条引用 | 0 → 22 部官方 PDF |

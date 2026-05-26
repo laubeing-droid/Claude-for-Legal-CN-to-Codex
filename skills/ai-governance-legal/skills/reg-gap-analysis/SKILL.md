@@ -1,6 +1,7 @@
-﻿---
+---
 name: reg-gap-analysis
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   将新的或修订的AI法规与当前AI政策和实践进行差异分析——
   输出差距清单和整改计划，含负责人和日期。适用于新法规
   出台、用户询问"[某法规]是否影响我们"、"
@@ -10,6 +11,7 @@ version: 2.10.0
 module: ai-governance-legal
 status: active
 ---
+
 
 # /reg-gap-analysis
 

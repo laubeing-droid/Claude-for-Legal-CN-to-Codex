@@ -1,6 +1,7 @@
-﻿---
+---
 name: customize
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   商事合同业务领域配置的引导式定制——修改一项配置而无需重新运行完整的冷启动访谈。
   调整风险姿态、上报联系人、审查指引立场、保密协议分类偏好、行文风格、
   审查偏好或事项工作区路径。当用户说"改一下我的[某配置]""更新我的配置"
@@ -10,6 +11,7 @@ version: 2.10.0
 module: commercial-legal
 status: active
 ---
+
 
 # /customize
 

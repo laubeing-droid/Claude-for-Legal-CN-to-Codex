@@ -1,6 +1,7 @@
-﻿---
+---
 name: matter-update
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   向案件历史文件追加带日期的事件记录并刷新日志行——
   捕获新进展、状态变化、风险重评估、期限变更和和解授权变更。
   当用户需要记录案件更新、标注进展或对案件组合记录状态变更时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: litigation-legal
 status: active
 ---
+
 
 # /matter-update
 

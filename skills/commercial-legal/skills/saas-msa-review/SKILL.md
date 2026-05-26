@@ -1,6 +1,7 @@
-﻿---
+---
 name: saas-msa-review
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   参考：SaaS订阅协议审查，重点关注订阅交易中最关键的条款——自动续约机制、
   价格调整、数据可迁移性、运行时间SLA以及再处理者权利。当 /commercial-legal:review
   检测到SaaS或订阅协议时加载。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: commercial-legal
 status: active
 ---
+
 
 # SaaS / 订阅协议审查
 

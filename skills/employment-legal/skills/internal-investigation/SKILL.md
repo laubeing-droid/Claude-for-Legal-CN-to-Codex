@@ -1,6 +1,7 @@
-﻿---
+---
 name: internal-investigation
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   Reference: shared framework for managing internal investigations from intake
   through final memo — privileged investigation log, document processing with
   needle-finding, source coverage tracking, Q&A against the log, memo drafting,
@@ -12,6 +13,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # Internal Investigation Skill
 

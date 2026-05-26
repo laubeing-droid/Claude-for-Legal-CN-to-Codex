@@ -1,6 +1,7 @@
-﻿---
+---
 name: investigation-query
 description: >
+platforms: [codex, claude-code, workbuddy, trae]
   对进行中的调查日志进行查询——证人说了什么、哪些地方陈述互相矛盾、
   存在哪些证据缺口、每个问题上最有证明力的证据是什么。
   当律师需要查询调查记录而不重新阅读每个条目时使用。
@@ -9,6 +10,7 @@ version: 2.10.0
 module: employment-legal
 status: active
 ---
+
 
 # /investigation-query
 
